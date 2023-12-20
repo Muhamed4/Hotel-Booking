@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Hotel Booking</p>
+    </footer>
+</body>
+
+@RenderSection("HomeIndexView", required: false)
+
+</html>
