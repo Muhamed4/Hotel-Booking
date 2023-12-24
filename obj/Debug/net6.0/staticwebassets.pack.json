@@ -5,12 +5,248 @@
       "PackagePath": "staticwebassets\\Hotel Booking.bundle.scp.css"
     },
     {
-      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\HomeIndex.css",
-      "PackagePath": "staticwebassets\\css\\HomeIndex.css"
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\assets\\css\\ajax-loader.gif"
     },
     {
-      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\animate.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\bootsnav.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootsnav.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\flaticon.css",
+      "PackagePath": "staticwebassets\\assets\\css\\flaticon.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\slick.eot"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\slick.svg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\slick.woff"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\linearicons.css",
+      "PackagePath": "staticwebassets\\assets\\css\\linearicons.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\assets\\css\\responsive.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\slick-theme.css",
+      "PackagePath": "staticwebassets\\assets\\css\\slick-theme.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\slick.css",
+      "PackagePath": "staticwebassets\\assets\\css\\slick.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticon.eot"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticon.svg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticon.ttf"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Flaticon.woff"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\Linearicons-Free.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Linearicons-Free.eot"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\Linearicons-Free.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Linearicons-Free.svg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\Linearicons-Free.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Linearicons-Free.ttf"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\Linearicons-Free.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Linearicons-Free.woff"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\Linearicons-Free.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Linearicons-Free.woff2"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.woff2"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\blog\\b1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\b1.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\blog\\b2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\b2.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\blog\\b3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\blog\\b3.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\clients\\c1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\clients\\c1.png"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\clients\\c2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\clients\\c2.png"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\clients\\c3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\clients\\c3.png"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\clients\\c4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\clients\\c4.png"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\counter\\counter-banner.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\counter\\counter-banner.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\explore\\e1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\explore\\e1.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\explore\\e2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\explore\\e2.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\explore\\e3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\explore\\e3.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\explore\\e4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\explore\\e4.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\explore\\e5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\explore\\e5.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\explore\\e6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\explore\\e6.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\explore\\person.png",
+      "PackagePath": "staticwebassets\\assets\\images\\explore\\person.png"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\images\\welcome-hero\\banner.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\welcome-hero\\banner.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\img\\controls.png",
+      "PackagePath": "staticwebassets\\assets\\img\\controls.png"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\js\\bootsnav.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootsnav.js"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\js\\custom.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom.js"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\js\\feather.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\feather.min.js"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\js\\jquery.counterup.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.counterup.min.js"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\js\\jquery.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.js"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\js\\slick.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\slick.min.js"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\js\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\waypoints.min.js"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\assets\\logo\\favicon.png",
+      "PackagePath": "staticwebassets\\assets\\logo\\favicon.png"
     },
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\favicon.ico",

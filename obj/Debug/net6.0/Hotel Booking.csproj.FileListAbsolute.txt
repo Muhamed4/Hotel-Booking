@@ -28,3 +28,4 @@ D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\obj\Debug\net6.0\refint\
 D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\obj\Debug\net6.0\Hotel Booking.pdb
 D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\obj\Debug\net6.0\Hotel Booking.genruntimeconfig.cache
 D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\obj\Debug\net6.0\ref\Hotel Booking.dll
+D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\obj\Debug\net6.0\Hotel Booking.sourcelink.json

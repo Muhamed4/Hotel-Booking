@@ -2,23 +2,99 @@
     ViewData["Title"] = "Home Page";
 }
 
-@section HomeIndexView {
+@* @section HomeIndexView {
     <link rel="stylesheet" href="~/css/HomeIndex.css">
-}
+} *@
+
+<header>
+    <a href="" class="logo">Hotel</a>
+    <nav class="navigation">
+        <div class="services">
+            <a href="#properties">My Properties</a>
+            <a href="#trips">My Trips</a>
+        </div>
+        <div class="Registration">
+            <a href="#log-in">Log In</a> |
+            <a href="#sing-up">Sign Up</a>
+        </div>
+    </nav>
+</header>
+
+<section class="main">
+    <div>
+        <h2>Hello, I'm Morsi <br> <span>Software Engineer</span></h2>
+        <h3>I Solve Real Problems To Make Life More Easier</h3>
+        <a href="#projects" class="main-btn">View My Works</a>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-hackerrank"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+        </div>
+    </div>
+</section>
 
 
-<p class="text">Hotel Booking</p>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <td>Jill</td>
-    </tr>
-    <tr>
-        <th rowspan="2">Phone</th>
-        <td>555-1234</td>
-    </tr>
-    <tr>
-        <td>555-8745</td>
-    </tr>
-</table>
+<sectino class="cards" id="Services">
+    <h2 class="title">Services</h2>
+    <div class="content">
+        <div class="card">
+            <div class="icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div class="info">
+                <h3>Coding</h3>
+                <p>
+                    Coding is the process of instructing a computer by writing commands in a programming language.
+                    It involves designing
+                    algorithms, using variables and data types, and solving problems through logical and structured
+                    thinking. Developers use
+                    integrated development environments to write, test, and debug code, creating software and
+                    applications
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <i class="fa-solid fa-bug"></i>
+            </div>
+
+            <div class="info">
+                <h3>Solving Bugs</h3>
+                <p>
+                    Bugs are errors or flaws in computer code that cause unexpected behavior in software. Developers
+                    use debugging tools to
+                    identify and fix bugs, ensuring the smooth functionality of programs. The process involves
+                    locating and resolving issues
+                    to improve the overall reliability and performance of the software.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon">
+                <i class="fa-solid fa-window-maximize"></i>
+            </div>
+
+            <div class="info">
+                <h3>Building Websites</h3>
+                <p>
+                    Building websites involves the creation of digital platforms through coding, but bugs, or coding
+                    errors, can disrupt the
+                    intended functionality. Web developers employ debugging tools to detect and rectify these
+                    issues, ensuring a smooth and
+                    error-free user experience.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</sectino>
+
+
+<footer>
+    <p>&copy; 2023 Hotel Booking</p>
+</footer>
