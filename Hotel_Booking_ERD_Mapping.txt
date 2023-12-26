@@ -3,8 +3,8 @@ USER ( ID  , Email, Password, First Name, Last Name, Image)
       ____
 
 
-HOTEL ( ID  , Name, Review Count, Country, City, Likes, Description, Image, USERID)
-       ____                                                                --------
+HOTEL ( ID  , Name, Country, City, Description, Image, USERID)
+       ____                                           --------
 
 
 REVIEW ( ID , Rating, Comment, Date, USERID, HOTELID)
@@ -37,3 +37,12 @@ FEATURE_SERVICE  ( ID , Service Description)
 
 FEATURE_FUN_PROGRAM  ( ID , Fun Description)
                      _______________________
+
+
+USER_REACT_HOTEL ( USERID , HOTELID, LIKE)
+                 ___________________ 
+
+
+
+USER_WATCH_HOTEL (USERID, HOTELID, WATCH_COUNT)
+                 _________________  
