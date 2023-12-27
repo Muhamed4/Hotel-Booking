@@ -67,6 +67,15 @@ namespace Hotel_Booking.Data.Config
                 .HasColumnType("BIT")
                 .HasDefaultValue(0)
                 .IsRequired();
+
+            builder.HasOne(X => X.Hotel)
+                .WithMany(X => X.ContainFeatures)
+                .HasPrincipalKey(X => X.ID)
+                .HasForeignKey(X => X.HotelID)
+                .HasConstraintName("FK_HOTEL_FEATURES")
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.ToTable(name: "Features", schema: "HotelBooking");
         }
     }
 }

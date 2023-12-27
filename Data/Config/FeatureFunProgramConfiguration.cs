@@ -18,6 +18,15 @@ namespace Hotel_Booking.Data.Config
                 .HasColumnName("Description")
                 .HasColumnType("NVARCHAR(MAX)")
                 .IsRequired();
+
+            builder.HasOne(X => X.Feature)
+                .WithMany(X => X.FeatureFunPrograms)
+                .HasPrincipalKey(X => X.ID)
+                .HasForeignKey(X => X.FeatureID)
+                .HasConstraintName("FK_FEATURE_FUNPROGRAM")
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.ToTable(name: "FeatureFunPrograms", schema: "HotelBooking");
         }
     }
 }

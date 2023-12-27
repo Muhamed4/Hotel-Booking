@@ -38,6 +38,40 @@ namespace Hotel_Booking.Data.Config
                 .HasColumnName("Image")
                 .HasColumnType("NVARCHAR(MAX)")
                 .IsRequired();
+
+            builder.HasMany(X => X.HotelWatches)
+                .WithMany(X => X.UserWatchs)
+                .UsingEntity<UserWatchHotel>(
+                    X => X.HasOne(X => X.User)
+                        .WithMany(X => X.UserWatchHotels)
+                        .HasPrincipalKey(X => X.ID)
+                        .HasForeignKey(X => X.UserID)
+                        .HasConstraintName("FK_USER_USERWATCHHOTELS")
+                        .OnDelete(DeleteBehavior.Cascade),
+
+                    x => x.HasOne(X => X.Hotel)
+                        .WithMany(X => X.UserWatchHotels)
+                        .HasPrincipalKey(X => X.ID)
+                        .HasForeignKey(X => X.HotelID)
+                        .HasConstraintName("FK_HOTEL_USERWATCHHOTELS")
+                        .OnDelete(DeleteBehavior.Cascade)
+                );
+
+            builder.HasMany(X => X.ConsistOfRooms)
+                .WithOne(X => X.Hotel)
+                .HasPrincipalKey(X => X.ID)
+                .HasForeignKey(X => X.HotelID)
+                .HasConstraintName("FK_HOTEL_CONSISTSOF_ROOMS")
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasMany(X => X.HasReviews)
+                .WithOne(X => X.Hotel)
+                .HasPrincipalKey(X => X.ID)
+                .HasForeignKey(X => X.HotelID)
+                .HasConstraintName("FK_HOTEL_REVIEWS")
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.ToTable(name: "Hotels", schema: "HotelBooking");
         }
     }
 }

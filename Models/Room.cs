@@ -11,10 +11,10 @@ namespace Hotel_Booking.Models
         public decimal Price { get; set; }
         public int RoomNumber { get; set; }
         public int BedCount { get; set; }
-        public DateOnly? CheckIn { get; set; }
-        public DateOnly? CheckOut { get; set; }
+        public DateTime? CheckIn { get; set; }
+        public DateTime? CheckOut { get; set; }
         // Foreign Key for User Table
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
         // Foreign Key for Hotel Table
         public int HotelID { get; set; }
         public ICollection<RoomImage>? RoomImages { get; set; }

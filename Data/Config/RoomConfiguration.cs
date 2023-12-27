@@ -32,13 +32,22 @@ namespace Hotel_Booking.Data.Config
 
             builder.Property(X => X.CheckIn)
                 .HasColumnName("CheckIn")
-                .HasColumnType("DATE")
+                .HasColumnType("DATETIME(3)")
                 .IsRequired();
 
             builder.Property(X => X.CheckOut)
                 .HasColumnName("CheckOut")
-                .HasColumnType("DATE")
+                .HasColumnType("DATETIME(3)")
                 .IsRequired();
+
+            builder.HasOne(X => X.User)
+                .WithMany(X => X.BookRooms)
+                .HasPrincipalKey(X => X.ID)
+                .HasForeignKey(X => X.UserID)
+                .HasConstraintName("FK_USER_BOOK_ROOM")
+                .OnDelete(DeleteBehavior.SetNull);
+
+            builder.ToTable(name: "Rooms", schema: "HotelBooking");
 
         }
     }
