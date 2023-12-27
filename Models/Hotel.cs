@@ -11,8 +11,9 @@ namespace Hotel_Booking.Models
         public string? Name { get; set; }
         public string? Country { get; set; }
         public string? City { get; set; }
-        public string? Descriptions { get; set; }
+        public string? Description { get; set; }
         public string? Image { get; set; }
+        // Foreign Key
         public int UserID { get; set; }
         public ICollection<UserReactHotel>? UserReactHotels { get; set; }
         public ICollection<UserWatchHotel>? UserWatchHotels { get; set; }

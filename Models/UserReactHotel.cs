@@ -9,7 +9,7 @@ namespace Hotel_Booking.Models
     {
         public int UserID { get; set; }
         public int HotelID { get; set; }
-        public byte Like { get; set; }
+        public bool Like { get; set; }
         public User? User { get; set; }
         public Hotel? Hotel { get; set; }
     }

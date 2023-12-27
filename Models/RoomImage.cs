@@ -9,6 +9,7 @@ namespace Hotel_Booking.Models
     {
         public int ID { get; set; }
         public string? Image { get; set; }
+        // Foreign for Room Table
         public int RoomID { get; set; }
         public Room? Room { get; set; }
     }

@@ -7,7 +7,7 @@ namespace Hotel_Booking.Models
 {
     public class FeatureService
     {
-        public int ID { get; set; }
+        public int FeatureID { get; set; }
         public string? Description { get; set; }
         public Feature? Feature { get; set; }
     }
