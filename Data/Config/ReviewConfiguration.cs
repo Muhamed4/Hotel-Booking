@@ -36,7 +36,7 @@ namespace Hotel_Booking.Data.Config
                 .HasPrincipalKey(X => X.ID)
                 .HasForeignKey(X => X.UserID)
                 .HasConstraintName("FK_USER_REVIEWS")
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.ToTable(name: "Reviews", schema: "HotelBooking");
         }

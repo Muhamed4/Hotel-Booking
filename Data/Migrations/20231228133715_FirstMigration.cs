@@ -96,7 +96,7 @@ namespace Hotel_Booking.Migrations
                     Rating = table.Column<decimal>(type: "DECIMAL(10,2)", precision: 10, scale: 2, nullable: false),
                     Comment = table.Column<string>(type: "NVARCHAR(MAX)", nullable: false),
                     Date = table.Column<DateTime>(type: "DATETIME2(3)", nullable: false, defaultValueSql: "GETDATE()"),
-                    UserID = table.Column<int>(type: "int", nullable: false),
+                    UserID = table.Column<int>(type: "int", nullable: true),
                     HotelID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -115,7 +115,7 @@ namespace Hotel_Booking.Migrations
                         principalSchema: "HotelBooking",
                         principalTable: "Users",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(

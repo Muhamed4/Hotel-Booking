@@ -12,7 +12,7 @@ namespace Hotel_Booking.Models
         public string? Comment { get; set; }
         public DateTime? Date { get; set; }
         // Foreign Key for User Table
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
         // Foreign Key for Hotel Table
         public int HotelID { get; set; }
         public User? User { get; set; }

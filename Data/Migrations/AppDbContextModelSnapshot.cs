@@ -4,7 +4,6 @@ using Hotel_Booking.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -12,10 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hotel_Booking.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231227222355_FirstMigration")]
-    partial class FirstMigration
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -223,7 +221,7 @@ namespace Hotel_Booking.Migrations
                         .HasColumnType("DECIMAL(10,2)")
                         .HasColumnName("Rating");
 
-                    b.Property<int>("UserID")
+                    b.Property<int?>("UserID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -467,8 +465,7 @@ namespace Hotel_Booking.Migrations
                     b.HasOne("Hotel_Booking.Models.User", "User")
                         .WithMany("MakeReviews")
                         .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
+                        .OnDelete(DeleteBehavior.SetNull)
                         .HasConstraintName("FK_USER_REVIEWS");
 
                     b.Navigation("Hotel");
