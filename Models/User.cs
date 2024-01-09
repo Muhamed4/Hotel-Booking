@@ -2,23 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Hotel_Booking.Models
 {
-    public class User
+    public class User : IdentityUser
     {
-        public int ID { get; set; }
-        public string? Email { get; set; }
-        public string? Password { get; set; }
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
+        public string FirstName { get; set; } = null!;
+        public string LastName { get; set; } = null!;
         public string? Image { get; set; }
-        public ICollection<Hotel>? OwnHotels { get; set; }
-        public ICollection<Review>? MakeReviews { get; set; }
-        public ICollection<Room>? BookRooms { get; set; }
-        public ICollection<UserReactHotel>? UserReactHotels { get; set; }
-        public ICollection<Hotel>? UserReactions { get; set; }
-        public ICollection<UserWatchHotel>? UserWatchHotels { get; set; }
-        public ICollection<Hotel>? UserWatchs { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Room> Rooms { get; set; }
+        public virtual ICollection<UserReactHotel> UserReactHotels { get; set; }
+        public virtual ICollection<UserWatchHotel> UserWatchHotels { get; set; }
     }
 }

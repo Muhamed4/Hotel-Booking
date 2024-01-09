@@ -39,32 +39,33 @@ namespace Hotel_Booking.Data.Config
                 .HasColumnType("NVARCHAR(MAX)")
                 .IsRequired();
 
-            builder.HasMany(X => X.HotelWatches)
-                .WithMany(X => X.UserWatchs)
-                .UsingEntity<UserWatchHotel>(
-                    X => X.HasOne(X => X.User)
-                        .WithMany(X => X.UserWatchHotels)
-                        .HasPrincipalKey(X => X.ID)
-                        .HasForeignKey(X => X.UserID)
-                        .HasConstraintName("FK_USER_USERWATCHHOTELS")
-                        .OnDelete(DeleteBehavior.Cascade),
+            // builder.HasMany(X => X.HotelWatches)
+            //     .WithMany(X => X.UserWatchs)
+            //     .UsingEntity<UserWatchHotel>(
+            //         X => X.HasOne(X => X.User)
+            //             .WithMany(X => X.UserWatchHotels)
+            //             .HasPrincipalKey(X => X.ID)
+            //             .HasForeignKey(X => X.UserID)
+            //             .HasConstraintName("FK_USER_USERWATCHHOTELS")
+            //             .OnDelete(DeleteBehavior.Cascade),
 
-                    x => x.HasOne(X => X.Hotel)
-                        .WithMany(X => X.UserWatchHotels)
-                        .HasPrincipalKey(X => X.ID)
-                        .HasForeignKey(X => X.HotelID)
-                        .HasConstraintName("FK_HOTEL_USERWATCHHOTELS")
-                        .OnDelete(DeleteBehavior.Cascade)
-                );
+            //         x => x.HasOne(X => X.Hotel)
+            //             .WithMany(X => X.UserWatchHotels)
+            //             .HasPrincipalKey(X => X.ID)
+            //             .HasForeignKey(X => X.HotelID)
+            //             .HasConstraintName("FK_HOTEL_USERWATCHHOTELS")
+            //             .OnDelete(DeleteBehavior.Cascade)
+            //     );
 
-            builder.HasMany(X => X.ConsistOfRooms)
+
+            builder.HasMany(X => X.Rooms)
                 .WithOne(X => X.Hotel)
                 .HasPrincipalKey(X => X.ID)
                 .HasForeignKey(X => X.HotelID)
-                .HasConstraintName("FK_HOTEL_CONSISTSOF_ROOMS")
+                .HasConstraintName("FK_HOTEL_ROOMS")
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasMany(X => X.HasReviews)
+            builder.HasMany(X => X.Reviews)
                 .WithOne(X => X.Hotel)
                 .HasPrincipalKey(X => X.ID)
                 .HasForeignKey(X => X.HotelID)

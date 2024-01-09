@@ -22,6 +22,29 @@ namespace Hotel_Booking.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Hotel_Booking.Models.Facility", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR(MAX)")
+                        .HasColumnName("Description");
+
+                    b.Property<int>("FeatureID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("FeatureID");
+
+                    b.ToTable("Facilities", "HotelBooking");
+                });
+
             modelBuilder.Entity("Hotel_Booking.Models.Feature", b =>
                 {
                     b.Property<int>("ID")
@@ -30,62 +53,62 @@ namespace Hotel_Booking.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<bool>("AirCondition")
+                    b.Property<bool?>("AirCondition")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("AirCondition");
+                        .HasColumnName("AirCondition")
+                        .HasDefaultValueSql("(0)");
 
-                    b.Property<bool>("AirportTransfer")
+                    b.Property<bool?>("AirportTransfer")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("AirportTransfer");
+                        .HasColumnName("AirportTransfer")
+                        .HasDefaultValueSql("(0)");
 
-                    b.Property<bool>("FontDesk247")
+                    b.Property<bool?>("FontDesk247")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("FontDesk247");
+                        .HasColumnName("FontDesk247")
+                        .HasDefaultValueSql("(0)");
 
-                    b.Property<bool>("FreeBreakfast")
+                    b.Property<bool?>("FreeBreakfast")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("FreeBreakfast");
+                        .HasColumnName("FreeBreakfast")
+                        .HasDefaultValueSql("(0)");
 
-                    b.Property<bool>("FreeParking")
+                    b.Property<bool?>("FreeParking")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("FreeParking");
+                        .HasColumnName("FreeParking")
+                        .HasDefaultValueSql("(0)");
 
-                    b.Property<bool>("FreeWifi")
+                    b.Property<bool?>("FreeWifi")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("FreeWifi");
+                        .HasColumnName("FreeWifi")
+                        .HasDefaultValueSql("(0)");
 
                     b.Property<int>("HotelID")
                         .HasColumnType("int");
 
-                    b.Property<bool>("LaundryFacility")
+                    b.Property<bool?>("LaundryFacility")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("LaundryFacility");
+                        .HasColumnName("LaundryFacility")
+                        .HasDefaultValueSql("(0)");
 
-                    b.Property<bool>("NoSmoking")
+                    b.Property<bool?>("NoSmoking")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("NoSmoking");
+                        .HasColumnName("NoSmoking")
+                        .HasDefaultValueSql("(0)");
 
-                    b.Property<bool>("Restaurant")
+                    b.Property<bool?>("Restaurant")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("Restaurant");
+                        .HasColumnName("Restaurant")
+                        .HasDefaultValueSql("(0)");
 
                     b.HasKey("ID");
 
@@ -94,60 +117,50 @@ namespace Hotel_Booking.Migrations
                     b.ToTable("Features", "HotelBooking");
                 });
 
-            modelBuilder.Entity("Hotel_Booking.Models.FeatureFacility", b =>
+            modelBuilder.Entity("Hotel_Booking.Models.FoodDrink", b =>
                 {
-                    b.Property<int>("FeatureID")
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("NVARCHAR(MAX)")
                         .HasColumnName("Description");
 
-                    b.HasKey("FeatureID", "Description");
+                    b.Property<int>("FeatureID")
+                        .HasColumnType("int");
 
-                    b.ToTable("FeatureFacilities", "HotelBooking");
+                    b.HasKey("ID");
+
+                    b.HasIndex("FeatureID");
+
+                    b.ToTable("FoodDrinks", "HotelBooking");
                 });
 
-            modelBuilder.Entity("Hotel_Booking.Models.FeatureFoodDrink", b =>
+            modelBuilder.Entity("Hotel_Booking.Models.FunProgram", b =>
                 {
-                    b.Property<int>("FeatureID")
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("NVARCHAR(MAX)")
                         .HasColumnName("Description");
 
-                    b.HasKey("FeatureID", "Description");
-
-                    b.ToTable("FeatureFoodDrinks", "HotelBooking");
-                });
-
-            modelBuilder.Entity("Hotel_Booking.Models.FeatureFunProgram", b =>
-                {
                     b.Property<int>("FeatureID")
                         .HasColumnType("int");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR(MAX)")
-                        .HasColumnName("Description");
+                    b.HasKey("ID");
 
-                    b.HasKey("FeatureID", "Description");
+                    b.HasIndex("FeatureID");
 
-                    b.ToTable("FeatureFunPrograms", "HotelBooking");
-                });
-
-            modelBuilder.Entity("Hotel_Booking.Models.FeatureService", b =>
-                {
-                    b.Property<int>("FeatureID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR(MAX)")
-                        .HasColumnName("Description");
-
-                    b.HasKey("FeatureID", "Description");
-
-                    b.ToTable("FeatureServices", "HotelBooking");
+                    b.ToTable("FunPrograms", "HotelBooking");
                 });
 
             modelBuilder.Entity("Hotel_Booking.Models.Hotel", b =>
@@ -183,12 +196,7 @@ namespace Hotel_Booking.Migrations
                         .HasColumnType("NVARCHAR(MAX)")
                         .HasColumnName("Name");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("UserID");
 
                     b.ToTable("Hotels", "HotelBooking");
                 });
@@ -206,10 +214,9 @@ namespace Hotel_Booking.Migrations
                         .HasColumnType("NVARCHAR(MAX)")
                         .HasColumnName("Comment");
 
-                    b.Property<DateTime?>("Date")
-                        .IsRequired()
+                    b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("DATETIME2(3)")
+                        .HasColumnType("DATETIME2")
                         .HasColumnName("Date")
                         .HasDefaultValueSql("GETDATE()");
 
@@ -217,12 +224,12 @@ namespace Hotel_Booking.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Rating")
-                        .HasPrecision(10, 2)
                         .HasColumnType("DECIMAL(10,2)")
                         .HasColumnName("Rating");
 
-                    b.Property<int?>("UserID")
-                        .HasColumnType("int");
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ID");
 
@@ -245,21 +252,18 @@ namespace Hotel_Booking.Migrations
                         .HasColumnType("INT")
                         .HasColumnName("BedCount");
 
-                    b.Property<DateTime?>("CheckIn")
-                        .IsRequired()
-                        .HasColumnType("DATETIME(3)")
+                    b.Property<DateTime>("CheckIn")
+                        .HasColumnType("DATE")
                         .HasColumnName("CheckIn");
 
-                    b.Property<DateTime?>("CheckOut")
-                        .IsRequired()
-                        .HasColumnType("DATETIME(3)")
+                    b.Property<DateTime>("CheckOut")
+                        .HasColumnType("DATE")
                         .HasColumnName("CheckOut");
 
                     b.Property<int>("HotelID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasPrecision(10, 2)
                         .HasColumnType("DECIMAL(10,2)")
                         .HasColumnName("Price");
 
@@ -267,14 +271,16 @@ namespace Hotel_Booking.Migrations
                         .HasColumnType("INT")
                         .HasColumnName("RoomNumber");
 
-                    b.Property<int?>("UserID")
-                        .HasColumnType("int");
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("HotelID");
-
                     b.HasIndex("UserID");
+
+                    b.HasIndex(new[] { "HotelID", "RoomNumber" }, "RoomNumberUnique")
+                        .IsUnique();
 
                     b.ToTable("Rooms", "HotelBooking");
                 });
@@ -302,7 +308,7 @@ namespace Hotel_Booking.Migrations
                     b.ToTable("RoomImages", "HotelBooking");
                 });
 
-            modelBuilder.Entity("Hotel_Booking.Models.User", b =>
+            modelBuilder.Entity("Hotel_Booking.Models.Service", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -310,14 +316,43 @@ namespace Hotel_Booking.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("NVARCHAR(MAX)")
-                        .HasColumnName("Email");
+                        .HasColumnName("Description");
+
+                    b.Property<int>("FeatureID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("FeatureID");
+
+                    b.ToTable("Services", "HotelBooking");
+                });
+
+            modelBuilder.Entity("Hotel_Booking.Models.User", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR(MAX)")
+                        .HasColumnType("NVARCHAR(100)")
                         .HasColumnName("FirstName");
 
                     b.Property<string>("Image")
@@ -326,77 +361,244 @@ namespace Hotel_Booking.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR(MAX)")
+                        .HasColumnType("NVARCHAR(100)")
                         .HasColumnName("LastName");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR(MAX)")
-                        .HasColumnName("Password");
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
 
-                    b.HasKey("ID");
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex(new[] { "Email" }, "EmailUnique")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
 
                     b.ToTable("Users", "HotelBooking");
                 });
 
             modelBuilder.Entity("Hotel_Booking.Models.UserReactHotel", b =>
                 {
-                    b.Property<int>("UserID")
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<int>("HotelID")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Like")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("BIT")
-                        .HasDefaultValue(false)
-                        .HasColumnName("Like");
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("UserID", "HotelID");
+                    b.HasKey("ID");
 
                     b.HasIndex("HotelID");
+
+                    b.HasIndex("UserID");
 
                     b.ToTable("UserReactHotels", "HotelBooking");
                 });
 
             modelBuilder.Entity("Hotel_Booking.Models.UserWatchHotel", b =>
                 {
-                    b.Property<int>("UserID")
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<int>("HotelID")
                         .HasColumnType("int");
 
-                    b.Property<int>("WatchCount")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INT")
-                        .HasDefaultValue(0)
-                        .HasColumnName("WatchCount");
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("UserID", "HotelID");
+                    b.HasKey("ID");
 
                     b.HasIndex("HotelID");
+
+                    b.HasIndex("UserID");
 
                     b.ToTable("UserWatchHotels", "HotelBooking");
                 });
 
-            modelBuilder.Entity("Hotel_Booking.Models.Feature", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
-                    b.HasOne("Hotel_Booking.Models.Hotel", "Hotel")
-                        .WithMany("ContainFeatures")
-                        .HasForeignKey("HotelID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_HOTEL_FEATURES");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Navigation("Hotel");
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("Roles", "Security");
                 });
 
-            modelBuilder.Entity("Hotel_Booking.Models.FeatureFacility", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("RoleClaims", "Security");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserClaims", "Security");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserLogins", "Security");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("UserRoles", "Security");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("UserTokens", "Security");
+                });
+
+            modelBuilder.Entity("Hotel_Booking.Models.Facility", b =>
                 {
                     b.HasOne("Hotel_Booking.Models.Feature", "Feature")
-                        .WithMany("FeatureFacilities")
+                        .WithMany("Facilities")
                         .HasForeignKey("FeatureID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
@@ -405,10 +607,22 @@ namespace Hotel_Booking.Migrations
                     b.Navigation("Feature");
                 });
 
-            modelBuilder.Entity("Hotel_Booking.Models.FeatureFoodDrink", b =>
+            modelBuilder.Entity("Hotel_Booking.Models.Feature", b =>
+                {
+                    b.HasOne("Hotel_Booking.Models.Hotel", "Hotel")
+                        .WithMany("Features")
+                        .HasForeignKey("HotelID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_HOTEL_FEATURES");
+
+                    b.Navigation("Hotel");
+                });
+
+            modelBuilder.Entity("Hotel_Booking.Models.FoodDrink", b =>
                 {
                     b.HasOne("Hotel_Booking.Models.Feature", "Feature")
-                        .WithMany("FeatureFoodDrinks")
+                        .WithMany("FoodDrinks")
                         .HasForeignKey("FeatureID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
@@ -417,10 +631,10 @@ namespace Hotel_Booking.Migrations
                     b.Navigation("Feature");
                 });
 
-            modelBuilder.Entity("Hotel_Booking.Models.FeatureFunProgram", b =>
+            modelBuilder.Entity("Hotel_Booking.Models.FunProgram", b =>
                 {
                     b.HasOne("Hotel_Booking.Models.Feature", "Feature")
-                        .WithMany("FeatureFunPrograms")
+                        .WithMany("FunPrograms")
                         .HasForeignKey("FeatureID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
@@ -429,43 +643,20 @@ namespace Hotel_Booking.Migrations
                     b.Navigation("Feature");
                 });
 
-            modelBuilder.Entity("Hotel_Booking.Models.FeatureService", b =>
-                {
-                    b.HasOne("Hotel_Booking.Models.Feature", "Feature")
-                        .WithMany("FeatureServices")
-                        .HasForeignKey("FeatureID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_FEATURE_SERVICE");
-
-                    b.Navigation("Feature");
-                });
-
-            modelBuilder.Entity("Hotel_Booking.Models.Hotel", b =>
-                {
-                    b.HasOne("Hotel_Booking.Models.User", "User")
-                        .WithMany("OwnHotels")
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_USER_HOTEL");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Hotel_Booking.Models.Review", b =>
                 {
                     b.HasOne("Hotel_Booking.Models.Hotel", "Hotel")
-                        .WithMany("HasReviews")
+                        .WithMany("Reviews")
                         .HasForeignKey("HotelID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_HOTEL_REVIEWS");
 
                     b.HasOne("Hotel_Booking.Models.User", "User")
-                        .WithMany("MakeReviews")
+                        .WithMany("Reviews")
                         .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.SetNull)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("FK_USER_REVIEWS");
 
                     b.Navigation("Hotel");
@@ -476,16 +667,17 @@ namespace Hotel_Booking.Migrations
             modelBuilder.Entity("Hotel_Booking.Models.Room", b =>
                 {
                     b.HasOne("Hotel_Booking.Models.Hotel", "Hotel")
-                        .WithMany("ConsistOfRooms")
+                        .WithMany("Rooms")
                         .HasForeignKey("HotelID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("FK_HOTEL_CONSISTSOF_ROOMS");
+                        .HasConstraintName("FK_HOTEL_ROOMS");
 
                     b.HasOne("Hotel_Booking.Models.User", "User")
-                        .WithMany("BookRooms")
+                        .WithMany("Rooms")
                         .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.SetNull)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("FK_USER_BOOK_ROOM");
 
                     b.Navigation("Hotel");
@@ -505,6 +697,18 @@ namespace Hotel_Booking.Migrations
                     b.Navigation("Room");
                 });
 
+            modelBuilder.Entity("Hotel_Booking.Models.Service", b =>
+                {
+                    b.HasOne("Hotel_Booking.Models.Feature", "Feature")
+                        .WithMany("Services")
+                        .HasForeignKey("FeatureID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_FEATURE_SERVICE");
+
+                    b.Navigation("Feature");
+                });
+
             modelBuilder.Entity("Hotel_Booking.Models.UserReactHotel", b =>
                 {
                     b.HasOne("Hotel_Booking.Models.Hotel", "Hotel")
@@ -512,7 +716,7 @@ namespace Hotel_Booking.Migrations
                         .HasForeignKey("HotelID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("FK_HOTEL_USER_REACT_HOTEL");
+                        .HasConstraintName("FK_HOTEL_USErREACTHotels");
 
                     b.HasOne("Hotel_Booking.Models.User", "User")
                         .WithMany("UserReactHotels")
@@ -533,38 +737,89 @@ namespace Hotel_Booking.Migrations
                         .HasForeignKey("HotelID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("FK_HOTEL_USERWATCHHOTELS");
+                        .HasConstraintName("FK_HOTEL_USErWATCHHotels");
 
                     b.HasOne("Hotel_Booking.Models.User", "User")
                         .WithMany("UserWatchHotels")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("FK_USER_USERWATCHHOTELS");
+                        .HasConstraintName("FK_USER_USER_WATCH_HOTEL");
 
                     b.Navigation("Hotel");
 
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Hotel_Booking.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Hotel_Booking.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Hotel_Booking.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Hotel_Booking.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Hotel_Booking.Models.Feature", b =>
                 {
-                    b.Navigation("FeatureFacilities");
+                    b.Navigation("Facilities");
 
-                    b.Navigation("FeatureFoodDrinks");
+                    b.Navigation("FoodDrinks");
 
-                    b.Navigation("FeatureFunPrograms");
+                    b.Navigation("FunPrograms");
 
-                    b.Navigation("FeatureServices");
+                    b.Navigation("Services");
                 });
 
             modelBuilder.Entity("Hotel_Booking.Models.Hotel", b =>
                 {
-                    b.Navigation("ConsistOfRooms");
+                    b.Navigation("Features");
 
-                    b.Navigation("ContainFeatures");
+                    b.Navigation("Reviews");
 
-                    b.Navigation("HasReviews");
+                    b.Navigation("Rooms");
 
                     b.Navigation("UserReactHotels");
 
@@ -578,11 +833,9 @@ namespace Hotel_Booking.Migrations
 
             modelBuilder.Entity("Hotel_Booking.Models.User", b =>
                 {
-                    b.Navigation("BookRooms");
+                    b.Navigation("Reviews");
 
-                    b.Navigation("MakeReviews");
-
-                    b.Navigation("OwnHotels");
+                    b.Navigation("Rooms");
 
                     b.Navigation("UserReactHotels");
 

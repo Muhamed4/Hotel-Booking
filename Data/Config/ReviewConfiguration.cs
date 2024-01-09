@@ -16,8 +16,7 @@ namespace Hotel_Booking.Data.Config
 
             builder.Property(X => X.Rating)
                 .HasColumnName("Rating")
-                .HasColumnType("DECIMAL")
-                .HasPrecision(10, 2)
+                .HasColumnType("DECIMAL(10, 2)")
                 .IsRequired();
 
             builder.Property(X => X.Comment)
@@ -27,16 +26,16 @@ namespace Hotel_Booking.Data.Config
 
             builder.Property(X => X.Date)
                 .HasColumnName("Date")
-                .HasColumnType("DATETIME2(3)")
+                .HasColumnType("DATETIME2")
                 .HasDefaultValueSql("GETDATE()")
                 .IsRequired();
 
             builder.HasOne(X => X.User)
-                .WithMany(X => X.MakeReviews)
-                .HasPrincipalKey(X => X.ID)
+                .WithMany(X => X.Reviews)
+                .HasPrincipalKey(X => X.Id)
                 .HasForeignKey(X => X.UserID)
                 .HasConstraintName("FK_USER_REVIEWS")
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.ToTable(name: "Reviews", schema: "HotelBooking");
         }

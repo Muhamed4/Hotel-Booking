@@ -16,8 +16,7 @@ namespace Hotel_Booking.Data.Config
 
             builder.Property(X => X.Price)
                 .HasColumnName("Price")
-                .HasColumnType("DECIMAL")
-                .HasPrecision(10, 2)
+                .HasColumnType("DECIMAL(10, 2)")
                 .IsRequired();
 
             builder.Property(X => X.RoomNumber)
@@ -32,20 +31,22 @@ namespace Hotel_Booking.Data.Config
 
             builder.Property(X => X.CheckIn)
                 .HasColumnName("CheckIn")
-                .HasColumnType("DATETIME(3)")
+                .HasColumnType("DATE")
                 .IsRequired();
 
             builder.Property(X => X.CheckOut)
                 .HasColumnName("CheckOut")
-                .HasColumnType("DATETIME(3)")
+                .HasColumnType("DATE")
                 .IsRequired();
 
+            builder.HasIndex(X => new { X.HotelID, X.RoomNumber }, "RoomNumberUnique").IsUnique();
+
             builder.HasOne(X => X.User)
-                .WithMany(X => X.BookRooms)
-                .HasPrincipalKey(X => X.ID)
+                .WithMany(X => X.Rooms)
+                .HasPrincipalKey(X => X.Id)
                 .HasForeignKey(X => X.UserID)
                 .HasConstraintName("FK_USER_BOOK_ROOM")
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.ToTable(name: "Rooms", schema: "HotelBooking");
 

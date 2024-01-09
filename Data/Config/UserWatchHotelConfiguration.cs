@@ -12,13 +12,16 @@ namespace Hotel_Booking.Data.Config
     {
         public void Configure(EntityTypeBuilder<UserWatchHotel> builder)
         {
-            builder.HasKey(X => new { X.UserID, X.HotelID });
+            builder.HasKey(X => X.ID);
 
-            builder.Property(X => X.WatchCount)
-                .HasColumnName("WatchCount")
-                .HasColumnType("INT")
-                .HasDefaultValue(0)
-                .IsRequired();
+            builder.HasOne(X => X.Hotel)
+                .WithMany(X => X.UserWatchHotels)
+                .HasPrincipalKey(X => X.ID)
+                .HasForeignKey(X => X.HotelID)
+                .HasConstraintName("FK_HOTEL_USErWATCHHotels")
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.ToTable(name: "UserWatchHotels", schema: "HotelBooking");
         }
     }
 }

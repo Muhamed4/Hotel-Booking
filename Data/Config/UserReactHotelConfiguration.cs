@@ -12,13 +12,16 @@ namespace Hotel_Booking.Data.Config
     {
         public void Configure(EntityTypeBuilder<UserReactHotel> builder)
         {
-            builder.HasKey(X => new { X.UserID, X.HotelID });
+            builder.HasKey(X => X.ID);
 
-            builder.Property(X => X.Like)
-                .HasColumnName("Like")
-                .HasColumnType("BIT")
-                .HasDefaultValue(0)
-                .IsRequired();
+            builder.HasOne(X => X.Hotel)
+                .WithMany(X => X.UserReactHotels)
+                .HasPrincipalKey(X => X.ID)
+                .HasForeignKey(X => X.HotelID)
+                .HasConstraintName("FK_HOTEL_USErREACTHotels")
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.ToTable(name: "UserReactHotels", schema: "HotelBooking");
         }
     }
 }
