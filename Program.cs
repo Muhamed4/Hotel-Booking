@@ -37,4 +37,27 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+
+// Seed roles during application startup
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    ConfigureRoles(roleManager);
+}
+
+// Method to seed roles
+static void ConfigureRoles(RoleManager<IdentityRole> roleManager)
+{
+    string[] roleNames = { "NUser", "Admin"};
+
+    foreach (var roleName in roleNames)
+    {
+        if (!roleManager.RoleExistsAsync(roleName).Result)
+        {
+            roleManager.CreateAsync(new IdentityRole(roleName)).Wait();
+        }
+    }
+}
+
 app.Run();
+
