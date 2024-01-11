@@ -4,18 +4,18 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Hotel_Booking.Models;
-using Hotel_Booking.ViewModel;
+using Hotel_Booking.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Hotel_Booking.Controllers
 {
-    public class Account : Controller
+    public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        public Account(UserManager<User> userManager, SignInManager<User> signIn)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signIn)
         {
             _userManager = userManager;
             _signInManager = signIn;

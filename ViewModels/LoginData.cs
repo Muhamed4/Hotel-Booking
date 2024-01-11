@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Hotel_Booking.ViewModel
+namespace Hotel_Booking.ViewModels
 {
     public class LoginData
     {

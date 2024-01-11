@@ -265,3 +265,6 @@ D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\bin\Debug\net6.0\runtime
 D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\bin\Debug\net6.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\projects\C#Projects\Visual_Studio_Code\Hotel Booking\obj\Debug\net6.0\Hotel Booking.MvcApplicationPartsAssemblyInfo.cs
