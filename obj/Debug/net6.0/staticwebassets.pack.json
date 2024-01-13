@@ -5,6 +5,42 @@
       "PackagePath": "staticwebassets\\Hotel Booking.bundle.scp.css"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\49bd376d-84e1-47ed-a351-ead7ef17e265Card0.jpg",
+      "PackagePath": "staticwebassets\\Images\\49bd376d-84e1-47ed-a351-ead7ef17e265Card0.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\6aa95e91-c7b9-4bb9-877f-b5a940ab48deCard1.jpg",
+      "PackagePath": "staticwebassets\\Images\\6aa95e91-c7b9-4bb9-877f-b5a940ab48deCard1.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\6fcbc3a9-755b-44ce-915b-3cad457304f0Card0.jpg",
+      "PackagePath": "staticwebassets\\Images\\6fcbc3a9-755b-44ce-915b-3cad457304f0Card0.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\8b5310ff-5bc4-40a8-a4d5-6602e48be165Card0.jpg",
+      "PackagePath": "staticwebassets\\Images\\8b5310ff-5bc4-40a8-a4d5-6602e48be165Card0.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\a14b1450-e1eb-4a81-a676-bbfec17e46b5Card0.jpg",
+      "PackagePath": "staticwebassets\\Images\\a14b1450-e1eb-4a81-a676-bbfec17e46b5Card0.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\a1fc81a4-75c7-4727-804a-cc68f6783540Card0.jpg",
+      "PackagePath": "staticwebassets\\Images\\a1fc81a4-75c7-4727-804a-cc68f6783540Card0.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\a7b68557-668b-4dab-acd4-9458fb94f225Card0.jpg",
+      "PackagePath": "staticwebassets\\Images\\a7b68557-668b-4dab-acd4-9458fb94f225Card0.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\e489ca7c-a7b3-4691-84c2-6a667b159951Card1.jpg",
+      "PackagePath": "staticwebassets\\Images\\e489ca7c-a7b3-4691-84c2-6a667b159951Card1.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\ffc79f1e-2e9c-4bb7-accc-71643c1f2f21Card0.jpg",
+      "PackagePath": "staticwebassets\\Images\\ffc79f1e-2e9c-4bb7-accc-71643c1f2f21Card0.jpg"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

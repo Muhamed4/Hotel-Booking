@@ -38,10 +38,10 @@ namespace Hotel_Booking.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult AddHotel(HotelData hotelData)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 string fileName = string.Empty;
-                if(hotelData.File is not null)
+                if (hotelData.File is not null)
                 {
                     string imagesPath = Path.Combine(_hosting.WebRootPath, "Images");
                     fileName = Guid.NewGuid().ToString() + hotelData.File.FileName;
@@ -58,12 +58,26 @@ namespace Hotel_Booking.Controllers
                     };
 
                     _hotelContext.Insert(_hotel);
-
+                    
                     // Go to Feature Page
-                    // return View();
+                    return RedirectToAction(nameof(AddFeature), new {_id = _hotel.ID});
                 }
             }
             return View(hotelData);
+        }
+
+        [HttpGet]
+        public IActionResult AddFeature(int hotelID)
+        {
+            ViewBag.HotelID = hotelID;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddFeature(FeatureData featureData, int hotelID)
+        {
+            return Content($"{hotelID}");
         }
     }
 }
