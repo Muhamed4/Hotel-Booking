@@ -17,7 +17,7 @@ namespace Hotel_Booking.ViewModels
         public bool FontDesk247 { get; set; }
         public bool Restaurant { get; set; }
         public bool AirCondition { get; set; }
-        // public List<FunProgram>FunPrograms;
+        // public List<string>FunPrograms;
         // public List<string>Services;
         // public List<string>Facilities;
         // public List<string>FoodDrinks;
