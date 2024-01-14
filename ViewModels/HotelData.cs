@@ -21,5 +21,9 @@ namespace Hotel_Booking.ViewModels
         [Required]
         [DisplayName("Image")]
         public IFormFile File { get; set; }
+        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "Number of rooms must be greater than 0")]
+        [DisplayName("Number of Rooms")]
+        public int NumberOfRooms { get; set; }
     }
 }

@@ -58,9 +58,9 @@ namespace Hotel_Booking.Controllers
                     };
 
                     _hotelContext.Insert(_hotel);
-                    
+
                     // Go to Feature Page
-                    return RedirectToAction(nameof(AddFeature), new {_id = _hotel.ID});
+                    return RedirectToAction(nameof(AddFeature), new { hotelID = _hotel.ID });
                 }
             }
             return View(hotelData);
