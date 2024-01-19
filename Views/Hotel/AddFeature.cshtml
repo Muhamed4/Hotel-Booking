@@ -49,39 +49,5 @@
     </div>
 
 
-    <button type="submit" class="btn btn-primary">Add Features</button>
+    <button type="submit" class="btn btn-primary">next</button>
 </form>
-
-
-
-@* @section scripts
-{
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            // Function to add a new description field
-            function addNewField(list, name) {
-                var newIndex = list.length;
-                var fieldHtml =
-                    `<div>
-                            <label>${name}</label>
-                            <input type="checkbox" name="${name}[${newIndex}].IsSelected" />
-                            <input type="text" name="${name}[${newIndex}].Description" placeholder="Enter description" />
-                        </div>`;
-
-                $(`#${name}List`).append(fieldHtml);
-            }
-
-            // Event handler for adding a new FunPrograms field
-            $("#addFunProgram").click(function () {
-                addNewField(@Model.FunPrograms, "FunPrograms");
-            });
-
-            // Event handler for adding a new Services field
-            $("#addService").click(function () {
-                addNewField(@Model.Services, "Services");
-            });
-        });
-    </script>
-} *@

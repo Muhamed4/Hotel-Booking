@@ -15,10 +15,13 @@ namespace Hotel_Booking.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        public AccountController(UserManager<User> userManager, SignInManager<User> signIn)
+        private readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _hosting;
+        public AccountController(UserManager<User> userManager, SignInManager<User> signIn,
+                                 Microsoft.AspNetCore.Hosting.IHostingEnvironment hosting)
         {
             _userManager = userManager;
             _signInManager = signIn;
+            _hosting = hosting;
         }
         [HttpGet]
         public IActionResult Register()
@@ -32,13 +35,22 @@ namespace Hotel_Booking.Controllers
         {
             if(ModelState.IsValid)
             {
+                string fileName = string.Empty;
+                if(registration.File is not null)
+                {
+                    string imagesPath = Path.Combine(_hosting.WebRootPath, "Images");
+                    fileName = Guid.NewGuid().ToString() + registration.File.FileName;
+                    string fullPath = Path.Combine(imagesPath, fileName);
+                    registration.File.CopyTo(new FileStream(fullPath, FileMode.Create));
+                }
                 User _user = new User()
                 {
                     FirstName = registration.FirstName,
                     LastName = registration.LastName,
                     Email = registration.Email,
                     PasswordHash = registration.Password,
-                    UserName = registration.FirstName + registration.LastName
+                    UserName = registration.FirstName + registration.LastName,
+                    Image = fileName
                 };
 
                 IdentityResult result = await _userManager.CreateAsync(_user, registration.Password);

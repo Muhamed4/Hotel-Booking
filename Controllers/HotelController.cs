@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using Hotel_Booking.Models;
 using Hotel_Booking.Repository.HotelRepo;
 using Hotel_Booking.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Hotel_Booking.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class HotelController : Controller
     {
         private readonly IHotelRepo _hotelContext;

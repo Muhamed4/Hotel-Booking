@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dL0n1Lvp4E7GCtx/ielJiVFe1/1fprvPEvZq12IiDzA=",
+  "Hash": "XkqOCgXqM3vIETXaG9t1W5prwHsFgCwOqmOERp16YAU=",
   "Source": "Hotel Booking",
   "BasePath": "_content/Hotel Booking",
   "Mode": "Default",
@@ -1383,6 +1383,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\e489ca7c-a7b3-4691-84c2-6a667b159951Card1.jpg"
+    },
+    {
+      "Identity": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\e564c129-0034-46ed-ac68-bf933cc9d9990_h1Rym88uBaU2OQPm.jpg",
+      "SourceId": "Hotel Booking",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\",
+      "BasePath": "_content/Hotel Booking",
+      "RelativePath": "Images/e564c129-0034-46ed-ac68-bf933cc9d9990_h1Rym88uBaU2OQPm.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\e564c129-0034-46ed-ac68-bf933cc9d9990_h1Rym88uBaU2OQPm.jpg"
     },
     {
       "Identity": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\ffc79f1e-2e9c-4bb7-accc-71643c1f2f21Card0.jpg",

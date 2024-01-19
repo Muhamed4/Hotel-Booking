@@ -24,5 +24,6 @@ namespace Hotel_Booking.ViewModels
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Two passwords are different!")]
         public string ConfirmPassword { get; set; }
+        public IFormFile File { get; set; }
     }
 }
