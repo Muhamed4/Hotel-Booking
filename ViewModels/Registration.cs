@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace Hotel_Booking.ViewModels
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Two passwords are different!")]
         public string ConfirmPassword { get; set; }
-        public IFormFile File { get; set; }
+        [DisplayName("Image")]
+        public IFormFile? File { get; set; }
     }
 }

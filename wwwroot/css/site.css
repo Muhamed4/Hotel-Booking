@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    /* background-color: rgb(34, 34, 40); */
+    width: 100%;
+    /* position: fixed; */
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    /* box-shadow: 0px 4px 10px 8px black; */
+    /* box-shadow: 0 5px 25px rgba(1 1 1 / 15%); */
+}
+
+.logo {
+    text-decoration: none;
+    color: goldenrod;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding-left: 40px;
+    background-size: contain;
+}
+
+.navbar .home {
+    color: black;
+    background-color: goldenrod;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.navbar a:hover{
+    color: red;
+}
+/* 
+.container {
+    padding: 50px 100px;
+} */

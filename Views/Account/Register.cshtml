@@ -4,54 +4,71 @@
     ViewData["Title"] = "Register";
 }
 
-<h1>Register</h1>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register" enctype="multipart/form-data">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+<div class="body">
+    <div class="wrapper">
+        <div class="isvaliddiv" asp-validation-summary="All"></div>
+        <form asp-action="Register" asp-controller="Account" enctype="multipart/form-data">
+            <h1>Register</h1>
+            <div class="tog">
+                <div class="input-box firstname">
+                    <input asp-for="FirstName" type="text" placeholder="First Name" required>
+                    <i class='bx bxs-user'></i>
+                    <span class="isvalid" asp-validation-for="FirstName"></span>
+                </div>
+                <div class="input-box">
+                    <input asp-for="LastName" type="text" placeholder="Last Name" required>
+                    <i class='bx bxs-user'></i>
+                    <span class="isvalid" asp-validation-for="LastName"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
+            <div class="input-box">
+                <input asp-for="Email" type="email" placeholder="Email" required>
+                <i class="fa-regular fa-envelope"></i>
+                <span class="isvalid" asp-validation-for="Email"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+
+            <div class="input-box">
+                <input asp-for="Password" type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+                <span class="isvalid" asp-validation-for="Password"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+
+            <div class="input-box">
+                <input asp-for="ConfirmPassword" type="password" placeholder="ConfirmPassword" required>
+                <i class='bx bxs-lock-alt'></i>
+                <span class="isvalid" asp-validation-for="ConfirmPassword"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+            <div class="input-box">
+                <input asp-for="File" type="file" placeholder="Choose Image">
+                <label for="File">
+                    @* <i class="fa-solid fa-upload"></i> *@
+                    Choose Image Profile
+                    <i class="fa-regular fa-image"></i>
+                </label>
+                <span class="isvalid" asp-validation-for="File"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="File" class="control-label"></label>
-                <input asp-for="File" class="form-control" />
-                <span asp-validation-for="File" class="text-danger"></span>
+
+            <input type="submit" class="btn" value="Register" />
+
+            <div class="register-link">
+                <p>
+                    Don you have an account ?
+                    <a asp-action="Login" asp-controller="Account">Login</a>
+                </p>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+@section AccountLogin {
+    <link rel="stylesheet" href="~/css/AccountRegister.css">
 }

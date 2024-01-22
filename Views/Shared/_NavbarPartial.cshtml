@@ -2,52 +2,26 @@
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-    <div class="container-fluid">
-        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"
-            style="margin-left: 110px; font-size: 40px;">Hotels</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1" style="margin-left: 950px;">
-
-                @if (User.Identity.IsAuthenticated == false)
-                {
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-action="" asp-controller="">Trips</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Account"
-                            asp-action="Register">Register</a>
-                    </li>
-                }
-                else
-                {
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <li class="nav-item" style="margin-left: 10px;">
-                            <a class="nav-link text-dark" asp-action="AddHotel" asp-controller="Hotel">Add Hotel</a>
-                        </li>
-                    }
-                    else
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-action="" asp-controller="">Trips</a>
-                        </li>
-                    }
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-action="" asp-controller="">@User.Identity.Name</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="FLogout">Logout</a>
-                    </li>
-                }
-            </ul>
-        </div>
-    </div>
+<a class="logo" asp-action="Index" asp-controller="Home"> Hotel </a>
+<nav class="navbar">
+    <a class="home" asp-action="Index" asp-controller="Home">Home</a>
+    @if(User.Identity.IsAuthenticated == false)
+    {
+        <a asp-action="" asp-controller="">Trips</a>
+        <a asp-action="" asp-controller="">Fav-Hotels</a>
+        <a asp-action="Login" asp-controller="Account">Sign In</a>
+    }
+    else
+    {
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-action="AddHotel" asp-controller="Hotel">Add Hotel</a>
+        }
+        else{
+            <a asp-action="" asp-controller="">Trips</a>
+            <a asp-action="" asp-controller="">Fav-Hotels</a>
+        }
+        <a asp-action="" asp-controller="">@User.Identity.Name</a>
+        <a asp-action="FLogout" asp-controller="Account">Logout</a>
+    }
 </nav>
