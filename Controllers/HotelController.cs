@@ -62,24 +62,10 @@ namespace Hotel_Booking.Controllers
                     _hotelContext.Insert(_hotel);
 
                     // Go to Feature Page
-                    return RedirectToAction(nameof(AddFeature), new { hotelID = _hotel.ID });
+                    return RedirectToAction("AddFeature", "Feature", new { hotelID = _hotel.ID });
                 }
             }
             return View(hotelData);
-        }
-
-        [HttpGet]
-        public IActionResult AddFeature(int hotelID)
-        {
-            ViewBag.HotelID = hotelID;
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult AddFeature(FeatureData featureData, int hotelID)
-        {
-            return Content($"{hotelID}");
         }
     }
 }

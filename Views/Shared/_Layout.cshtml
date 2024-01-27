@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Hotel Booking</title>
+    <title>Hotel</title>
+    <link rel="icon" href="../Images/hotelicon3.png" type="image/png">
     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -26,5 +27,6 @@
     @RenderSection("HomeIndex", required: false)
     @RenderSection("AccountLogin", required: false)
     @RenderSection("AccountRegister", required: false)
+    @RenderSection("AddHotel", required: false)
 </body>
 </html>

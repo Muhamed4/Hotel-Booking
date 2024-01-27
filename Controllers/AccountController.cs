@@ -35,14 +35,14 @@ namespace Hotel_Booking.Controllers
         {
             if(ModelState.IsValid)
             {
-                string fileName = string.Empty;
-                if(registration.File is not null)
-                {
-                    string imagesPath = Path.Combine(_hosting.WebRootPath, "Images");
-                    fileName = Guid.NewGuid().ToString() + registration.File.FileName;
-                    string fullPath = Path.Combine(imagesPath, fileName);
-                    registration.File.CopyTo(new FileStream(fullPath, FileMode.Create));
-                }
+                // string fileName = string.Empty;
+                // if(registration.File is not null)
+                // {
+                //     string imagesPath = Path.Combine(_hosting.WebRootPath, "Images");
+                //     fileName = Guid.NewGuid().ToString() + registration.File.FileName;
+                //     string fullPath = Path.Combine(imagesPath, fileName);
+                //     registration.File.CopyTo(new FileStream(fullPath, FileMode.Create));
+                // }
                 User _user = new User()
                 {
                     FirstName = registration.FirstName,
@@ -50,14 +50,14 @@ namespace Hotel_Booking.Controllers
                     Email = registration.Email,
                     PasswordHash = registration.Password,
                     UserName = registration.FirstName + registration.LastName,
-                    Image = fileName
+                    // Image = fileName
                 };
 
                 IdentityResult result = await _userManager.CreateAsync(_user, registration.Password);
 
                 if(result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(_user, "NUser");
+                    await _userManager.AddToRoleAsync(_user, "NUser"); // NUser
 
                     await _signInManager.SignInAsync(_user, false);
 

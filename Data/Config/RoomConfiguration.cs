@@ -29,24 +29,24 @@ namespace Hotel_Booking.Data.Config
                 .HasColumnType("INT")
                 .IsRequired();
 
-            builder.Property(X => X.CheckIn)
-                .HasColumnName("CheckIn")
-                .HasColumnType("DATE")
-                .IsRequired();
+            // builder.Property(X => X.CheckIn)
+            //     .HasColumnName("CheckIn")
+            //     .HasColumnType("DATE")
+            //     .IsRequired();
 
-            builder.Property(X => X.CheckOut)
-                .HasColumnName("CheckOut")
-                .HasColumnType("DATE")
-                .IsRequired();
+            // builder.Property(X => X.CheckOut)
+            //     .HasColumnName("CheckOut")
+            //     .HasColumnType("DATE")
+            //     .IsRequired();
 
             builder.HasIndex(X => new { X.HotelID, X.RoomNumber }, "RoomNumberUnique").IsUnique();
 
-            builder.HasOne(X => X.User)
-                .WithMany(X => X.Rooms)
-                .HasPrincipalKey(X => X.Id)
-                .HasForeignKey(X => X.UserID)
-                .HasConstraintName("FK_USER_BOOK_ROOM")
-                .OnDelete(DeleteBehavior.Cascade);
+            // builder.HasOne(X => X.User)
+            //     .WithMany(X => X.Rooms)
+            //     .HasPrincipalKey(X => X.Id)
+            //     .HasForeignKey(X => X.UserID)
+            //     .HasConstraintName("FK_USER_BOOK_ROOM")
+            //     .OnDelete(DeleteBehavior.Cascade);
 
             builder.ToTable(name: "Rooms", schema: "HotelBooking");
 

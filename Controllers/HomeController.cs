@@ -9,36 +9,36 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult CreateCookie()
-    {
-        string key = "Muhamed";
-        string value = "Morsi";
-        CookieOptions options = new CookieOptions()
-        {
-            Expires = DateTime.Now.AddDays(5)
-        };
+    // public IActionResult CreateCookie()
+    // {
+    //     string key = "Muhamed";
+    //     string value = "Morsi";
+    //     CookieOptions options = new CookieOptions()
+    //     {
+    //         Expires = DateTime.Now.AddDays(5)
+    //     };
 
-        Response.Cookies.Append(key, value, options);
-        return View(nameof(Index));
-    }
+    //     Response.Cookies.Append(key, value, options);
+    //     return View(nameof(Index));
+    // }
 
-    public IActionResult ReadCookie()
-    {
-        string key = "Muhamed";
-        var cookieValue = Request.Cookies[key];
-        return View(nameof(Index));
-    }
+    // public IActionResult ReadCookie()
+    // {
+    //     string key = "Muhamed";
+    //     var cookieValue = Request.Cookies[key];
+    //     return View(nameof(Index));
+    // }
 
-    public IActionResult RemoveCookie()
-    {
-        string key = "Muhamed";
-        string value = "";
-        CookieOptions options = new CookieOptions()
-        {
-            Expires = DateTime.Now.AddDays(-1)
-        };
+    // public IActionResult RemoveCookie()
+    // {
+    //     string key = "Muhamed";
+    //     string value = "";
+    //     CookieOptions options = new CookieOptions()
+    //     {
+    //         Expires = DateTime.Now.AddDays(-1)
+    //     };
 
-        Response.Cookies.Append(key, value, options);
-        return View(nameof(Index));
-    }
+    //     Response.Cookies.Append(key, value, options);
+    //     return View(nameof(Index));
+    // }
 }

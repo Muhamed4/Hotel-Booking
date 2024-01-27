@@ -15,6 +15,7 @@ namespace Hotel_Booking.Data
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Room> Rooms { get; set; }
+        public DbSet<UserBookRoom> UserBookRooms { get; set; }
         public DbSet<RoomImage> RoomImages { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Facility> Facilities { get; set; }
@@ -30,12 +31,12 @@ namespace Hotel_Booking.Data
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
 
-            modelBuilder.Entity<IdentityRole>().ToTable("Roles", "Security");
-            modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles", "Security");
-            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims", "Security");
-            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins", "Security");
-            modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims", "Security");
-            modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens", "Security");
+            modelBuilder.Entity<IdentityRole>().ToTable(name: "IdentityRole", schema:"Security");
+            modelBuilder.Entity<IdentityUserRole<string>>().ToTable(name: "IdentityUserRole", schema:"Security");
+            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable(name: "IdentityUserClaim", schema:"Security");
+            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable(name: "IdentityUserLogin", schema:"Security");
+            modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable(name: "IdentityRoleClaim", schema:"Security");
+            modelBuilder.Entity<IdentityUserToken<string>>().ToTable(name: "IdentityUserToken", schema:"Security");
         }
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hotel_Booking.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240109225750_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20240127204435_FirstMig")]
+    partial class FirstMig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -254,14 +254,6 @@ namespace Hotel_Booking.Migrations
                         .HasColumnType("INT")
                         .HasColumnName("BedCount");
 
-                    b.Property<DateTime>("CheckIn")
-                        .HasColumnType("DATE")
-                        .HasColumnName("CheckIn");
-
-                    b.Property<DateTime>("CheckOut")
-                        .HasColumnType("DATE")
-                        .HasColumnName("CheckOut");
-
                     b.Property<int>("HotelID")
                         .HasColumnType("int");
 
@@ -273,13 +265,7 @@ namespace Hotel_Booking.Migrations
                         .HasColumnType("INT")
                         .HasColumnName("RoomNumber");
 
-                    b.Property<string>("UserID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("UserID");
 
                     b.HasIndex(new[] { "HotelID", "RoomNumber" }, "RoomNumberUnique")
                         .IsUnique();
@@ -416,6 +402,38 @@ namespace Hotel_Booking.Migrations
                     b.ToTable("Users", "HotelBooking");
                 });
 
+            modelBuilder.Entity("Hotel_Booking.Models.UserBookRoom", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<DateTime>("CheckIn")
+                        .HasColumnType("DATE")
+                        .HasColumnName("CheckIn");
+
+                    b.Property<DateTime>("CheckOut")
+                        .HasColumnType("DATE")
+                        .HasColumnName("CheckOut");
+
+                    b.Property<int>("RoomID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("RoomID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("UserBookRooms", "HotelBooking");
+                });
+
             modelBuilder.Entity("Hotel_Booking.Models.UserReactHotel", b =>
                 {
                     b.Property<int>("ID")
@@ -488,7 +506,7 @@ namespace Hotel_Booking.Migrations
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.ToTable("Roles", "Security");
+                    b.ToTable("IdentityRole", "Security");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -513,7 +531,7 @@ namespace Hotel_Booking.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("RoleClaims", "Security");
+                    b.ToTable("IdentityRoleClaim", "Security");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -538,7 +556,7 @@ namespace Hotel_Booking.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserClaims", "Security");
+                    b.ToTable("IdentityUserClaim", "Security");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
@@ -560,7 +578,7 @@ namespace Hotel_Booking.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserLogins", "Security");
+                    b.ToTable("IdentityUserLogin", "Security");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
@@ -575,7 +593,7 @@ namespace Hotel_Booking.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("UserRoles", "Security");
+                    b.ToTable("IdentityUserRole", "Security");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -594,7 +612,7 @@ namespace Hotel_Booking.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("UserTokens", "Security");
+                    b.ToTable("IdentityUserToken", "Security");
                 });
 
             modelBuilder.Entity("Hotel_Booking.Models.Facility", b =>
@@ -675,16 +693,7 @@ namespace Hotel_Booking.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_HOTEL_ROOMS");
 
-                    b.HasOne("Hotel_Booking.Models.User", "User")
-                        .WithMany("Rooms")
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_USER_BOOK_ROOM");
-
                     b.Navigation("Hotel");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Hotel_Booking.Models.RoomImage", b =>
@@ -709,6 +718,27 @@ namespace Hotel_Booking.Migrations
                         .HasConstraintName("FK_FEATURE_SERVICE");
 
                     b.Navigation("Feature");
+                });
+
+            modelBuilder.Entity("Hotel_Booking.Models.UserBookRoom", b =>
+                {
+                    b.HasOne("Hotel_Booking.Models.Room", "Room")
+                        .WithMany("UserBookRooms")
+                        .HasForeignKey("RoomID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_USERBOOKROOM_BOOK_ROOM");
+
+                    b.HasOne("Hotel_Booking.Models.User", "User")
+                        .WithMany("UserBookRooms")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_USERBOOKROOM_BOOK_USER");
+
+                    b.Navigation("Room");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Hotel_Booking.Models.UserReactHotel", b =>
@@ -831,13 +861,15 @@ namespace Hotel_Booking.Migrations
             modelBuilder.Entity("Hotel_Booking.Models.Room", b =>
                 {
                     b.Navigation("RoomImages");
+
+                    b.Navigation("UserBookRooms");
                 });
 
             modelBuilder.Entity("Hotel_Booking.Models.User", b =>
                 {
                     b.Navigation("Reviews");
 
-                    b.Navigation("Rooms");
+                    b.Navigation("UserBookRooms");
 
                     b.Navigation("UserReactHotels");
 

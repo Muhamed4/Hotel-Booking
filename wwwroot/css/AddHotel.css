@@ -1,0 +1,168 @@
+.body {
+    /* width: 100%; */
+    background: url(../Images/addhotel3.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 690px;
+    /* min-height: 600px; */
+    /* padding: 0 300px; */
+}
+
+.content {
+    width: 50%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    color: #fff;
+    padding: 20px 30px;
+    margin-top: 20px;
+}
+
+
+.body .cont-box {
+    width: 100%;
+    height: 50px;
+    margin: 35px 0;
+    /* position: relative; */
+}
+
+.cont-box i {
+    /* position: absolute;
+    right: 20px; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    /* font-size: 20px; */
+    /* padding-left: 5px; */
+    /* position: absolute;
+    right: 300px; */
+}
+
+
+.body .hadd .cont-box{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.body .nhadd .cont-box{
+    /* margin-top: 5px; */
+    margin-bottom: 5px;
+}
+
+
+.cont-box input {
+    width: 100%;
+    height: 100%;
+    /* height: 20px; */
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    background-color: transparent;
+    /* background-color: #fff; */
+}
+
+.cont-box input::placeholder {
+    color: #fff;
+}
+
+
+.body .nhadd {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.body .nhadd .cont-box1 {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.body .nhadd .cont-box2 {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cont-box label {
+    font-size: 100%;
+    width: 20%;
+}
+
+.nhadd .cont-box input {
+    width: 60%;
+}
+
+.body .hadd {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.body .hadd .cont-box {
+    width: 30%;
+}
+
+/* .content .disc {
+    height: 100px;
+    display: flex;
+    align-items: flex-start;
+} */
+
+
+.body .cont-btn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.body .cont-btn input {
+    width: 15%;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgb(73, 14, 14);
+    color: #fff;
+    cursor: pointer;
+}
+
+.body .cont-btn input:hover{
+    color: gold;
+}
+
+span {
+    color: red;
+}
+
+.cont-box3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.lab {
+    font-size: 30px;
+}
+
+
+.cont-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.body .divdanger {
+    color: red;
+}

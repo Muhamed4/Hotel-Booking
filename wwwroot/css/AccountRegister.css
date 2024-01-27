@@ -136,16 +136,16 @@
     color: red;
 }
 
-.wrapper .input-box input[type="file"]{
+/* .wrapper .input-box input[type="file"]{
     display: none;
-}
+} */
 
-.wrapper .input-box label {
+/* .wrapper .input-box label {
     width: 100%;
     display: inline-block;
     text-transform: uppercase;
     color: #fff;
-    /* background-color: red; */
+    background-color: red;
     text-align: left;
     padding: 15px 40px;
     font-size: 18px;
@@ -154,8 +154,8 @@
     cursor: pointer;
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 40px;
-}
+} */
 
-.wrapper .input-box label:active {
+/* .wrapper .input-box label:active {
     transform: scale(0.9);
-}
+} */

@@ -16,14 +16,30 @@ namespace Hotel_Booking.ViewModels
         [Required]
         public string City { get; set; }
         [Required]
-        [MinLength(250)]
+        [MinLength(10)]
         public string Description { get; set; }
         [Required]
         [DisplayName("Image")]
         public IFormFile File { get; set; }
-        [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "Number of rooms must be greater than 0")]
-        [DisplayName("Number of Rooms")]
-        public int NumberOfRooms { get; set; }
+        // [Required]
+        // [Range(1, int.MaxValue, ErrorMessage = "Number of rooms must be greater than 0")]
+        // [DisplayName("Rooms")]
+        // public int NumRoom { get; set; }
+        // [Required]
+        // [Range(0, int.MaxValue, ErrorMessage = "Number of rooms must be >= 0")]
+        // [DisplayName("Facilities")]
+        // public int NumFacility { get; set; }
+        // [Required]
+        // [Range(0, int.MaxValue, ErrorMessage = "Number of rooms must be >= 0")]
+        // [DisplayName("Food&Drink Features")]
+        // public int NumFoodDrink { get; set; }
+        // [Required]
+        // [Range(0, int.MaxValue, ErrorMessage = "Number of rooms must be >= 0")]
+        // [DisplayName("Fun programs")]
+        // public int NumFunProgram { get; set; }
+        // [Required]
+        // [Range(0, int.MaxValue, ErrorMessage = "Number of rooms must be >= 0")]
+        // [DisplayName("Services")]
+        // public int NumService { get; set; }
     }
 }

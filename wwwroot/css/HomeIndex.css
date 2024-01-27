@@ -22,11 +22,15 @@
     word-spacing: 15px;
     text-transform: capitalize;
     line-height: 150px;
+    background-color: transparent;
+    /* border: 2px solid rgba(255, 255, 255, 0.2); */
+    backdrop-filter: blur(2px);
 }
 
 .main .ntext {
     font-size: 20px;
     font-weight: 600;
+    backdrop-filter: blur(3px);
 }
 
 section {
