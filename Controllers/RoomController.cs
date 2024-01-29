@@ -64,10 +64,13 @@ namespace Hotel_Booking.Controllers
                     }
                 }
 
-
+                bool Decide = roomData.addMore;
+                if(Decide)
+                    return RedirectToAction("AddRoom", "Room", new { hotelID = roomData.hotelID });
+                    
                 return RedirectToAction("AddFeature", "Feature", new { hotelID = roomData.hotelID });
             }
-            
+
             return View(roomData);
         }
     }

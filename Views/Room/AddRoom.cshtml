@@ -36,16 +36,34 @@
 
             <div class="cont-box">
                 <input type="hidden" asp-for="hotelID" />
+                <input type="hidden" asp-for="addMore" id="additionalData" value="" />
             </div>
 
             <div class="cont-btn">
-                <input type="submit" value="Next" />
+                <input type="submit" value="Save & Add Other Room" onclick="AddOtherRoom(true)" />
+                <input type="submit" value="Save & Next" onclick="AddOtherRoom(false)" />
             </div>
         </form>
     </div>
 </div>
 
 @section Scripts {
+    <script>
+        function AddOtherRoom(Value) {
+
+            // Set the value of the hidden input field
+            document.getElementById("additionalData").value = Value;
+        }
+
+        @* function NoOtherRoom() {
+
+            var additionalDataValue = false;
+
+            // Set the value of the hidden input field
+            document.getElementById("additionalData").value = additionalDataValue;
+        } *@
+    </script>
+    
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

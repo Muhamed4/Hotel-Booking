@@ -15,7 +15,7 @@ namespace Hotel_Booking.ViewModels
     public class RoomData
     {
         [Required]
-        [Range(0, double.MaxValue, ErrorMessage ="Price Must be >= 0")]
+        [Range(0, double.MaxValue, ErrorMessage = "Price Must be >= 0")]
         public decimal Price { get; set; }
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "RoomNumber Must be >= 1")]
@@ -28,5 +28,6 @@ namespace Hotel_Booking.ViewModels
         [DisplayName("Choose the gallery images of this room")]
         public IFormFileCollection GalleryImages { get; set; }
         public int hotelID { get; set; }
+        public bool addMore { get; set; }
     }
 }
