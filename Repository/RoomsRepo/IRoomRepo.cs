@@ -13,5 +13,6 @@ namespace Hotel_Booking.Repository.RoomsRepo
         void Insert(Room room);
         void Update(int id, Room newRoom);
         void Delete(int id);
+        bool CheckRoomByHotelId(int roomNumber, int hotelId);
     }
 }

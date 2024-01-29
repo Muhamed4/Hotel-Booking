@@ -50,5 +50,12 @@ namespace Hotel_Booking.Repository.RoomsRepo
 
             _context.SaveChanges();
         }
+
+        public bool CheckRoomByHotelId(int roomNumber, int hotelId){
+
+            var _room = _context.Rooms.FirstOrDefault(X => X.HotelID == hotelId && X.RoomNumber == roomNumber);
+
+            return _room is not null;
+        }
     }
 }
