@@ -96,6 +96,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Hotel Booking.bundle.scp.css))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\028811ed-4ccd-490f-b1d6-b1823a868d89_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>Images/028811ed-4ccd-490f-b1d6-b1823a868d89_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\028811ed-4ccd-490f-b1d6-b1823a868d89_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\054c3923-3e83-45e4-9eac-751d66a8d4d1inline_image_preview.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -111,6 +127,54 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\054c3923-3e83-45e4-9eac-751d66a8d4d1inline_image_preview.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\4b65cc75-68e7-41ee-84f4-039c2617d37784412931-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>Images/4b65cc75-68e7-41ee-84f4-039c2617d37784412931-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\4b65cc75-68e7-41ee-84f4-039c2617d37784412931-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\5dc7e821-64fc-4b66-845b-5ef55dba83bf_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>Images/5dc7e821-64fc-4b66-845b-5ef55dba83bf_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\5dc7e821-64fc-4b66-845b-5ef55dba83bf_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\ac527bad-2577-4571-b7a6-cb073514bc97_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>Images/ac527bad-2577-4571-b7a6-cb073514bc97_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\ac527bad-2577-4571-b7a6-cb073514bc97_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\addhotel.jpg))">
       <SourceType>Package</SourceType>
@@ -208,6 +272,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\addhotel7.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\b1268fc6-59a4-40e3-9d9b-67bd866ae2a0_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>Images/b1268fc6-59a4-40e3-9d9b-67bd866ae2a0_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\b1268fc6-59a4-40e3-9d9b-67bd866ae2a0_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\b1686063-ef22-476d-92ec-dfa496ceaa5d_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>Images/b1686063-ef22-476d-92ec-dfa496ceaa5d_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\b1686063-ef22-476d-92ec-dfa496ceaa5d_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\banner.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -223,6 +319,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\banner.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\dc871e8b-04cc-4d0f-8003-efa5e7a917cf_Comp.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>Images/dc871e8b-04cc-4d0f-8003-efa5e7a917cf_Comp.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\dc871e8b-04cc-4d0f-8003-efa5e7a917cf_Comp.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\fb1fc114-d37d-486b-a834-a6d693ec4148rating.png))">
       <SourceType>Package</SourceType>

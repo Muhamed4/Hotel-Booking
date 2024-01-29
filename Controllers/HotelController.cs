@@ -46,7 +46,7 @@ namespace Hotel_Booking.Controllers
                 if (hotelData.File is not null)
                 {
                     string imagesPath = Path.Combine(_hosting.WebRootPath, "Images");
-                    fileName = Guid.NewGuid().ToString() + hotelData.File.FileName;
+                    fileName = Guid.NewGuid().ToString() + "_" + hotelData.File.FileName;
                     string fullPath = Path.Combine(imagesPath, fileName);
                     hotelData.File.CopyTo(new FileStream(fullPath, FileMode.Create));
 

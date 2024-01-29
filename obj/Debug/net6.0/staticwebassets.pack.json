@@ -5,8 +5,24 @@
       "PackagePath": "staticwebassets\\Hotel Booking.bundle.scp.css"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\028811ed-4ccd-490f-b1d6-b1823a868d89_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg",
+      "PackagePath": "staticwebassets\\Images\\028811ed-4ccd-490f-b1d6-b1823a868d89_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\054c3923-3e83-45e4-9eac-751d66a8d4d1inline_image_preview.jpg",
       "PackagePath": "staticwebassets\\Images\\054c3923-3e83-45e4-9eac-751d66a8d4d1inline_image_preview.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\4b65cc75-68e7-41ee-84f4-039c2617d37784412931-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg",
+      "PackagePath": "staticwebassets\\Images\\4b65cc75-68e7-41ee-84f4-039c2617d37784412931-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\5dc7e821-64fc-4b66-845b-5ef55dba83bf_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg",
+      "PackagePath": "staticwebassets\\Images\\5dc7e821-64fc-4b66-845b-5ef55dba83bf_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\ac527bad-2577-4571-b7a6-cb073514bc97_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg",
+      "PackagePath": "staticwebassets\\Images\\ac527bad-2577-4571-b7a6-cb073514bc97_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg"
     },
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\addhotel.jpg",
@@ -33,8 +49,20 @@
       "PackagePath": "staticwebassets\\Images\\addhotel7.jpg"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\b1268fc6-59a4-40e3-9d9b-67bd866ae2a0_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg",
+      "PackagePath": "staticwebassets\\Images\\b1268fc6-59a4-40e3-9d9b-67bd866ae2a0_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\b1686063-ef22-476d-92ec-dfa496ceaa5d_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg",
+      "PackagePath": "staticwebassets\\Images\\b1686063-ef22-476d-92ec-dfa496ceaa5d_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\banner.jpg",
       "PackagePath": "staticwebassets\\Images\\banner.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\dc871e8b-04cc-4d0f-8003-efa5e7a917cf_Comp.jpg",
+      "PackagePath": "staticwebassets\\Images\\dc871e8b-04cc-4d0f-8003-efa5e7a917cf_Comp.jpg"
     },
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\fb1fc114-d37d-486b-a834-a6d693ec4148rating.png",

@@ -10,9 +10,11 @@ namespace Hotel_Booking.Repository.RoomsRepo
     public class RoomRepo : IRoomRepo
     {
         private readonly AppDbContext _context;
-        public RoomRepo(AppDbContext context)
+        private readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _hosting;
+        public RoomRepo(AppDbContext context, Microsoft.AspNetCore.Hosting.IHostingEnvironment hosting)
         {
             this._context = context;
+            this._hosting = hosting;
         }
         public void Delete(int id)
         {
@@ -55,7 +57,24 @@ namespace Hotel_Booking.Repository.RoomsRepo
 
             var _room = _context.Rooms.FirstOrDefault(X => X.HotelID == hotelId && X.RoomNumber == roomNumber);
 
-            return _room is not null;
+            if(_room is null)
+                return true;
+                
+            return false;
+        }
+
+        public string UploadImage(IFormFile File)
+        {
+            string fileName = string.Empty;
+            if (File is not null)
+            {
+                string imagesPath = Path.Combine(_hosting.WebRootPath, "RoomImages");
+                fileName = Guid.NewGuid().ToString() + "_" + File.FileName;
+                string fullPath = Path.Combine(imagesPath, fileName);
+                File.CopyTo(new FileStream(fullPath, FileMode.Create));
+            }
+
+            return fileName;
         }
     }
 }

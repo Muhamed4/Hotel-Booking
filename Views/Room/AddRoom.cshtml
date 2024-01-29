@@ -5,6 +5,48 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<div>
-    <h1>@Model.hotelID</h1>
+<div class="body">
+    <div class="content">
+        <div class="divdanger" asp-validation-summary="All"></div>
+        <form asp-action="AddRoom" asp-controller="Room" enctype="multipart/form-data">
+            @* <h1>@ViewData["Title"]</h1> *@
+            <div class="cont-box">
+                <input type="number" asp-for="Price" placeholder="Price of the Room" />
+                <span asp-validation-for="Price"></span>
+            </div>
+
+            <div class="cont-box">
+                <input type="number" asp-for="RoomNumber" placeholder="Room Number" />
+                <span asp-validation-for="RoomNumber"></span>
+            </div>
+
+            <div class="cont-box">
+                <input type="number" asp-for="BedCount" placeholder="Number of Beds inside the room" />
+                <span asp-validation-for="BedCount"></span>
+            </div>
+
+            <div class="cont-box">
+                <label asp-for="GalleryImages"></label>
+                <div class="custom-file">
+                    <input asp-for="GalleryImages" />
+                    <label for="custom-file">Choose File</label>
+                </div>
+                <span asp-validation-for="GalleryImages"></span>
+            </div>
+
+            <div class="cont-box">
+                <input type="hidden" asp-for="hotelID" />
+            </div>
+
+            <div class="cont-btn">
+                <input type="submit" value="Next" />
+            </div>
+        </form>
+    </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

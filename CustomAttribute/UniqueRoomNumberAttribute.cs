@@ -21,7 +21,7 @@ namespace Hotel_Booking.CustomAttribute
             // get an instance of the IRoomRepo service from the dependency injection container within the context of the validation process. 
             var validationService = (IRoomRepo)validationContext.GetService(typeof(IRoomRepo));
 
-            if (validationService != null && !validationService.CheckRoomByHotelId(roomDataInstance.RoomNumber, roomDataInstance.hotelID))
+            if (validationService == null || !validationService.CheckRoomByHotelId(roomDataInstance.RoomNumber, roomDataInstance.hotelID))
             {
                 return new ValidationResult("Room number must be unique per hotel.");
             }

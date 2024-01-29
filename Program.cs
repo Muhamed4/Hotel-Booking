@@ -2,6 +2,7 @@ using Hotel_Booking.Data;
 using Hotel_Booking.Models;
 using Hotel_Booking.Repository.FeaturesRepo;
 using Hotel_Booking.Repository.HotelRepo;
+using Hotel_Booking.Repository.RoomImageRepo;
 using Hotel_Booking.Repository.RoomsRepo;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ builder.Services.AddIdentity<User, IdentityRole>()
 
 builder.Services.AddScoped<IHotelRepo, HotelRepo>();
 builder.Services.AddScoped<IRoomRepo, RoomRepo>();
+builder.Services.AddScoped<IRoomImageRepo, RoomImageRepo>();
 builder.Services.AddScoped<IFeatureRepo, FeatureRepo>();
 
 var app = builder.Build();
