@@ -50,10 +50,3 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 Make sure to keep these packages up to date with the latest versions and regularly check for updates to benefit from bug fixes and new features.
 
-# Contributing
-
-We welcome contributions! If you would like to contribute to the project, please follow our [contribution guidelines](CONTRIBUTING.md).
-
-# Contact
-
-For questions or feedback, please contact [Your Name] at [your.email@example.com].
