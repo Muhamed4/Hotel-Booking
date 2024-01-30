@@ -37,6 +37,14 @@
       "PackagePath": "staticwebassets\\Images\\7f5d30ad-57b9-4d8b-8e12-f805632c8508_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\83f99561-259d-4690-abc6-205c2317b978_abdulsamad-aliyu-ydqQla7PAd4-unsplash.jpg",
+      "PackagePath": "staticwebassets\\Images\\83f99561-259d-4690-abc6-205c2317b978_abdulsamad-aliyu-ydqQla7PAd4-unsplash.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\9c97018f-58c0-4806-b583-308d7a72a2fa_wp1828903.png",
+      "PackagePath": "staticwebassets\\Images\\9c97018f-58c0-4806-b583-308d7a72a2fa_wp1828903.png"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\ac527bad-2577-4571-b7a6-cb073514bc97_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg",
       "PackagePath": "staticwebassets\\Images\\ac527bad-2577-4571-b7a6-cb073514bc97_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg"
     },
@@ -137,8 +145,24 @@
       "PackagePath": "staticwebassets\\Images\\thirdhotel.jpg"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\03bd3012-e38f-4431-8757-168ab7dfbb32_unnamed.jpg",
+      "PackagePath": "staticwebassets\\RoomImages\\03bd3012-e38f-4431-8757-168ab7dfbb32_unnamed.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\0f3d56c1-d18e-4db2-8a3d-57216556ea27_daniele-levis-pelusi-jTknOGI18us-unsplash.jpg",
+      "PackagePath": "staticwebassets\\RoomImages\\0f3d56c1-d18e-4db2-8a3d-57216556ea27_daniele-levis-pelusi-jTknOGI18us-unsplash.jpg"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\20e47c2b-cc99-475c-9802-05bd798807eb_abdulsamad-aliyu-ydqQla7PAd4-unsplash.jpg",
       "PackagePath": "staticwebassets\\RoomImages\\20e47c2b-cc99-475c-9802-05bd798807eb_abdulsamad-aliyu-ydqQla7PAd4-unsplash.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\2997b209-7785-407f-89d7-4c515fd837f8_steve-halama-Yhc7YGZlz3g-unsplash.jpg",
+      "PackagePath": "staticwebassets\\RoomImages\\2997b209-7785-407f-89d7-4c515fd837f8_steve-halama-Yhc7YGZlz3g-unsplash.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\3a445df2-f4bf-4dfa-9b3c-ef16edc249ee_kobu-agency-67L18R4tW_w-unsplash.jpg",
+      "PackagePath": "staticwebassets\\RoomImages\\3a445df2-f4bf-4dfa-9b3c-ef16edc249ee_kobu-agency-67L18R4tW_w-unsplash.jpg"
     },
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\3db2813a-8fb9-41de-9ce3-3e00ac58b27e_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg",
@@ -161,6 +185,10 @@
       "PackagePath": "staticwebassets\\RoomImages\\740e99fe-31f6-4e6d-bfae-3d99a598e086_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\7d131dc1-5911-44bb-a3d8-1a457b2b4b3f_sean-lim-NPlv2pkYoUA-unsplash.jpg",
+      "PackagePath": "staticwebassets\\RoomImages\\7d131dc1-5911-44bb-a3d8-1a457b2b4b3f_sean-lim-NPlv2pkYoUA-unsplash.jpg"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\817fe8d7-6e86-4f90-990c-54a5a94bd8d6_0_h1Rym88uBaU2OQPm.jpg",
       "PackagePath": "staticwebassets\\RoomImages\\817fe8d7-6e86-4f90-990c-54a5a94bd8d6_0_h1Rym88uBaU2OQPm.jpg"
     },
@@ -169,8 +197,20 @@
       "PackagePath": "staticwebassets\\RoomImages\\825e4311-5fe5-4050-ad65-66f5aa6295be_84412931-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\ab020d9f-d966-4681-988c-c3ed166bf238_sean-lim-NPlv2pkYoUA-unsplash.jpg",
+      "PackagePath": "staticwebassets\\RoomImages\\ab020d9f-d966-4681-988c-c3ed166bf238_sean-lim-NPlv2pkYoUA-unsplash.jpg"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\ab722c5a-bdea-4a8b-bb24-6929285dff70_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg",
       "PackagePath": "staticwebassets\\RoomImages\\ab722c5a-bdea-4a8b-bb24-6929285dff70_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\ac235115-0771-4041-b328-c08f4ac75ab8_software-programmer.jpg",
+      "PackagePath": "staticwebassets\\RoomImages\\ac235115-0771-4041-b328-c08f4ac75ab8_software-programmer.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\b0ecfebb-f3dd-4d9e-8260-04bbffa694a8_job-57897.jpg",
+      "PackagePath": "staticwebassets\\RoomImages\\b0ecfebb-f3dd-4d9e-8260-04bbffa694a8_job-57897.jpg"
     },
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\b15c0a58-1d44-4d46-81c9-06e7261ef030_1.jpg",
@@ -179,6 +219,10 @@
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\b977c0b4-8ff6-4012-b60b-b3bea792a659_abdulsamad-aliyu-ydqQla7PAd4-unsplash.jpg",
       "PackagePath": "staticwebassets\\RoomImages\\b977c0b4-8ff6-4012-b60b-b3bea792a659_abdulsamad-aliyu-ydqQla7PAd4-unsplash.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\RoomImages\\b9aa5c03-1720-43a4-87f8-4be1b84538d1_software-programmer.jpg",
+      "PackagePath": "staticwebassets\\RoomImages\\b9aa5c03-1720-43a4-87f8-4be1b84538d1_software-programmer.jpg"
     },
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\AccountLogin.css",
@@ -191,6 +235,10 @@
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\AddHotel.css",
       "PackagePath": "staticwebassets\\css\\AddHotel.css"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\AddRoom.css",
+      "PackagePath": "staticwebassets\\css\\AddRoom.css"
     },
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\HomeIndex.css",

@@ -16,15 +16,18 @@ namespace Hotel_Booking.ViewModels
     {
         [Required]
         [Range(0, double.MaxValue, ErrorMessage = "Price Must be >= 0")]
+        [DisplayName("Price per night $")]
         public decimal Price { get; set; }
         [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "RoomNumber Must be >= 1")]
+        [Range(1, int.MaxValue, ErrorMessage = "Room Number Must be >= 1")]
         [UniqueRoomNumber]
+        [DisplayName("Room Number")]
         public int RoomNumber { get; set; }
         [Required]
-        [Range(1, int.MaxValue, ErrorMessage = "BedCount Must be >= 1")]
+        [Range(1, int.MaxValue, ErrorMessage = "Number of Beds Must be >= 1")]
+        [DisplayName("Number of Beds per room")]
         public int BedCount { get; set; }
-        [Required]
+        [Required(ErrorMessage = "People would like to see the room.")]
         [DisplayName("Choose the gallery images of this room")]
         public IFormFileCollection GalleryImages { get; set; }
         public int hotelID { get; set; }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Hotel_Booking.CustomAttribute;
 
 namespace Hotel_Booking.ViewModels
 {
@@ -17,6 +18,7 @@ namespace Hotel_Booking.ViewModels
         public string LastName { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]
+        [UniqueEmail]
         public string Email { get; set; }
         [Required]
         [DataType(DataType.Password)]

@@ -1,47 +1,59 @@
 @model Hotel_Booking.ViewModels.RoomData
 @{
-    ViewData["Title"] = "AddRoom";
+    ViewData["Title"] = "Add Room";
 }
 
-<h1>@ViewData["Title"]</h1>
 
 <div class="body">
     <div class="content">
-        <div class="divdanger" asp-validation-summary="All"></div>
+        <h1>@ViewData["Title"]</h1>
+        @* <div class="divdanger" asp-validation-summary="All"></div> *@
         <form asp-action="AddRoom" asp-controller="Room" enctype="multipart/form-data">
             @* <h1>@ViewData["Title"]</h1> *@
             <div class="cont-box">
-                <input type="number" asp-for="Price" placeholder="Price of the Room" />
-                <span asp-validation-for="Price"></span>
-            </div>
-
-            <div class="cont-box">
-                <input type="number" asp-for="RoomNumber" placeholder="Room Number" />
-                <span asp-validation-for="RoomNumber"></span>
-            </div>
-
-            <div class="cont-box">
-                <input type="number" asp-for="BedCount" placeholder="Number of Beds inside the room" />
-                <span asp-validation-for="BedCount"></span>
-            </div>
-
-            <div class="cont-box">
-                <label asp-for="GalleryImages"></label>
-                <div class="custom-file">
-                    <input asp-for="GalleryImages" />
-                    <label for="custom-file">Choose File</label>
+                <div class="lbsp">
+                    <label asp-for="Price"></label>
+                    <span asp-validation-for="Price"></span>
                 </div>
-                <span asp-validation-for="GalleryImages"></span>
+                <input type="number" asp-for="Price" placeholder="Price of the Room" />
             </div>
 
             <div class="cont-box">
-                <input type="hidden" asp-for="hotelID" />
-                <input type="hidden" asp-for="addMore" id="additionalData" value="" />
+                <div class="lbsp">
+                    <label asp-for="RoomNumber"></label>
+                    <span asp-validation-for="RoomNumber"></span>
+                </div>
+                <input type="number" asp-for="RoomNumber" placeholder="Room Number" />
             </div>
 
-            <div class="cont-btn">
-                <input type="submit" value="Save & Add Other Room" onclick="AddOtherRoom(true)" />
-                <input type="submit" value="Save & Next" onclick="AddOtherRoom(false)" />
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label asp-for="BedCount"></label>
+                    <span asp-validation-for="BedCount"></span>
+                </div>
+                <input type="number" asp-for="BedCount" placeholder="Number of Beds inside the room" />
+            </div>
+
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label asp-for="GalleryImages"></label>
+                    <span asp-validation-for="GalleryImages"></span>
+                </div>
+                <input type="file" asp-for="GalleryImages" multiple />
+                @* <div class="custom-file">
+                <input type="file" asp-for="GalleryImages" multiple />
+                <label for="custom-file">Choose File</label>
+                </div> *@
+            </div>
+
+            <input type="hidden" asp-for="hotelID" />
+            <input type="hidden" asp-for="addMore" id="additionalData" value="" />
+
+            <div class="handle">
+                <div class="cont-btn">
+                    <input type="submit" value="Save & Add Other Room" onclick="AddOtherRoom(true)" />
+                    <input type="submit" value="Save & Next" onclick="AddOtherRoom(false)" />
+                </div>
             </div>
         </form>
     </div>
@@ -57,14 +69,19 @@
 
         @* function NoOtherRoom() {
 
-            var additionalDataValue = false;
+        var additionalDataValue = false;
 
-            // Set the value of the hidden input field
-            document.getElementById("additionalData").value = additionalDataValue;
+        // Set the value of the hidden input field
+        document.getElementById("additionalData").value = additionalDataValue;
         } *@
+
     </script>
-    
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+}
+
+@section AddRoom {
+    <link rel="stylesheet" href="~/css/AddRoom.css">
 }
