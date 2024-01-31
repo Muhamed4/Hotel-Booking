@@ -1,53 +1,185 @@
 @model Hotel_Booking.ViewModels.FeatureData
 
-<h2>Add Features @ViewBag.HotelID</h2>
+<div class="body">
+    <div class="content">
+        <h3>Choose the feature that your hotel include</h3>
+        <form asp-action="AddFeature" asp-route-hotelID="@ViewBag.HotelID">
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label>Do you have Free Parking ?</label>
+                    <span asp-validation-for="FreeParking"></span>
+                </div>
+                <div class="choice">
+                    <label>
+                        <input type="radio" asp-for="FreeParking" value="true">
+                        Yes
+                    </label>
 
-<form asp-action="AddFeature" asp-route-hotelID="@ViewBag.HotelID">
-    <div class="form-group">
-        <label asp-for="FreeParking">Free Parking</label>
-        <input asp-for="FreeParking" type="checkbox" />
+                    <label>
+                        <input type="radio" asp-for="FreeParking" value="false">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label>Do you have Laundry Facility ?</label>
+                    <span asp-validation-for="LaundryFacility"></span>
+                </div>
+                <div class="choice">
+                    <label>
+                        <input type="radio" asp-for="LaundryFacility" value="true">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" asp-for="LaundryFacility" value="false">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label>Do you allow Smoking ?</label>
+                    <span asp-validation-for="NoSmoking"></span>
+                </div>
+                <div class="choice">
+                    <label>
+                        <input type="radio" asp-for="NoSmoking" value="false">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" asp-for="NoSmoking" value="true">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label>Do you have Free Wifi ?</label>
+                    <span asp-validation-for="FreeWifi"></span>
+                </div>
+                <div class="choice">
+                    <label>
+                        <input type="radio" asp-for="FreeWifi" value="true">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" asp-for="FreeWifi" value="false">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label>Do you have Free Breakfast ?</label>
+                    <span asp-validation-for="FreeBreakfast"></span>
+                </div>
+                <div class="choice">
+                    <label>
+                        <input asp-for="FreeBreakfast" type="radio" value="true" />
+                        Yes
+                    </label>
+                    <label>
+                        <input asp-for="FreeBreakfast" type="radio" value="false" />
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label>Do you have Airport Transfer ?</label>
+                    <span asp-validation-for="AirportTransfer"></span>
+                </div>
+                <div class="choice">
+                    <label>
+                        <input type="radio" asp-for="AirportTransfer" value="true">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" asp-for="AirportTransfer" value="false">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label>Do you have 24 hour service every day?</label>
+                    <span asp-validation-for="FontDesk247"></span>
+                </div>
+                <div class="choice">
+                    <label>
+                        <input type="radio" asp-for="FontDesk247" value="true">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" asp-for="FontDesk247" value="false">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label>Do you have Restaurant ?</label>
+                    <span asp-validation-for="Restaurant"></span>
+                </div>
+                <div class="choice">
+                    <label>
+                        <input type="radio" asp-for="Restaurant" value="true">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" asp-for="Restaurant" value="false">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <div class="lbsp">
+                    <label>Do you have Air Condition ?</label>
+                    <span asp-validation-for="AirCondition"></span>
+                </div>
+                <div class="choice">
+                    <label>
+                        <input type="radio" asp-for="AirCondition" value="true">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" asp-for="AirCondition" value="false">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="cont-btn">
+                <input type="submit" value="Next" />
+            </div>
+            
+        </form>
     </div>
-
-    <div class="form-group">
-        <label asp-for="LaundryFacility">Laundry Facility</label>
-        <input asp-for="LaundryFacility" type="checkbox" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="NoSmoking">No Smoking</label>
-        <input asp-for="NoSmoking" type="checkbox" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="FreeWifi">Free Wifi</label>
-        <input asp-for="FreeWifi" type="checkbox" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="FreeBreakfast">Free Breakfast</label>
-        <input asp-for="FreeBreakfast" type="checkbox" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="AirportTransfer">Airport Transfer</label>
-        <input asp-for="AirportTransfer" type="checkbox" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="FontDesk247">24/7 Front Desk</label>
-        <input asp-for="FontDesk247" type="checkbox" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Restaurant">Restaurant</label>
-        <input asp-for="Restaurant" type="checkbox" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="AirCondition">Air Condition</label>
-        <input asp-for="AirCondition" type="checkbox" />
-    </div>
+</div>
 
 
-    <button type="submit" class="btn btn-primary">next</button>
-</form>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+@section AddRoom {
+    <link rel="stylesheet" href="~/css/AddFeature.css">
+}

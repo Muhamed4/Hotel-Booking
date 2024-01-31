@@ -1,9 +1,13 @@
 using Hotel_Booking.Data;
 using Hotel_Booking.Models;
+using Hotel_Booking.Repository.FacilitiesRepo;
 using Hotel_Booking.Repository.FeaturesRepo;
+using Hotel_Booking.Repository.FoodDrinksRepo;
+using Hotel_Booking.Repository.FunProgramsRepo;
 using Hotel_Booking.Repository.HotelRepo;
 using Hotel_Booking.Repository.RoomImageRepo;
 using Hotel_Booking.Repository.RoomsRepo;
+using Hotel_Booking.Repository.ServicesRepo;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +28,10 @@ builder.Services.AddScoped<IHotelRepo, HotelRepo>();
 builder.Services.AddScoped<IRoomRepo, RoomRepo>();
 builder.Services.AddScoped<IRoomImageRepo, RoomImageRepo>();
 builder.Services.AddScoped<IFeatureRepo, FeatureRepo>();
+builder.Services.AddScoped<IFacilityRepo, FacilityRepo>();
+builder.Services.AddScoped<IFoodDrinkRepo, FoodDrinkRepo>();
+builder.Services.AddScoped<IFunProgramRepo, FunProgramRepo>();
+builder.Services.AddScoped<IServiceRepo, ServiceRepo>();
 
 var app = builder.Build();
 

@@ -4,7 +4,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Hotel_Booking.Models;
+using Hotel_Booking.Repository.FacilitiesRepo;
 using Hotel_Booking.Repository.FeaturesRepo;
+using Hotel_Booking.Repository.FoodDrinksRepo;
+using Hotel_Booking.Repository.FunProgramsRepo;
+using Hotel_Booking.Repository.ServicesRepo;
 using Hotel_Booking.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -13,10 +17,19 @@ namespace Hotel_Booking.Controllers
 {
     public class FeatureController : Controller
     {
-        private IFeatureRepo _featureContext;
-        public FeatureController(IFeatureRepo featureRepository)
+        private readonly IFeatureRepo _featureContext;
+        private readonly IFacilityRepo _facilityContext;
+        private readonly IFoodDrinkRepo _foodDrinkContext;
+        private readonly IFunProgramRepo _funProgramContext;
+        private readonly IServiceRepo _serviceContext;
+        public FeatureController(IFeatureRepo featureRepository, IFacilityRepo facilityRepository, IFoodDrinkRepo foodDrinkRepository,
+                                 IFunProgramRepo funProgramRepository, IServiceRepo serviceRepository)
         {
             this._featureContext = featureRepository;
+            this._facilityContext = facilityRepository;
+            this._foodDrinkContext = foodDrinkRepository;
+            this._funProgramContext = funProgramRepository;
+            this._serviceContext = serviceRepository;
         }
         public IActionResult Index()
         {
@@ -62,8 +75,28 @@ namespace Hotel_Booking.Controllers
         [HttpGet]
         public IActionResult AddOtherFeature(int featureID)
         {
-            ViewBag.FeatureID = featureID;
-            return Content($"{featureID}");
+            var otherFeature = new OtherFeature();
+            otherFeature.FeatureID = featureID;
+            return View(otherFeature);
+        }
+
+        [HttpPost]
+        public IActionResult AddOtherFeature(OtherFeature otherFeature)
+        {
+            if(ModelState.IsValid)
+            {
+                _facilityContext.Insert(otherFeature.Facility, otherFeature.FeatureID);
+                _foodDrinkContext.Insert(otherFeature.FoodDrink, otherFeature.FeatureID);
+                _funProgramContext.Insert(otherFeature.FunProgram, otherFeature.FeatureID);
+                _serviceContext.Insert(otherFeature.Service, otherFeature.FeatureID);
+
+                bool Decide = otherFeature.addMore;
+                if(Decide)
+                    return RedirectToAction("AddOtherFeature", "Feature", new { featureID = otherFeature.FeatureID });
+                
+                return RedirectToAction("Index", "AdminHotels");
+            }
+            return View(otherFeature);
         }
     }
 }

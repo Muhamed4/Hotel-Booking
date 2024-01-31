@@ -1,0 +1,60 @@
+@model Hotel_Booking.ViewModels.OtherFeature
+@{
+    ViewData["Title"] = "Add Other Features";
+}
+
+<div class="body">
+    <div class="content">
+        @* <div class="divdanger" asp-validation-summary="All"></div> *@
+        <form asp-action="AddOtherFeature" asp-controller="Feature">
+            <div class="cont-box">
+                <input type="text" asp-for="Facility" placeholder="Facility" />
+                <span asp-validation-for="Facility"></span>
+            </div>
+
+            <div class="cont-box">
+                <input type="text" asp-for="FoodDrink" placeholder="Food and Drink" />
+                <span asp-validation-for="FoodDrink"></span>
+            </div>
+
+            <div class="cont-box">
+                <input type="text" asp-for="FunProgram" placeholder="Fun Program" />
+                <span asp-validation-for="FunProgram"></span>
+            </div>
+
+
+            <div class="cont-box">
+                <input type="text" asp-for="Service" placeholder="Service" />
+                <span asp-validation-for="Service"></span>
+            </div>
+
+            <input type="hidden" asp-for="FeatureID" />
+            <input type="hidden" asp-for="addMore" id="additionalData" value="" />
+
+            <div class="handle">
+                <div class="cont-btn">
+                    <input type="submit" value="Save & Add Other Features" onclick="AddOtherRoom(true)" />
+                    <input type="submit" value="Save & Next" onclick="AddOtherRoom(false)" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function AddOtherRoom(Value) {
+            // Set the value of the hidden input field
+            document.getElementById("additionalData").value = Value;
+        }
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+@section AddRoom {
+    <link rel="stylesheet" href="~/css/AddOtherFeature.css">
+}

@@ -1,0 +1,92 @@
+
+.body {
+    background-image: url(../Images/addhotel3.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 690px;
+}
+
+.body h3 {
+    text-align: center;
+    color: gold;
+}
+
+.content {
+    width: 50%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(50px);
+    color: #fff;
+    padding: 20px 50px
+}
+
+.body .content .cont-box {
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .cont-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    background-color: transparent;
+    font-size: 15px;
+} */
+
+.cont-box input[type="radio"] {
+    transform: scale(1.5);
+    margin-right: 5px;
+}
+
+
+.cont-box .lbsp span {
+    display: block;
+    color: red;
+}
+
+.cont-box .lbsp label {
+    /* font-weight: 600; */
+    font-size: large;
+}
+
+.cont-box .choice {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.body .cont-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body .cont-btn input {
+    width: 15%;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgb(73, 14, 14);
+    color: #fff;
+    cursor: pointer;
+}
+
+.body .cont-btn input:hover{
+    color: gold;
+}
