@@ -4,6 +4,7 @@ using Hotel_Booking.Repository.FacilitiesRepo;
 using Hotel_Booking.Repository.FeaturesRepo;
 using Hotel_Booking.Repository.FoodDrinksRepo;
 using Hotel_Booking.Repository.FunProgramsRepo;
+using Hotel_Booking.Repository.HomesRepo;
 using Hotel_Booking.Repository.HotelRepo;
 using Hotel_Booking.Repository.RoomImageRepo;
 using Hotel_Booking.Repository.RoomsRepo;
@@ -24,6 +25,7 @@ builder.Services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
 
 
+builder.Services.AddScoped<IHomeRepo, HomeRepo>();
 builder.Services.AddScoped<IHotelRepo, HotelRepo>();
 builder.Services.AddScoped<IRoomRepo, RoomRepo>();
 builder.Services.AddScoped<IRoomImageRepo, RoomImageRepo>();

@@ -22,10 +22,12 @@
         </main>
     </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Hotel Booking. All rights reserved.</p>
+        </div>
+    </footer>
+
     @RenderSection("HomeIndex", required: false)
     @RenderSection("AccountLogin", required: false)
     @RenderSection("AccountRegister", required: false)
@@ -33,6 +35,10 @@
     @RenderSection("AddRoom", required: false)
     @RenderSection("AddFeature", required: false)
     @RenderSection("AddOtherFeature", required: false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>

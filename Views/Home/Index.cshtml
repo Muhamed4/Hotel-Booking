@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Hotel_Booking.ViewModels.HotelInfo>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -11,6 +12,58 @@
         Hotel Is A Booking Platform That Offers Several Hotels information Showed
         In Details To Help You Book Your Favorite Hotel At Any Place.
     </p>
+</section>
+
+<section class="headp">
+    discover your new favourite stay
+</section>
+
+
+<section class="hotels">
+    @foreach (var hotel in @Model)
+    {
+        <div class="content">
+
+            <div class="divimg" style="background-image: url(../Images/@hotel.Image);"> </div>
+
+            <p class="review">@hotel.Rating.ToString("F1")/10
+                @* @{
+                    if(hotel.RatingCount >= 0 && hotel.RatingCount <= 3.9) <span>Bad</span>
+                    else if(hotel.RatingCount >= 4 && hotel.RatingCount <= 7.9) <span>Good</span>
+                    else if(hotel.RatingCount >= 8 && hotel.RatingCount <= 9.5) <span>Excellent</span>
+                    else if(hotel.RatingCount >= 9.6 && hotel.RatingCount <= 10.0) <span>Excellent</span>
+                } *@
+                (@hotel.RatingCount Reviews)</p>
+
+            <div class="desc"> @hotel.Description </div>
+
+            <div class="othdata">
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    @hotel.Country, @hotel.City
+                </p>
+
+                <span>
+                    <i class="fa-solid fa-eye"></i>
+                    @hotel.Views Views
+                </span>
+            </div>
+
+            <div class="likemore">
+                <a class="view" href="#">More Details</a>
+
+                <div class="viewlikes">
+                    <a class="love" href="#">
+                        @* if the user react with this hotel the love icon will take the fill div otherwise it will take the fill1 div *@
+
+                        <div class="fill1"> <i class="fa-regular fa-heart"></i> </div>
+                        @* <div class="fill">  </div> *@
+                    </a>
+                    <span style="font-size: large;">@hotel.Loves</span>
+                </div>
+            </div>
+        </div>
+    }
 </section>
 
 

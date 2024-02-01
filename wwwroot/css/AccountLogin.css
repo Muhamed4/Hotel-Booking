@@ -121,3 +121,7 @@
     z-index: 999;
     color: red;
 }
+
+.wrapper .divdanger{
+    color: red;
+}
