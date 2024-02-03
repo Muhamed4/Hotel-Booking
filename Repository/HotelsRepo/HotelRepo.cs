@@ -145,7 +145,7 @@ namespace Hotel_Booking.Repository.HotelRepo
                 Hotel = GetById(hotelId),
                 Reviews = GetReviews(hotelId),
                 Rooms = GetRooms(hotelId),
-                Feature = GetFeature(hotelId),
+                Serviceswithicons = Getservicewithicons(hotelId),
                 Facilities = GetFacilities(hotelId),
                 FunPrograms = GetFunPrograms(hotelId),
                 FoodDrinks = GetFoodDrinks(hotelId),
@@ -153,6 +153,45 @@ namespace Hotel_Booking.Repository.HotelRepo
             };
 
             return allHotelDetails;
+        }
+
+        public List<Servicewithicon> Getservicewithicons(int hotelId)
+        {
+            var feature = GetFeature(hotelId);
+            if(feature is not null)
+            {
+                List<Servicewithicon> lst = new List<Servicewithicon>();
+
+                if(feature.FreeParking == true)
+                    lst.Add(new Servicewithicon() {service = "Free Parking", icon = HotelIcons.FreeParking});
+                
+                if(feature.LaundryFacility == true)
+                    lst.Add(new Servicewithicon() {service = "Laundry Facility", icon = HotelIcons.LaundryFacility});
+                
+                if(feature.NoSmoking == true)
+                    lst.Add(new Servicewithicon() {service = "No Smoking", icon = HotelIcons.NoSmoking});
+
+                if(feature.FreeWifi == true)
+                    lst.Add(new Servicewithicon() {service = "Free Wifi", icon = HotelIcons.FreeWifi});
+
+                if(feature.FreeBreakfast == true)
+                    lst.Add(new Servicewithicon() {service = "Free Breakfast", icon = HotelIcons.FreeBreakfast});
+
+                if(feature.AirportTransfer == true)
+                    lst.Add(new Servicewithicon() {service = "Airport Transfer", icon = HotelIcons.AirportTransfer});
+
+                if(feature.FontDesk247 == true)
+                    lst.Add(new Servicewithicon() {service = "24/7 Front Desk", icon = HotelIcons.FontDesk247});
+
+                if(feature.Restaurant == true)
+                    lst.Add(new Servicewithicon() {service = "Restaurant", icon = HotelIcons.Restaurant});
+
+                if(feature.AirCondition == true)
+                    lst.Add(new Servicewithicon() {service = "Air Condition", icon = HotelIcons.AirCondition});
+
+                return lst;
+            }
+            return new List<Servicewithicon>();
         }
     }
 }

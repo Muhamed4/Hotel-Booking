@@ -64,7 +64,8 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
-    margin-top: auto;
+    position: sticky;
+    top: 100%;
     /* display: flex;
     justify-content: center;
     align-items: flex-end; */

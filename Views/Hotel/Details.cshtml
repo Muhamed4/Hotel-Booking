@@ -1,11 +1,167 @@
-
 @model Hotel_Booking.ViewModels.AllHotelDetails
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="body">
+    <div class="content1">
+        <div class="hotelData">
+            <div class="img" style="background-image: url(/Images/addhotel6.jpg);"></div>
+            <div class="nameofhotel">Paris</div>
+            <div class="address">
+                <p>Egypt, Sohag</p>
+            </div>
+            <div class="rating">
+                <p>8.7 Excellent</p>
+                <a href="#">see all 235 reviews ></a>
+            </div>
+            <div class="desc">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis mollitia placeat quisquam libero in
+                dicta quas voluptates iure eaque quam, magni non quae delectus hic, quod nemo saepe dolorem debitis
+                tempora doloribus maiores molestiae odit ut praesentium. Ratione, repellendus assumenda, quam, ad
+                reiciendis praesentium officiis expedita facilis adipisci fuga minima iure labore earum vero alias
+                aperiam iusto minus quia beatae totam sint harum. Quia ab enim officia saepe. Assumenda atque sequi
+                natus nam, similique rem voluptates delectus obcaecati ex nihil voluptatem dolorum illum error optio
+                alias deleniti vel doloremque et officiis dolores magnam? Optio veritatis dolorum in, necessitatibus
+                debitis perspiciatis?
+            </div>
+        </div>
 
-<div>
-    
+        <div class="feature-icons">
+            <div class="part1">
+                <div class="icon">
+                    <i class="fa-solid fa-car"></i>
+                    Free Parking
+                </div>
+
+                <div class="icon">
+                    <i class='bx bxs-washer'></i>
+                    Laundry Facility
+                </div>
+
+                <div class="icon">
+                    <i class="fa-solid fa-ban-smoking"></i>
+                    No Smoking
+                </div>
+
+                <div class="icon">
+                    <i class="fa-solid fa-wifi"></i>
+                    Free Wifi
+                </div>
+
+                <div class="icon">
+                    <i class="fa-solid fa-bell-concierge"></i>
+                    24/7 front Desk
+                </div>
+            </div>
+
+            <div class="part2">
+                <div class="icon">
+                    <i class="fa-solid fa-mug-saucer"></i>
+                    Free Breakfast
+                </div>
+
+                <div class="icon">
+                    <i class="fa-solid fa-van-shuttle"></i>
+                    Airport Transfer
+                </div>
+
+                <div class="icon">
+                    <i class="fa-solid fa-utensils"></i>
+                    Restaurant
+                </div>
+
+                <div class="icon">
+                    <i class="fa-solid fa-snowflake"></i>
+                    Air Condition
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="content2">
+        <div class="facility">
+            <h2> <i class="fa-solid fa-check"></i> Facilities</h2>
+            <ul>
+                <li>9 buildings/towers</li>
+                <li>Built in 1997</li>
+                <li>ATM/banking</li>
+                <li>Safe-deposit box at front desk</li>
+                <li>Garden</li>
+                <li>Terrace</li>
+                <li>Television in common areas</li>
+                <li>Health club</li>
+                <li>5 outdoor pools</li>
+                <li>Spa services</li>
+                <li>Massage/treatment rooms</li>
+            </ul>
+        </div>
+
+        <div class="funprogram">
+            <h2> <i class='bx bxs-happy-alt' ></i> Fun Programs</h2>
+            <ul>
+                <li>9 buildings/towers</li>
+                <li>Built in 1997</li>
+                <li>ATM/banking</li>
+                <li>Safe-deposit box at front desk</li>
+                <li>Garden</li>
+                <li>Terrace</li>
+                <li>Television in common areas</li>
+                <li>Health club</li>
+                <li>5 outdoor pools</li>
+                <li>Spa services</li>
+                <li>Massage/treatment rooms</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="content2">
+        <div class="fooddrink">
+            <h2> <i class="fa-solid fa-utensils"></i> Food and Drink </h2>
+            <ul>
+                <li>9 buildings/towers</li>
+                <li>Built in 1997</li>
+                <li>ATM/banking</li>
+                <li>Safe-deposit box at front desk</li>
+                <li>Garden</li>
+                <li>Terrace</li>
+                <li>Television in common areas</li>
+                <li>Health club</li>
+                <li>5 outdoor pools</li>
+                <li>Spa services</li>
+                <li>Massage/treatment rooms</li>
+            </ul>
+        </div>
+
+        <div class="service">
+            <h2> <i class="fa-solid fa-bell-concierge"></i> Services </h2>
+            <ul>
+                <li>9 buildings/towers</li>
+                <li>Built in 1997</li>
+                <li>ATM/banking</li>
+                <li>Safe-deposit box at front desk</li>
+                <li>Garden</li>
+                <li>Terrace</li>
+                <li>Television in common areas</li>
+                <li>Health club</li>
+                <li>5 outdoor pools</li>
+                <li>Spa services</li>
+                <li>Massage/treatment rooms</li>
+            </ul>
+        </div>
+
+    </div>
 </div>
+
+
+@section PageStyle {
+    <link rel="stylesheet" href="~/css/HotelDetails.css">
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

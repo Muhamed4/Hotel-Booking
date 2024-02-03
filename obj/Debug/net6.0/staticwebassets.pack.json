@@ -345,6 +345,10 @@
       "PackagePath": "staticwebassets\\css\\HomeIndex.css"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\HotelDetails.css",
+      "PackagePath": "staticwebassets\\css\\HotelDetails.css"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

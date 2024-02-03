@@ -28,11 +28,11 @@
 
             <p class="review">@hotel.Rating.ToString("F1")/10
                 @* @{
-                    if(hotel.RatingCount >= 0 && hotel.RatingCount <= 3.9) <span>Bad</span>
-                    else if(hotel.RatingCount >= 4 && hotel.RatingCount <= 7.9) <span>Good</span>
-                    else if(hotel.RatingCount >= 8 && hotel.RatingCount <= 9.5) <span>Excellent</span>
-                    else if(hotel.RatingCount >= 9.6 && hotel.RatingCount <= 10.0) <span>Excellent</span>
-                } *@
+            if(hotel.RatingCount >= 0 && hotel.RatingCount <= 3.9) <span>Bad</span>
+            else if(hotel.RatingCount >= 4 && hotel.RatingCount <= 7.9) <span>Good</span>
+            else if(hotel.RatingCount >= 8 && hotel.RatingCount <= 9.5) <span>Excellent</span>
+            else if(hotel.RatingCount >= 9.6 && hotel.RatingCount <= 10.0) <span>Excellent</span>
+            } *@
                 (@hotel.RatingCount Reviews)</p>
 
             <div class="desc"> @hotel.Description </div>
@@ -54,10 +54,11 @@
 
                 <div class="viewlikes">
                     <a class="love" href="#">
-                        @* if the user react with this hotel the love icon will take the fill div otherwise it will take the fill1 div *@
+                        @* if the user react with this hotel the love icon will take the fill div otherwise it will take the
+                    fill1 div *@
 
                         <div class="fill1"> <i class="fa-regular fa-heart"></i> </div>
-                        @* <div class="fill">  </div> *@
+                        @* <div class="fill"> </div> *@
                     </a>
                     <span style="font-size: large;">@hotel.Loves</span>
                 </div>
@@ -68,6 +69,6 @@
 
 
 
-@section HomeIndex {
+@section PageStyle {
     <link rel="stylesheet" href="~/css/HomeIndex.css">
 }

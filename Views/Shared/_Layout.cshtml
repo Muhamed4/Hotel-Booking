@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    @* This line brings the linke of the style sheet for the current @RenderBody() page *@
+    @RenderSection("PageStyle", required: false)
 </head>
 
 <body>
@@ -24,17 +26,18 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Hotel Booking. All rights reserved.</p>
+            <p>&copy; @DateTime.Now.Year Hotel Booking. All rights reserved.</p>
         </div>
     </footer>
 
-    @RenderSection("HomeIndex", required: false)
+    @* @RenderSection("HomeIndex", required: false)
     @RenderSection("AccountLogin", required: false)
     @RenderSection("AccountRegister", required: false)
     @RenderSection("AddHotel", required: false)
     @RenderSection("AddRoom", required: false)
     @RenderSection("AddFeature", required: false)
     @RenderSection("AddOtherFeature", required: false)
+    @RenderSection("HotelDetails", required: false) *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
