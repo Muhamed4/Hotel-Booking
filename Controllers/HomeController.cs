@@ -1,4 +1,5 @@
-﻿using Hotel_Booking.Repository.HomesRepo;
+﻿using System.Security.Claims;
+using Hotel_Booking.Repository.HomesRepo;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hotel_Booking.Controllers;
@@ -14,5 +15,16 @@ public class HomeController : Controller
     {
         var allHotelsInfo = _homeContext.GetAllHotelsInfo();
         return View(allHotelsInfo);
+    }
+
+    public IActionResult SomeAction()
+    {
+        var userId = "";
+        if(User.Identity.IsAuthenticated)
+        {
+            userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        }
+
+        return Content($"{userId}");
     }
 }

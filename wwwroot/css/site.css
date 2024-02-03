@@ -8,6 +8,12 @@
     scroll-behavior: smooth;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 header {
     /* background-color: rgb(34, 34, 40); */
     width: 100%;
@@ -58,6 +64,10 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+    margin-top: auto;
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-end; */
 }
 
 .footer-content {

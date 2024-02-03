@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 
 namespace Hotel_Booking.Controllers
 {
-    [Authorize(Roles ="Admin")]
     public class HotelController : Controller
     {
         private readonly IHotelRepo _hotelContext;
@@ -30,12 +29,14 @@ namespace Hotel_Booking.Controllers
             return View();
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpGet]
         public IActionResult AddHotel()
         {
             return View();
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult AddHotel(HotelData hotelData)
@@ -67,6 +68,14 @@ namespace Hotel_Booking.Controllers
                 }
             }
             return View(hotelData);
+        }
+
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var allHotelDetails = _hotelContext.GetAllHotelDetails(id);
+            
+            return View(allHotelDetails);
         }
     }
 }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Hotel_Booking.Data;
 using Hotel_Booking.Models;
+using Hotel_Booking.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hotel_Booking.Repository.HotelRepo
 {
@@ -18,7 +20,7 @@ namespace Hotel_Booking.Repository.HotelRepo
         {
             var _hotel = GetById(id);
 
-            if(_hotel is not null)
+            if (_hotel is not null)
             {
                 _context.Hotels.Remove(_hotel);
                 _context.SaveChanges();
@@ -37,6 +39,39 @@ namespace Hotel_Booking.Repository.HotelRepo
             return _hotel;
         }
 
+        public List<Review> GetReviews(int hotelId)
+        {
+            var res = _context.Hotels.Include(H => H.Reviews).FirstOrDefault(H => H.ID == hotelId);
+            List<Review> reviews = new List<Review>();
+            if (res is not null)
+            {
+                reviews = res.Reviews.ToList();
+            }
+            return reviews;
+        }
+
+        public List<Room> GetRooms(int hotelId)
+        {
+            var res = _context.Hotels.Include(H => H.Rooms).FirstOrDefault(H => H.ID == hotelId);
+            List<Room> rooms = new List<Room>();
+            if (res is not null)
+            {
+                rooms = res.Rooms.ToList();
+            }
+            return rooms;
+        }
+
+        public Feature GetFeature(int hotelId)
+        {
+            var res = _context.Hotels.Include(H => H.Features).FirstOrDefault(H => H.ID == hotelId);
+            Feature feature = new Feature();
+            if (res is not null)
+            {
+                feature = res.Features.FirstOrDefault();
+            }
+            return feature;
+        }
+
         public void Insert(Hotel hotel)
         {
             _context.Hotels.Add(hotel);
@@ -53,6 +88,71 @@ namespace Hotel_Booking.Repository.HotelRepo
             _oldHotel.Image = newHotel.Image;
 
             _context.SaveChanges();
+        }
+
+        public List<Facility> GetFacilities(int hotelId)
+        {
+            var feature = GetFeature(hotelId);
+            if (feature is not null)
+            {
+                var res = _context.Features.Include(F => F.Facilities).FirstOrDefault(F => F.ID == feature.ID);
+                if (res is not null)
+                    return res.Facilities.ToList();
+            }
+            return new List<Facility>();
+        }
+
+        public List<FunProgram> GetFunPrograms(int hotelId)
+        {
+            var feature = GetFeature(hotelId);
+            if (feature is not null)
+            {
+                var res = _context.Features.Include(F => F.FunPrograms).FirstOrDefault(F => F.ID == feature.ID);
+                if (res is not null)
+                    return res.FunPrograms.ToList();
+            }
+            return new List<FunProgram>();
+        }
+
+        public List<FoodDrink> GetFoodDrinks(int hotelId)
+        {
+            var feature = GetFeature(hotelId);
+            if (feature is not null)
+            {
+                var res = _context.Features.Include(F => F.FoodDrinks).FirstOrDefault(F => F.ID == feature.ID);
+                if (res is not null)
+                    return res.FoodDrinks.ToList();
+            }
+            return new List<FoodDrink>();
+        }
+
+        public List<Service> GetServices(int hotelId)
+        {
+            var feature = GetFeature(hotelId);
+            if (feature is not null)
+            {
+                var res = _context.Features.Include(F => F.Services).FirstOrDefault(F => F.ID == feature.ID);
+                if(res is not null)
+                    return res.Services.ToList();
+            }
+            return new List<Service>();
+        }
+
+        public AllHotelDetails GetAllHotelDetails(int hotelId)
+        {
+            AllHotelDetails allHotelDetails = new AllHotelDetails()
+            {
+                Hotel = GetById(hotelId),
+                Reviews = GetReviews(hotelId),
+                Rooms = GetRooms(hotelId),
+                Feature = GetFeature(hotelId),
+                Facilities = GetFacilities(hotelId),
+                FunPrograms = GetFunPrograms(hotelId),
+                FoodDrinks = GetFoodDrinks(hotelId),
+                Services = GetServices(hotelId)
+            };
+
+            return allHotelDetails;
         }
     }
 }
