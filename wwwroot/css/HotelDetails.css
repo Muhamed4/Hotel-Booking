@@ -147,3 +147,17 @@
     margin-bottom: 5px;
     font-size: 18px;
 }
+
+.rooms {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+

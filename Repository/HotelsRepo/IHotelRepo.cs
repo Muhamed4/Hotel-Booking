@@ -21,7 +21,8 @@ namespace Hotel_Booking.Repository.HotelRepo
         List<FunProgram> GetFunPrograms(int hotelId);
         List<FoodDrink> GetFoodDrinks(int hotelId);
         List<Service> GetServices(int hotelId);
-        AllHotelDetails GetAllHotelDetails(int hotelId);
+        AllHotelDetails GetAllHotelDetails(int hotelId, string UserID);
         List<Servicewithicon> Getservicewithicons(int hotelId);
+        List<RoomWithPics> GetRoomWithPics(int hotelID, string UserID);
     }
 }

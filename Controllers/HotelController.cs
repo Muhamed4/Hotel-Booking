@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Hotel_Booking.Models;
 using Hotel_Booking.Repository.HotelRepo;
@@ -24,8 +25,6 @@ namespace Hotel_Booking.Controllers
 
         public IActionResult Index()
         {
-            // Just for test!
-            // return Content("Hotel Controller is exist!");
             return View();
         }
 
@@ -70,10 +69,12 @@ namespace Hotel_Booking.Controllers
             return View(hotelData);
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Details(int id)
         {
-            var allHotelDetails = _hotelContext.GetAllHotelDetails(id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var allHotelDetails = _hotelContext.GetAllHotelDetails(id, userId);
             
             return View(allHotelDetails);
         }

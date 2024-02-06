@@ -10,7 +10,7 @@ namespace Hotel_Booking.ViewModels
     {
         public Hotel Hotel { get; set; }
         public List<Review> Reviews { get; set; }
-        public List<Room> Rooms { get; set; }
+        public List<RoomWithPics> Rooms { get; set; }
         public List<Servicewithicon> Serviceswithicons { get; set; }
         public List<Facility> Facilities { get; set; }
         public List<FunProgram> FunPrograms { get; set; }
