@@ -7,11 +7,13 @@ using Hotel_Booking.Models;
 using Hotel_Booking.Repository.RoomImageRepo;
 using Hotel_Booking.Repository.RoomsRepo;
 using Hotel_Booking.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Hotel_Booking.Controllers
 {
+    [Authorize]
     public class RoomController : Controller
     {
         private IRoomRepo _roomContext;

@@ -132,19 +132,19 @@ namespace Hotel_Booking.Repository.HotelRepo
             if (feature is not null)
             {
                 var res = _context.Features.Include(F => F.Services).FirstOrDefault(F => F.ID == feature.ID);
-                if(res is not null)
+                if (res is not null)
                     return res.Services.ToList();
             }
             return new List<Service>();
         }
 
-        public AllHotelDetails GetAllHotelDetails(int hotelId)
+        public AllHotelDetails GetAllHotelDetails(int hotelId, string UserID)
         {
             AllHotelDetails allHotelDetails = new AllHotelDetails()
             {
                 Hotel = GetById(hotelId),
                 Reviews = GetReviews(hotelId),
-                Rooms = GetRooms(hotelId),
+                Rooms = GetRoomWithPics(hotelId, UserID),
                 Serviceswithicons = Getservicewithicons(hotelId),
                 Facilities = GetFacilities(hotelId),
                 FunPrograms = GetFunPrograms(hotelId),
@@ -158,40 +158,81 @@ namespace Hotel_Booking.Repository.HotelRepo
         public List<Servicewithicon> Getservicewithicons(int hotelId)
         {
             var feature = GetFeature(hotelId);
-            if(feature is not null)
+            if (feature is not null)
             {
                 List<Servicewithicon> lst = new List<Servicewithicon>();
 
-                if(feature.FreeParking == true)
-                    lst.Add(new Servicewithicon() {service = "Free Parking", icon = HotelIcons.FreeParking});
-                
-                if(feature.LaundryFacility == true)
-                    lst.Add(new Servicewithicon() {service = "Laundry Facility", icon = HotelIcons.LaundryFacility});
-                
-                if(feature.NoSmoking == true)
-                    lst.Add(new Servicewithicon() {service = "No Smoking", icon = HotelIcons.NoSmoking});
+                if (feature.FreeParking == true)
+                    lst.Add(new Servicewithicon() { service = "Free Parking", icon = HotelIcons.FreeParking });
 
-                if(feature.FreeWifi == true)
-                    lst.Add(new Servicewithicon() {service = "Free Wifi", icon = HotelIcons.FreeWifi});
+                if (feature.LaundryFacility == true)
+                    lst.Add(new Servicewithicon() { service = "Laundry Facility", icon = HotelIcons.LaundryFacility });
 
-                if(feature.FreeBreakfast == true)
-                    lst.Add(new Servicewithicon() {service = "Free Breakfast", icon = HotelIcons.FreeBreakfast});
+                if (feature.NoSmoking == true)
+                    lst.Add(new Servicewithicon() { service = "No Smoking", icon = HotelIcons.NoSmoking });
 
-                if(feature.AirportTransfer == true)
-                    lst.Add(new Servicewithicon() {service = "Airport Transfer", icon = HotelIcons.AirportTransfer});
+                if (feature.FreeWifi == true)
+                    lst.Add(new Servicewithicon() { service = "Free Wifi", icon = HotelIcons.FreeWifi });
 
-                if(feature.FontDesk247 == true)
-                    lst.Add(new Servicewithicon() {service = "24/7 Front Desk", icon = HotelIcons.FontDesk247});
+                if (feature.FreeBreakfast == true)
+                    lst.Add(new Servicewithicon() { service = "Free Breakfast", icon = HotelIcons.FreeBreakfast });
 
-                if(feature.Restaurant == true)
-                    lst.Add(new Servicewithicon() {service = "Restaurant", icon = HotelIcons.Restaurant});
+                if (feature.AirportTransfer == true)
+                    lst.Add(new Servicewithicon() { service = "Airport Transfer", icon = HotelIcons.AirportTransfer });
 
-                if(feature.AirCondition == true)
-                    lst.Add(new Servicewithicon() {service = "Air Condition", icon = HotelIcons.AirCondition});
+                if (feature.FontDesk247 == true)
+                    lst.Add(new Servicewithicon() { service = "24/7 Front Desk", icon = HotelIcons.FontDesk247 });
+
+                if (feature.Restaurant == true)
+                    lst.Add(new Servicewithicon() { service = "Restaurant", icon = HotelIcons.Restaurant });
+
+                if (feature.AirCondition == true)
+                    lst.Add(new Servicewithicon() { service = "Air Condition", icon = HotelIcons.AirCondition });
 
                 return lst;
             }
             return new List<Servicewithicon>();
+        }
+
+        public List<RoomWithPics> GetRoomWithPics(int hotelID, string UserID)
+        {
+            List<RoomWithPics> lst = new List<RoomWithPics>();
+            var rooms = _context.Rooms.Where(R => R.HotelID == hotelID).ToList();
+
+            if (rooms is not null)
+            {
+                foreach (var room in rooms)
+                {
+                    var dateTimeNow = DateTime.Now;
+                    var Pics = _context.RoomImages.Where(R => R.RoomID == room.ID).ToList();
+                    var BookedRoom = _context.UserBookRooms.FirstOrDefault(R => R.RoomID == room.ID && R.UserID == UserID
+                                                && R.CheckIn <= dateTimeNow && R.CheckOut >= dateTimeNow);
+                    List<string> images = new List<string>();
+                    foreach (var pic in Pics)
+                    {
+                        images.Add(pic.Image);
+                    }
+                    DateTime _checkIn = DateTime.Now.AddDays(-10);
+                    DateTime _checkOut = DateTime.Now.AddDays(-9);
+                    if(BookedRoom is not null)
+                    {
+                        _checkIn = BookedRoom.CheckIn;
+                        _checkOut = BookedRoom.CheckOut;
+                    }
+                    RoomWithPics roomWithPics = new RoomWithPics()
+                    {
+                        RoomID = room.ID,
+                        UserID = UserID,
+                        Price = room.Price,
+                        BedCount = room.BedCount,
+                        CheckIn = _checkIn,
+                        CheckOut = _checkOut,
+                        Images = images
+                    };
+                    lst.Add(roomWithPics);
+                }
+            }
+            return lst;
         }
     }
 }
