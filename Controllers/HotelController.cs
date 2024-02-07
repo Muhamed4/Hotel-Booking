@@ -78,5 +78,10 @@ namespace Hotel_Booking.Controllers
             
             return View(allHotelDetails);
         }
+
+        public IActionResult ShowImages()
+        {
+            return View();
+        }
     }
 }

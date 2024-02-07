@@ -27,26 +27,26 @@
 }
 
 .hotelData .nameofhotel {
-    margin: 20px 0 20px 20px;
+    margin: 20px 0 10px 20px;
     font-size: 70px;
     font-weight: 700;
     text-align: center;
 }
 
 .hotelData .address {
-    margin: 20px 0 5px 20px;
+    margin: 5px 0 5px 20px;
     font-size: 25px;
     font-weight: 600;
 }
 
 .hotelData .desc {
     width: 70%;
-    padding: 20px 0 10px 20px;
+    padding: 20px 0 5px 20px;
     font-weight: 600;
 }
 
 .hotelData .rating {
-    padding: 20px 0 5px 20px;
+    padding: 20px 0 0px 20px;
     font-size: 20px;
     font-weight: 600;
 }
@@ -55,7 +55,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 33%;
+    width: 35%;
 }
 
 .hotelData .rating a {
@@ -98,7 +98,7 @@
 }
 
 .facility ul {
-    padding : 0 0 20px 40px
+    padding: 0 0 20px 40px
 }
 
 .facility ul li {
@@ -112,7 +112,7 @@
 }
 
 .funprogram ul {
-    padding : 0 0 20px 40px
+    padding: 0 0 20px 40px
 }
 
 .funprogram ul li {
@@ -126,7 +126,7 @@
 }
 
 .fooddrink ul {
-    padding : 0 0 20px 40px
+    padding: 0 0 20px 40px
 }
 
 .fooddrink ul li {
@@ -140,7 +140,7 @@
 }
 
 .service ul {
-    padding : 0 0 20px 40px
+    padding: 0 0 20px 40px
 }
 
 .service ul li {
@@ -154,10 +154,8 @@
     border-radius: 30px;
     margin-top: 10px;
     padding: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
 }
 
-
+.rooms .room {
+    margin-bottom: 40px;
+}
