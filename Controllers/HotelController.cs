@@ -74,6 +74,7 @@ namespace Hotel_Booking.Controllers
         public IActionResult Details(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            _hotelContext.UserWatchHotel(id, userId);
             var allHotelDetails = _hotelContext.GetAllHotelDetails(id, userId);
             
             return View(allHotelDetails);

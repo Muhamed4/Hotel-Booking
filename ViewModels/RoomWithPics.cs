@@ -10,9 +10,11 @@ namespace Hotel_Booking.ViewModels
         public int RoomID { get; set; }
         public decimal Price { get; set; }
         public int BedCount { get; set; }
+        public int RoomNumber { get; set; }
+        public string UserID { get; set; }
+        public bool Booked { get; set; }
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
-        public string UserID { get; set; }
         public List<string> Images { get; set; }
     }
 }

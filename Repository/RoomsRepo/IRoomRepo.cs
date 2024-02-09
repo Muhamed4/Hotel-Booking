@@ -15,5 +15,7 @@ namespace Hotel_Booking.Repository.RoomsRepo
         void Delete(int id);
         bool CheckRoomByHotelId(int roomNumber, int hotelId);
         string UploadImage(IFormFile File);
+        void BookRoom(UserBookRoom _book);
+        void CancelBookRoom(int RoomId, string UserId);
     }
 }

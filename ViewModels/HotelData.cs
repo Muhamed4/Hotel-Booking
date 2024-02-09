@@ -16,7 +16,7 @@ namespace Hotel_Booking.ViewModels
         [Required]
         public string City { get; set; }
         [Required]
-        [MinLength(10)]
+        [MinLength(200)]
         public string Description { get; set; }
         [Required]
         [DisplayName("Image")]

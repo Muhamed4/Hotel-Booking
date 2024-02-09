@@ -1,6 +1,7 @@
 .body {
     padding: 20px 250px;
     background-color: #eee;
+    /* background-color: rgb(124, 124, 124); */
 }
 
 .content1 {
@@ -71,7 +72,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .feature-icons .icon {
@@ -158,4 +159,25 @@
 
 .rooms .room {
     margin-bottom: 40px;
+}
+
+
+.reviews {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.makereview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.makereview span {
+    font-size: large;
+    font-weight: 600;
 }

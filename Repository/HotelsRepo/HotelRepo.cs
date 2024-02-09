@@ -64,7 +64,7 @@ namespace Hotel_Booking.Repository.HotelRepo
         public Feature GetFeature(int hotelId)
         {
             var res = _context.Hotels.Include(H => H.Features).FirstOrDefault(H => H.ID == hotelId);
-            Feature feature = new Feature();
+            Feature feature = null;
             if (res is not null)
             {
                 feature = res.Features.FirstOrDefault();
@@ -142,14 +142,18 @@ namespace Hotel_Booking.Repository.HotelRepo
         {
             AllHotelDetails allHotelDetails = new AllHotelDetails()
             {
+                UserID = UserID,
+                Rate = GetRate(hotelId),
+                ReviewsCount = GetReviewsCount(hotelId),
                 Hotel = GetById(hotelId),
-                Reviews = GetReviews(hotelId),
+                Reviews = GetUserReviews(hotelId),
                 Rooms = GetRoomWithPics(hotelId, UserID),
                 Serviceswithicons = Getservicewithicons(hotelId),
                 Facilities = GetFacilities(hotelId),
                 FunPrograms = GetFunPrograms(hotelId),
                 FoodDrinks = GetFoodDrinks(hotelId),
-                Services = GetServices(hotelId)
+                Services = GetServices(hotelId),
+                isVisited = CheckVisited(hotelId, UserID)
             };
 
             return allHotelDetails;
@@ -205,8 +209,9 @@ namespace Hotel_Booking.Repository.HotelRepo
                 {
                     var dateTimeNow = DateTime.Now;
                     var Pics = _context.RoomImages.Where(R => R.RoomID == room.ID).ToList();
-                    var BookedRoom = _context.UserBookRooms.FirstOrDefault(R => R.RoomID == room.ID && R.UserID == UserID
-                                                && R.CheckIn <= dateTimeNow && R.CheckOut >= dateTimeNow);
+                    var BookedRoom = _context.UserBookRooms.FirstOrDefault(R => R.RoomID == room.ID
+                                                && (R.CheckIn >= dateTimeNow || R.CheckOut >= dateTimeNow));
+
                     List<string> images = new List<string>();
                     foreach (var pic in Pics)
                     {
@@ -214,10 +219,15 @@ namespace Hotel_Booking.Repository.HotelRepo
                     }
                     DateTime _checkIn = DateTime.Now.AddDays(-10);
                     DateTime _checkOut = DateTime.Now.AddDays(-9);
-                    if(BookedRoom is not null)
+                    bool isBooked = false;
+                    if (BookedRoom is not null)
                     {
-                        _checkIn = BookedRoom.CheckIn;
-                        _checkOut = BookedRoom.CheckOut;
+                        if (BookedRoom.UserID == UserID)
+                        {
+                            _checkIn = BookedRoom.CheckIn;
+                            _checkOut = BookedRoom.CheckOut;
+                        }
+                        else isBooked = true;
                     }
                     RoomWithPics roomWithPics = new RoomWithPics()
                     {
@@ -225,6 +235,8 @@ namespace Hotel_Booking.Repository.HotelRepo
                         UserID = UserID,
                         Price = room.Price,
                         BedCount = room.BedCount,
+                        RoomNumber = room.RoomNumber,
+                        Booked = isBooked,
                         CheckIn = _checkIn,
                         CheckOut = _checkOut,
                         Images = images
@@ -233,6 +245,88 @@ namespace Hotel_Booking.Repository.HotelRepo
                 }
             }
             return lst;
+        }
+
+        public List<UserReview> GetUserReviews(int hotelId)
+        {
+            var reviews = _context.Hotels.Include(H => H.Reviews).FirstOrDefault(H => H.ID == hotelId);
+            List<UserReview> userReviews = new List<UserReview>();
+            if (reviews is not null)
+            {
+                var res = reviews.Reviews.ToList();
+                foreach (var item in res)
+                {
+                    var user = _context.Users.FirstOrDefault(U => U.Id == item.UserID);
+                    if (user is not null)
+                    {
+                        UserReview userReview = new UserReview()
+                        {
+                            UserName = user.UserName,
+                            Rating = item.Rating,
+                            Comment = item.Comment,
+                            Date = item.Date
+                        };
+                        userReviews.Add(userReview);
+                    }
+                }
+            }
+
+            return userReviews;
+        }
+
+        public bool CheckVisited(int hotelId, string userId)
+        {
+            var res = _context.UserBookRooms.Where(B => B.UserID == userId && B.CheckOut < DateTime.Now).ToList();
+            if (res is not null)
+            {
+                foreach (var item in res)
+                {
+                    var check = _context.Rooms.FirstOrDefault(R => R.ID == item.RoomID && R.HotelID == hotelId);
+                    if (check is not null)
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
+        public decimal GetRate(int hotelId)
+        {
+            decimal rate = 0.00m;
+            var reviews = _context.Reviews.Where(R => R.HotelID == hotelId).ToList();
+            if (reviews is not null)
+            {
+                rate = reviews.Select(R => R.Rating).DefaultIfEmpty(0).Average();
+            }
+
+            return rate;
+        }
+
+        public int GetReviewsCount(int hotelId)
+        {
+            int reviewsCount = 0;
+            var reviews = _context.Reviews.Where(R => R.HotelID == hotelId).ToList();
+            if (reviews is not null)
+            {
+                reviewsCount = reviews.Count();
+            }
+
+            return reviewsCount;
+        }
+
+        public void UserWatchHotel(int hotelId, string UserId)
+        {
+            var watch = _context.UserWatchHotels.FirstOrDefault(W => W.HotelID == hotelId && W.UserID == UserId);
+            if (watch is null)
+            {
+                var userWatchhotel = new UserWatchHotel()
+                {
+                    UserID = UserId,
+                    HotelID = hotelId
+                };
+                _context.UserWatchHotels.Add(userWatchhotel);
+                _context.SaveChanges();
+            }
         }
     }
 }
