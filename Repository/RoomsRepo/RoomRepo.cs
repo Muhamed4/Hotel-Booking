@@ -19,7 +19,7 @@ namespace Hotel_Booking.Repository.RoomsRepo
         public void Delete(int id)
         {
             var room = GetById(id);
-            if(room is not null)
+            if (room is not null)
             {
                 _context.Rooms.Remove(room);
                 _context.SaveChanges();
@@ -53,13 +53,14 @@ namespace Hotel_Booking.Repository.RoomsRepo
             _context.SaveChanges();
         }
 
-        public bool CheckRoomByHotelId(int roomNumber, int hotelId){
+        public bool CheckRoomByHotelId(int roomNumber, int hotelId)
+        {
 
             var _room = _context.Rooms.FirstOrDefault(X => X.HotelID == hotelId && X.RoomNumber == roomNumber);
 
-            if(_room is null)
+            if (_room is null)
                 return true;
-                
+
             return false;
         }
 
@@ -75,6 +76,31 @@ namespace Hotel_Booking.Repository.RoomsRepo
             }
 
             return fileName;
+        }
+
+        public void BookRoom(UserBookRoom _book)
+        {
+            if (_book is not null)
+            {
+                var room = _context.UserBookRooms
+                           .FirstOrDefault(R => R.RoomID == _book.RoomID && (R.CheckIn >= DateTime.Now || R.CheckOut >= DateTime.Now));
+                if (room is null)
+                {
+                    _context.UserBookRooms.Add(_book);
+                    _context.SaveChanges();
+                }
+            }
+        }
+
+        public void CancelBookRoom(int RoomId, string UserId)
+        {
+            var room = _context.UserBookRooms
+                           .FirstOrDefault(R => R.RoomID == RoomId && R.UserID == UserId && (R.CheckIn >= DateTime.Now || R.CheckOut >= DateTime.Now));
+            if(room is not null)
+            {
+                _context.UserBookRooms.Remove(room);
+                _context.SaveChanges();
+            }
         }
     }
 }

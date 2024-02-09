@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Hotel_Booking.Models;
 using Hotel_Booking.Repository.RoomImageRepo;
@@ -74,6 +75,46 @@ namespace Hotel_Booking.Controllers
             }
 
             return View(roomData);
+        }
+
+        [HttpGet]
+        public IActionResult BookRoom(int RoomID, int hotelId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var _data = new UserBookRoomData();
+            _data.UserId = userId;
+            _data.RoomId = RoomID;
+            ViewBag.hotelId = hotelId;
+            return View(_data);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult BookRoom(UserBookRoomData _data, int hotelId)
+        {
+            if(ModelState.IsValid)
+            {
+                var Date = _data.BookDate;
+                var booking = new UserBookRoom()
+                {
+                    RoomID = _data.RoomId,
+                    UserID = _data.UserId,
+                    CheckIn = _data.BookDate,
+                    CheckOut = Date.AddDays(_data.Nights)
+                };
+                _roomContext.BookRoom(booking);
+                return RedirectToAction("Details", "Hotel", new { id = hotelId });
+            }
+
+            return View(_data);
+        }
+
+        [HttpGet]
+        public IActionResult CancelBookRoom(int RoomID, int hotelId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            _roomContext.CancelBookRoom(RoomID, userId);
+            return RedirectToAction("Details", "Hotel", new { id = hotelId });
         }
     }
 }

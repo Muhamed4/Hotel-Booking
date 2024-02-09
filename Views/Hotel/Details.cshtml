@@ -6,320 +6,266 @@
 <div class="body" style="padding: 20px 150px;">
     <div class="content1">
         <div class="hotelData">
-            <div class="img" style="background-image: url(/Images/addhotel6.jpg);"></div>
-            <div class="nameofhotel">Paris</div>
+            <div class="img" style="background-image: url(/Images/@Model.Hotel.Image);"></div>
+            <div class="nameofhotel">@Model.Hotel.Name</div>
             <div class="address">
-                <p>Egypt, Sohag</p>
+                <p>@Model.Hotel.Country, @Model.Hotel.City</p>
             </div>
             <hr>
             <div class="rating">
-                <a href="#"> <span style="color: black;">8.7 Excellent</span> see all 235 reviews ></a>
+                <a href="#"> <span style="color: black;">@Model.Rate/10 </span> see all @Model.ReviewsCount reviews
+                    ></a>
             </div>
             <div class="desc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis mollitia placeat quisquam libero in
-                dicta quas voluptates iure eaque quam, magni non quae delectus hic, quod nemo saepe dolorem debitis
-                tempora doloribus maiores molestiae odit ut praesentium. Ratione, repellendus assumenda, quam, ad
-                reiciendis praesentium officiis expedita facilis adipisci fuga minima iure labore earum vero alias
-                aperiam iusto minus quia beatae totam sint harum. Quia ab enim officia saepe. Assumenda atque sequi
-                natus nam, similique rem voluptates delectus obcaecati ex nihil voluptatem dolorum illum error optio
-                alias deleniti vel doloremque et officiis dolores magnam? Optio veritatis dolorum in, necessitatibus
-                debitis perspiciatis?
+                @* <p>@Model.Hotel.Description</p> *@
+                @Model.Hotel.Description
             </div>
+        </div>
+
+        @if (Model.Serviceswithicons.Count > 0)
+        {
             <hr>
-        </div>
-
-        <div class="feature-icons">
-            <div class="part1">
-                <div class="icon">
-                    <i class="fa-solid fa-car"></i>
-                    Free Parking
-                </div>
-
-                <div class="icon">
-                    <i class='bx bxs-washer'></i>
-                    Laundry Facility
-                </div>
-
-                <div class="icon">
-                    <i class="fa-solid fa-ban-smoking"></i>
-                    No Smoking
-                </div>
-
-                <div class="icon">
-                    <i class="fa-solid fa-wifi"></i>
-                    Free Wifi
-                </div>
-
-                <div class="icon">
-                    <i class="fa-solid fa-bell-concierge"></i>
-                    24/7 front Desk
-                </div>
-            </div>
-
-            <div class="part2">
-                <div class="icon">
-                    <i class="fa-solid fa-mug-saucer"></i>
-                    Free Breakfast
-                </div>
-
-                <div class="icon">
-                    <i class="fa-solid fa-van-shuttle"></i>
-                    Airport Transfer
-                </div>
-
-                <div class="icon">
-                    <i class="fa-solid fa-utensils"></i>
-                    Restaurant
-                </div>
-
-                <div class="icon">
-                    <i class="fa-solid fa-snowflake"></i>
-                    Air Condition
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="content2">
-        <div class="facility">
-            <h2> <i class="fa-solid fa-check"></i> Facilities</h2>
-            <ul>
-                <li>9 buildings/towers</li>
-                <li>Built in 1997</li>
-                <li>ATM/banking</li>
-                <li>Safe-deposit box at front desk</li>
-                <li>Garden</li>
-                <li>Terrace</li>
-                <li>Television in common areas</li>
-                <li>Health club</li>
-                <li>5 outdoor pools</li>
-                <li>Spa services</li>
-                <li>Massage/treatment rooms</li>
-            </ul>
-        </div>
-
-        <div class="funprogram">
-            <h2> <i class='bx bxs-happy-alt'></i> Fun Programs</h2>
-            <ul>
-                <li>9 buildings/towers</li>
-                <li>Built in 1997</li>
-                <li>ATM/banking</li>
-                <li>Safe-deposit box at front desk</li>
-                <li>Garden</li>
-                <li>Terrace</li>
-                <li>Television in common areas</li>
-                <li>Health club</li>
-                <li>5 outdoor pools</li>
-                <li>Spa services</li>
-                <li>Massage/treatment rooms</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="content2">
-        <div class="fooddrink">
-            <h2> <i class="fa-solid fa-utensils"></i> Food and Drink </h2>
-            <ul>
-                <li>9 buildings/towers</li>
-                <li>Built in 1997</li>
-                <li>ATM/banking</li>
-                <li>Safe-deposit box at front desk</li>
-                <li>Garden</li>
-                <li>Terrace</li>
-                <li>Television in common areas</li>
-                <li>Health club</li>
-                <li>5 outdoor pools</li>
-                <li>Spa services</li>
-                <li>Massage/treatment rooms</li>
-            </ul>
-        </div>
-
-        <div class="service">
-            <h2> <i class="fa-solid fa-bell-concierge"></i> Services </h2>
-            <ul>
-                <li>9 buildings/towers</li>
-                <li>Built in 1997</li>
-                <li>ATM/banking</li>
-                <li>Safe-deposit box at front desk</li>
-                <li>Garden</li>
-                <li>Terrace</li>
-                <li>Television in common areas</li>
-                <li>Health club</li>
-                <li>5 outdoor pools</li>
-                <li>Spa services</li>
-                <li>Massage/treatment rooms</li>
-            </ul>
-        </div>
-
-    </div>
-
-
-    <div class="rooms">
-        <div class="room">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-
-                                @for (int i = 0; i < 5; i++)
+            <div class="feature-icons">
+                <div class="part1">
+                    @for (int i = 0; i < @Math.Min(5, @Model.Serviceswithicons.Count); i++)
+                    {
+                        <div class="icon">
+                            @{
+                                if (Model.Serviceswithicons[i].service == "Laundry Facility")
                                 {
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="@i"
-                                        class="@(i==0 ? "active" : "") ">
-                                    </li>
+                                    <i class='@Model.Serviceswithicons[i].icon'></i>
                                 }
-                            </ol>
-                            <div class="carousel-inner">
-                                @* @for (int i = 0; i < 5; i++)
+                                else
                                 {
-                                <div class="@(i==0 ? "carousel-item active" : "carousel-item") ">
-                                <img class="d-block w-100" src="~/Images/addhotel6.jpg" alt="Model.Gallery[i].Name">
-                                </div>
-                                } *@
-
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="~/Images/addhotel6.jpg" alt="Model.Gallery[i].Name">
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="~/Images/addhotel7.jpg" alt="Model.Gallery[i].Name">
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="~/Images/addhotel5.jpg" alt="Model.Gallery[i].Name">
-                                </div>
-
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                                    <i class="@Model.Serviceswithicons[i].icon"></i>
+                                }
+                            }
+                            @Model.Serviceswithicons[i].service
                         </div>
-                    </div>
-                    <div class="col-md-6">
+                    }
+                </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>Room Details</h4>
-                            </div>
+                <div class="part2">
+                    @for (int i = 5; i < @Model.Serviceswithicons.Count; i++)
+                    {
+                        <div class="icon">
+                            @{
+                                if (Model.Serviceswithicons[i].service == "Laundry Facility")
+                                {
+                                    <i class='@Model.Serviceswithicons[i].icon'></i>
+                                }
+                                else
+                                {
+                                    <i class="@Model.Serviceswithicons[i].icon"></i>
+                                }
+                            }
+                            @Model.Serviceswithicons[i].service
                         </div>
-
-                        <ul class="list-group">
-                            <li class="list-group-item"><span class="font-weight-bold">Room Number - </span>
-                                542</li>
-                            <li class="list-group-item"><span class="font-weight-bold">Number of Beds - </span> 3
-                            </li>
-                            <li class="list-group-item"><span class="font-weight-bold">Price Per Night - </span> $500
-                            </li>
-                        </ul>
-
-                        <hr />
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
-                                    Reserve
-                                </a>
-                            </div>
-                        </div>
-
-
-                    </div>
+                    }
                 </div>
             </div>
-        </div>
+        }
+    </div>
 
+
+    @if (@Model.Facilities.Count > 0 || @Model.FunPrograms.Count > 0)
+    {
+        <div class="content2">
+            @if (@Model.Facilities.Count > 0)
+            {
+                <div class="facility">
+                    <h2> <i class="fa-solid fa-check"></i> Facilities</h2>
+                    <ul>
+                        @foreach (var service in @Model.Facilities)
+                        {
+                            <li>@service.Description</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            @if (@Model.FunPrograms.Count > 0)
+            {
+                <div class="funprogram">
+                    <h2> <i class='bx bxs-happy-alt'></i> Fun Programs</h2>
+                    <ul>
+                        @foreach (var service in @Model.FunPrograms)
+                        {
+                            <li>@service.Description</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+        </div>
+    }
+
+    @if (@Model.FoodDrinks.Count > 0 || @Model.Services.Count > 0)
+    {
+        <div class="content2">
+            @if (@Model.FoodDrinks.Count > 0)
+            {
+                <div class="fooddrink">
+                    <h2> <i class="fa-solid fa-utensils"></i> Food and Drink </h2>
+                    <ul>
+                        @foreach (var service in @Model.FoodDrinks)
+                        {
+                            <li>@service.Description</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            @if (@Model.Services.Count > 0)
+            {
+                <div class="service">
+                    <h2> <i class="fa-solid fa-bell-concierge"></i> Services </h2>
+                    <ul>
+                        @foreach (var service in @Model.Services)
+                        {
+                            <li>@service.Description</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+    }
+
+
+    @if (@Model.Rooms.Count > 0)
+    {
+        <div class="rooms">
+            @foreach (var room in @Model.Rooms)
+            {
+                <div class="room">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                @{
+                                    string Roomid = "carouselExampleIndicators" + room.RoomID.ToString();
+                                }
+                                <div id=@Roomid class="carousel slide" data-ride="carousel">
+                                    @* <ol class="carousel-indicators">
+
+                            @for (int i = 0; i < room.Images.Count; i++)
+                            {
+                            <li data-target="#@Roomid" data-slide-to="@i" class="@(i==0 ? "active" : "") ">
+                            </li>
+                            }
+                            </ol> *@
+                                    <div class="carousel-inner">
+                                        @for (int i = 0; i < room.Images.Count; i++)
+                                        {
+                                            <div class="@(i==0 ? "carousel-item active" : "carousel-item") ">
+                                                <img class="d-block w-100" src="~/RoomImages/@room.Images[i]" alt="">
+                                            </div>
+                                        }
+                                    </div>
+                                    <a class="carousel-control-prev" href="#@Roomid" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#@Roomid" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4>Room Details</h4>
+                                    </div>
+                                </div>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item"><span class="font-weight-bold">Room Number - </span>
+                                        @room.RoomNumber</li>
+                                    <li class="list-group-item"><span class="font-weight-bold">Number of Beds - </span>
+                                        @room.BedCount
+                                    </li>
+                                    <li class="list-group-item"><span class="font-weight-bold">Price Per Night - </span>
+                                        $@room.Price
+                                    </li>
+                                </ul>
+
+                                <hr />
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        @{
+                                            if (room.CheckOut >= DateTime.Now)
+                                            {
+                                                if (room.CheckIn <= DateTime.Now)
+                                                {
+                                                // You Booked This Room
+                                                    <span style="color: red; font-weight: 600;">You Booked it !</span>
+                                                }
+                                                else
+                                                {
+                                                    // Cancel the booking
+                                                    <a class="btn btn-outline-danger" asp-controller="Room" asp-action="CancelBookRoom"
+                                                        asp-route-RoomID="@room.RoomID" asp-route-hotelId="@Model.Hotel.ID">
+                                                        Cancel
+                                                    </a>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (room.Booked == true)
+                                                {
+                                                // It's sold !
+                                                    <span style="color: red; font-weight: 600;">It is sold !</span>
+                                                }
+                                                else
+                                                {
+                                                    <a class="btn btn-outline-primary" asp-controller="Room" asp-action="BookRoom"
+                                                        asp-route-RoomID="@room.RoomID" asp-route-hotelId="@Model.Hotel.ID">
+                                                        Reserve
+                                                    </a>
+                                                }
+                                            }
+                                        }
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            }
+        </div>
+    }
+
+
+    <div class="reviews">
+        <div class="makereview">
+            <span>Do You Want To Make a Review on this Hotel ?</span>
+            <form asp-action="ShowImages" asp-controller="Hotel" id="review-from">
+                <input type="checkbox" asp-for="isVisited" id="visited" hidden>
+                <button class="btn btn-outline-primary" id="makeReviewLink">
+                    Make Review
+                </button>
+            </form>
+        </div>
 
         <hr>
 
-        <div class="room">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-
-                                @for (int i = 0; i < 5; i++)
-                                {
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="@i"
-                                        class="@(i==0 ? "active" : "") ">
-                                    </li>
-                                }
-                            </ol>
-                            <div class="carousel-inner">
-                                @* @for (int i = 0; i < 5; i++)
-                                {
-                                <div class="@(i==0 ? "carousel-item active" : "carousel-item") ">
-                                <img class="d-block w-100" src="~/Images/addhotel6.jpg" alt="Model.Gallery[i].Name">
-                                </div>
-                                } *@
-
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="~/Images/banner.jpg" alt="Model.Gallery[i].Name">
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="~/Images/hotel1.jpg" alt="Model.Gallery[i].Name">
-                                </div>
-
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="~/Images/img.jpg" alt="Model.Gallery[i].Name">
-                                </div>
-
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4>Room Details</h4>
-                            </div>
-                        </div>
-
-                        <ul class="list-group">
-                            <li class="list-group-item"><span class="font-weight-bold">Room Number - </span>
-                                542</li>
-                            <li class="list-group-item"><span class="font-weight-bold">Number of Beds - </span> 3
-                            </li>
-                            <li class="list-group-item"><span class="font-weight-bold">Price Per Night - </span> $500
-                            </li>
-                        </ul>
-
-                        <hr />
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
-                                    Reserve
-                                </a>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
+        @foreach (var review in @Model.Reviews)
+        {
+            <div class="userReview">
+                <p>@review.Rating/10 Very Good</p>
+                <p>@review.Date</p>
+                <p>
+                    @review.Comment
+                </p>
+                <p>@review.UserName</p>
+                <hr>
             </div>
-        </div>
-
+        }
     </div>
 
 </div>
@@ -327,11 +273,25 @@
 
 @section PageStyle {
     <link rel="stylesheet" href="~/css/HotelDetails.css">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
     <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
 }
 
 @section Scripts {
+
+    <script>
+        const form = document.querySelector('#review-form');
+        const myButton = document.querySelector('#makeReviewLink');
+        var isVisited = @Json.Serialize(Model.isVisited);
+        myButton.addEventListener('click', (event) => {
+            if (isVisited == false) {
+                event.preventDefault(); // Prevent the form from submitting
+                alert('You should visit this hotel at least once to make a review ....'); // Show an alert message
+                return;
+            }
+        });
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     @{

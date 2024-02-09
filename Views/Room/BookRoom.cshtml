@@ -1,0 +1,63 @@
+@model Hotel_Booking.ViewModels.UserBookRoomData
+@{
+    ViewData["Title"] = "BookRoom";
+}
+
+<form asp-controller="Room" asp-action="BookRoom" asp-route-hotelId="@ViewBag.hotelId" id="book-form">
+    <div class="container">
+        <div class="book-container">
+            <div class="form-group">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="BookDate"></label>
+                <input asp-for="BookDate" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="Nights"></label>
+                <input asp-for="Nights" class="form-control" required type="number" min="1" />
+            </div>
+
+            <input asp-for="RoomId" hidden/>
+            <input asp-for="UserId" hidden/>
+
+            <div class="btn">
+                <button id="my-btn" type="submit">Save</button>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@section PageStyle {
+    <link rel="stylesheet" href="~/css/RoomBookRoom.css">
+        @* <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" /> *@
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+}
+
+@section Scripts {
+
+    <script>
+        const form = document.querySelector('#book-form');
+        const myButton = document.querySelector('#my-btn');
+        myButton.addEventListener('click', (event) => {
+            const now = new Date();
+            const startTimeInput = document.querySelector('#BookDate');
+            const startTime = new Date(startTimeInput.value);
+            if (startTime <= now) {
+                event.preventDefault(); // Prevent the form from submitting
+                alert('Please enter a Book time after the current time.'); // Show an alert message
+                return;
+            }
+        });
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -14,7 +14,12 @@ namespace Hotel_Booking.Repository.HotelRepo
         void Insert(Hotel hotel);
         void Update(int id, Hotel newHotel);
         void Delete(int id);
+        void UserWatchHotel(int hotelId, string UserId);
+        bool CheckVisited(int hotelId, string userId);
+        decimal GetRate(int hotelId);
+        int GetReviewsCount(int hotelId);
         List<Review> GetReviews(int hotelId);
+        List<UserReview> GetUserReviews(int hotelId);
         List<Room> GetRooms(int hotelId);
         Feature GetFeature(int hotelId);
         List<Facility> GetFacilities(int hotelId);
