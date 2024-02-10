@@ -1,17 +1,25 @@
-﻿@model List<Hotel_Booking.ViewModels.HotelInfo>
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@model List<Hotel_Booking.ViewModels.HotelInfo>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <section class="main">
     <p class="welcom">
-        welcome to Hotel
+        Choose your destination !
     </p>
 
-    <p class="ntext">
-        Hotel Is A Booking Platform That Offers Several Hotels information Showed
-        In Details To Help You Book Your Favorite Hotel At Any Place.
-    </p>
+    @* <p class="ntext">
+    Hotel Is A Booking Platform That Offers Several Hotels information Showed
+    In Details To Help You Book Your Favorite Hotel At Any Place.
+    </p> *@
+    <form asp-controller="Home" asp-action="Search" method="get" class="search-container">
+        <input type="text" name="country" id="searchCountry" placeholder="Country...">
+        <input type="text" name="city" id="searchCity" placeholder="City...">
+        <button type="submit">Search</button>
+    </form>
+
 </section>
 
 <section class="headp">
@@ -53,14 +61,21 @@
                 <a class="view" asp-controller="Hotel" asp-action="Details" asp-route-id="@hotel.ID">More Details</a>
 
                 <div class="viewlikes">
-                    <a class="love" href="#">
-                        @* if the user react with this hotel the love icon will take the fill div otherwise it will take the
-                    fill1 div *@
+                    @{
+                        string btnid = "btn" + hotel.ID.ToString();
+                        string idcnt = "loveCount" + hotel.ID.ToString();
+                    }
 
-                        <div class="fill1"> <i class="fa-regular fa-heart"></i> </div>
-                        @* <div class="fill"> </div> *@
-                    </a>
-                    <span style="font-size: large;">@hotel.Loves</span>
+                    @* style="color: @(hotel.Reacted == true ? "red;" : "grey;")" *@
+                    <Button onclick="Toggle('@btnid', '@idcnt')" id="@btnid" class="btn">
+                        <i class="fa-solid fa-heart"></i>
+                    </Button>
+
+                    @* <Button id="btnh2" class="btn">
+                <i class="fa-regular fa-heart"></i>
+                </Button> *@
+
+                    <span id="@idcnt" style="font-size: large;">@hotel.Loves</span>
                 </div>
             </div>
         </div>
@@ -71,4 +86,71 @@
 
 @section PageStyle {
     <link rel="stylesheet" href="~/css/HomeIndex.css">
+}
+
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to toggle button color based on local storage
+            function toggleButtonColor(btnid) {
+                var btnvar = document.getElementById(btnid);
+                @* var userId = @Json.Serialize(User.FindFirstValue(ClaimTypes.NameIdentifier)); *@
+                var userId = '@User.FindFirstValue(System.Security.Claims.ClaimTypes.NameIdentifier)';
+                var storageKey = "buttonState_" + userId + "_" + btnid;
+
+                // Check local storage for the button state
+                var buttonState = localStorage.getItem(storageKey);
+
+                if (buttonState === "red") {
+                    btnvar.style.color = "red";
+                } else {
+                    btnvar.style.color = "grey";
+                }
+            }
+
+            // Apply toggleButtonColor for each button on page load
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function (button) {
+                var btnid = button.id;
+                toggleButtonColor(btnid);
+            });
+
+            // Function to handle button click
+            window.Toggle = function (btnid, idcnt) {
+                var buttonId = btnid;
+                var btnvar = document.getElementById(buttonId);
+                var userId = '@User.FindFirstValue(System.Security.Claims.ClaimTypes.NameIdentifier)';
+                var storageKey = "buttonState_" + userId + "_" + btnid;
+
+                if (!userId) {
+                    alert("You must log in or register first!");
+                    return;
+                }
+
+                // Toggle button color
+                if (btnvar.style.color === "red") {
+                    btnvar.style.color = "grey";
+                    localStorage.setItem(storageKey, "grey");
+                } else {
+                    btnvar.style.color = "red";
+                    localStorage.setItem(storageKey, "red");
+                }
+
+                // AJAX request to update love count
+                $.ajax({
+                    url: '/Hotel/Reaction',
+                    type: 'POST',
+                    data: { hotelId: btnid.replace('btn', '') },
+                    success: function (data) {
+                        // Update the love count
+                        $('#' + idcnt).text(data);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            };
+        });
+    </script>
 }

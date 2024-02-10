@@ -69,7 +69,7 @@ namespace Hotel_Booking.Controllers
             return View(hotelData);
         }
 
-        [Authorize]
+        [Authorize(Roles ="NUser")]
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -80,9 +80,18 @@ namespace Hotel_Booking.Controllers
             return View(allHotelDetails);
         }
 
+        [Authorize(Roles ="NUser")]
+        public JsonResult Reaction(int hotelId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            int reactCount = _hotelContext.UserReact(hotelId, userId);
+            return Json(reactCount);
+        }
+
         public IActionResult ShowImages()
         {
             return View();
         }
+
     }
 }

@@ -8,6 +8,7 @@ namespace Hotel_Booking.Repository.HomesRepo
 {
     public interface IHomeRepo
     {
-        List<HotelInfo> GetAllHotelsInfo();
+        List<HotelInfo> GetAllHotelsInfo(string country, string city, string userId);
+        List<HotelInfo> Filter(List<HotelInfo> info, string country, string city);
     }
 }

@@ -13,18 +13,25 @@ public class HomeController : Controller
     }
     public IActionResult Index()
     {
-        var allHotelsInfo = _homeContext.GetAllHotelsInfo();
-        return View(allHotelsInfo);
-    }
-
-    public IActionResult SomeAction()
-    {
-        var userId = "";
+        string country = TempData["Country"] as string;
+        string city = TempData["City"] as string;
+        string userId = "";
         if(User.Identity.IsAuthenticated)
         {
             userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         }
+        var allHotelsInfo = _homeContext.GetAllHotelsInfo(country, city, userId);
+        return View(allHotelsInfo);
+    }
 
-        return Content($"{userId}");
+    public IActionResult Search(string country, string city)
+    {
+        string _country = "", _city = "";
+        if(country is not null && country != "")_country = country.ToLower();
+        if(city is not null && city != "") _city = city.ToLower();
+        TempData["Country"] = _country;
+        TempData["City"] = _city;
+        
+        return RedirectToAction(nameof(Index));
     }
 }

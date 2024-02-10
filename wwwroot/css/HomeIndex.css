@@ -27,7 +27,8 @@ section {
     line-height: 150px;
     background-color: transparent;
     /* border: 2px solid rgba(255, 255, 255, 0.2); */
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(100px);
+    border-radius: 50px;
 }
 
 .main .ntext {
@@ -114,6 +115,10 @@ section {
     margin: 2px 2px 10px 2px;
 }
 
+.hotels .content .othdata span {
+    /* margin-right: 10px; */
+}
+
 .hotels .content .likemore {
     display: flex;
     flex-direction: row;
@@ -137,22 +142,6 @@ section {
     color: tomato;
 }
 
-.hotels .content .likemore .love {
-    padding: 5px 10px 5px 5px;
-    color: tomato;
-    font-weight: 600;
-    font-size: 24px;
-    transition: 0.8s ease;
-    /* background-color: blue; */
-    text-decoration: none;
-
-}
-
-.hotels .content .likemore .love:hover {
-    color: red;
-    /* transform: scale(1.5); */
-}
-
 
 .hotels .content .likemore .viewlikes {
     display: flex;
@@ -161,39 +150,62 @@ section {
     align-items: center;
 }
 
-/* .hotels .content .likemore .love .fill {
-    background-color: red;
-    border-radius: 50%;
+
+.viewlikes .btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    font-size: 25px;
+    color: grey;
+}
+
+.viewlikes .btn i:hover {
+    cursor: pointer;
+}
+
+.viewlikes span {
+    /* margin-right: 10px; */
+}
+
+.search-container {
+    display: flex;
+    margin: 50px 0;
+    width: 70%;
+}
+
+#searchCountry , #searchCity {
+    flex: 1;
+    padding: 8px;
+    border-radius: 20px;
+    margin-right: 20px;
+    height: 45px;
+    border: none;
+    outline: none;
+}
+
+/* #searchCity {
+    flex: 1;
+    padding: 8px;
+    border-radius: 20px;
+    margin-right: 20px;
+    border: none;
 } */
 
-
-.content .fill {
-    height: 14px;
-    width: 14px;
-    background-color: #f20044;
-    position: relative;
-    transform: rotate(-45deg);
-    /* box-shadow: -10px 10px 90px #f20044; */
+.search-container button {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 10%;
+    border: none;
+    outline: none;
+    transition: 0.9s ease;
+    color: gold;
+    background-color: grey;
+    font-weight: 600;
 }
 
-.content .fill::before {
-    content: '';
-    position: absolute;
-    height: 14px;
-    width: 14px;
-    background-color: #f20044;
-    top: -50%;
-    border-radius: 50px;
-    /* box-shadow: -10px -10px 90px #f20044; */
-}
 
-.content .fill::after {
-    content: '';
-    position: absolute;
-    height: 14px;
-    width: 14px;
-    background-color: #f20044;
-    right: -50%;
-    border-radius: 50px;
-    /* box-shadow: 10px 10px 90px #f20044; */
+.search-container button:hover {
+    transform: scale(1.1);
 }

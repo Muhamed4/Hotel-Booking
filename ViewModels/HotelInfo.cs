@@ -17,5 +17,6 @@ namespace Hotel_Booking.ViewModels
         public int RatingCount { get; set; }
         public int Views { get; set; }
         public int Loves { get; set; }
+        public bool Reacted { get; set; } = false;
     }
 }
