@@ -328,5 +328,26 @@ namespace Hotel_Booking.Repository.HotelRepo
                 _context.SaveChanges();
             }
         }
+
+        public int UserReact(int hotelId, string UserId)
+        {
+            
+            var react = _context.UserReactHotels.FirstOrDefault(R => R.HotelID == hotelId && R.UserID == UserId);
+            if (react is not null)
+            {
+                _context.UserReactHotels.Remove(react);
+            }
+            else
+            {
+                var reaction = new UserReactHotel() { UserID = UserId, HotelID = hotelId };
+                _context.UserReactHotels.Add(reaction);
+            }
+
+            _context.SaveChanges();
+
+            int reactCount = _context.UserReactHotels.Where(R => R.HotelID == hotelId).Count();
+
+            return reactCount;
+        }
     }
 }

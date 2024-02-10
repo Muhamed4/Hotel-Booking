@@ -18,6 +18,7 @@ namespace Hotel_Booking.Repository.HotelRepo
         bool CheckVisited(int hotelId, string userId);
         decimal GetRate(int hotelId);
         int GetReviewsCount(int hotelId);
+        int UserReact(int hotelId, string UserId);
         List<Review> GetReviews(int hotelId);
         List<UserReview> GetUserReviews(int hotelId);
         List<Room> GetRooms(int hotelId);
