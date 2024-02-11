@@ -16,14 +16,14 @@ Follow these instructions to get a copy of the project up and running on your lo
 ### Prerequisites
 
 - [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0) installed on your machine
-- [Visual Studio](https://visualstudio.microsoft.com/) or any preferred code editor
+- `[Visual Studio / Visual Studio Code]` or any preferred code editor
 
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/hotel-explorer-dotnet.git
+   git clone https://github.com/Muhamed4/Hotel-Booking.git
 # Usage
 
 1. Open your web browser and go to [https://localhost:5001](https://localhost:5001).

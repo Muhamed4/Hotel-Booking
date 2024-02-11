@@ -244,12 +244,17 @@
     <div class="reviews">
         <div class="makereview">
             <span>Do You Want To Make a Review on this Hotel ?</span>
-            <form asp-action="Review" asp-controller="Hotel" asp-route-hotelId="@Model.Hotel.ID" id="review-from">
-                <input type="checkbox" asp-for="isVisited" id="visited" hidden>
-                <button class="btn btn-outline-primary" id="makeReviewLink">
-                    Make Review
-                </button>
-            </form>
+            @* <form asp-action="Review" asp-controller="Hotel" asp-route-hotelId="@Model.Hotel.ID" id="review-from">
+            <input type="checkbox" asp-for="isVisited" id="visited" hidden>
+            <a asp-action="Review" asp-controller="Hotel" asp-route-hotelId="@Model.Hotel.ID" class="btn
+            btn-outline-primary" id="makeReviewLink">
+            Make Review
+            </a>
+            </form> *@
+            <a asp-action="Review" asp-controller="Hotel" asp-route-hotelId="@Model.Hotel.ID"
+                class="btn btn-outline-primary" id="makeReviewLink">
+                Make Review
+            </a>
         </div>
 
         <hr>
@@ -273,8 +278,8 @@
 
 @section PageStyle {
     <link rel="stylesheet" href="~/css/HotelDetails.css">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    @* <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" /> *@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        @* <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" /> *@
 }
 
 @section Scripts {

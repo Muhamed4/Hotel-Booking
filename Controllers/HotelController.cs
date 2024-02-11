@@ -89,7 +89,7 @@ namespace Hotel_Booking.Controllers
         }
 
         [Authorize(Roles ="NUser")]
-        [HttpPost]
+        [HttpGet]
         public IActionResult Review(int hotelId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
