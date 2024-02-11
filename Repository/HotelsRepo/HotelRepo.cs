@@ -207,10 +207,10 @@ namespace Hotel_Booking.Repository.HotelRepo
             {
                 foreach (var room in rooms)
                 {
-                    var dateTimeNow = DateTime.Now;
+                    var dateTimeNow = DateTime.Now.Date;
                     var Pics = _context.RoomImages.Where(R => R.RoomID == room.ID).ToList();
                     var BookedRoom = _context.UserBookRooms.FirstOrDefault(R => R.RoomID == room.ID
-                                                && (R.CheckIn >= dateTimeNow || R.CheckOut >= dateTimeNow));
+                                                && (R.CheckIn.Date >= dateTimeNow || R.CheckOut.Date >= dateTimeNow));
 
                     List<string> images = new List<string>();
                     foreach (var pic in Pics)
@@ -276,7 +276,7 @@ namespace Hotel_Booking.Repository.HotelRepo
 
         public bool CheckVisited(int hotelId, string userId)
         {
-            var res = _context.UserBookRooms.Where(B => B.UserID == userId && B.CheckOut < DateTime.Now).ToList();
+            var res = _context.UserBookRooms.Where(B => B.UserID == userId && B.CheckOut.Date < DateTime.Now.Date).ToList();
             if (res is not null)
             {
                 foreach (var item in res)
@@ -331,7 +331,7 @@ namespace Hotel_Booking.Repository.HotelRepo
 
         public int UserReact(int hotelId, string UserId)
         {
-            
+
             var react = _context.UserReactHotels.FirstOrDefault(R => R.HotelID == hotelId && R.UserID == UserId);
             if (react is not null)
             {
@@ -348,6 +348,23 @@ namespace Hotel_Booking.Repository.HotelRepo
             int reactCount = _context.UserReactHotels.Where(R => R.HotelID == hotelId).Count();
 
             return reactCount;
+        }
+
+        public void AddReview(ReviewData _review)
+        {
+            if (_review is not null)
+            {
+                var review = new Review()
+                {
+                    Rating = _review.Rating,
+                    Comment = _review.Comment,
+                    Date = DateTime.Now,
+                    HotelID = _review.HotelID,
+                    UserID = _review.UserID
+                };
+                _context.Reviews.Add(review);
+                _context.SaveChanges();
+            }
         }
     }
 }

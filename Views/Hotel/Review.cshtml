@@ -1,0 +1,40 @@
+@model Hotel_Booking.ViewModels.ReviewData
+@{
+    ViewData["Title"] = "BookRoom";
+}
+
+<form asp-controller="Hotel" asp-action="Review" id="book-form">
+    <div class="container">
+        <div class="book-container">
+            <div class="form-group">
+                <label asp-for="Rating"></label>
+                <input type="number" asp-for="Rating" class="form-control" step="any" required />
+                <span asp-validation-for="Rating"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment"></label>
+                @* <input asp-for="Comment" class="form-control" required /> *@
+                <textarea asp-for="Comment" class="from-control" cols="67" rows="4" required></textarea>
+                <span asp-validation-for="Comment"></span>
+            </div>
+
+            <input asp-for="HotelID" hidden/>
+            <input asp-for="UserID" hidden/>
+
+            <div class="btn">
+                <button id="my-btn" type="submit">Save</button>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@section PageStyle {
+    <link rel="stylesheet" href="~/css/HotelReview.css">
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

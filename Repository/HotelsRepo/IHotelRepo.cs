@@ -19,6 +19,7 @@ namespace Hotel_Booking.Repository.HotelRepo
         decimal GetRate(int hotelId);
         int GetReviewsCount(int hotelId);
         int UserReact(int hotelId, string UserId);
+        void AddReview(ReviewData _review);
         List<Review> GetReviews(int hotelId);
         List<UserReview> GetUserReviews(int hotelId);
         List<Room> GetRooms(int hotelId);

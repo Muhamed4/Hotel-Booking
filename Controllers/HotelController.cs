@@ -88,6 +88,32 @@ namespace Hotel_Booking.Controllers
             return Json(reactCount);
         }
 
+        [Authorize(Roles ="NUser")]
+        [HttpPost]
+        public IActionResult Review(int hotelId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var review = new ReviewData();
+            review.HotelID = hotelId;
+            review.UserID = userId;
+            return View(review);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Review(ReviewData review)
+        {
+            if(ModelState.IsValid)
+            {
+                _hotelContext.AddReview(review);
+                return RedirectToAction("Details", "Hotel", new { id = review.HotelID });
+            }
+
+            return View(review);
+        }
+        
+
+        [HttpPost]
         public IActionResult ShowImages()
         {
             return View();

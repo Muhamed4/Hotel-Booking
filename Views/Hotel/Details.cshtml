@@ -195,9 +195,9 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         @{
-                                            if (room.CheckOut >= DateTime.Now)
+                                            if (room.CheckOut.Date >= DateTime.Now.Date)
                                             {
-                                                if (room.CheckIn <= DateTime.Now)
+                                                if (room.CheckIn.Date <= DateTime.Now.Date)
                                                 {
                                                 // You Booked This Room
                                                     <span style="color: red; font-weight: 600;">You Booked it !</span>
@@ -244,7 +244,7 @@
     <div class="reviews">
         <div class="makereview">
             <span>Do You Want To Make a Review on this Hotel ?</span>
-            <form asp-action="ShowImages" asp-controller="Hotel" id="review-from">
+            <form asp-action="Review" asp-controller="Hotel" asp-route-hotelId="@Model.Hotel.ID" id="review-from">
                 <input type="checkbox" asp-for="isVisited" id="visited" hidden>
                 <button class="btn btn-outline-primary" id="makeReviewLink">
                     Make Review
