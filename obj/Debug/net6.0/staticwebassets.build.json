@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tV6Isb9MH/FWdb7bZqQVXBJszhuDwEAtP2J7hb5yQnA=",
+  "Hash": "OfM3cx5k3amXrHrDkmU4SCO4RHSI2Fx3bGxdHdeeMfY=",
   "Source": "Hotel Booking",
   "BasePath": "_content/Hotel Booking",
   "Mode": "Default",
@@ -1307,6 +1307,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\AddRoom.css"
+    },
+    {
+      "Identity": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\AdminHotelsIndex.css",
+      "SourceId": "Hotel Booking",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\",
+      "BasePath": "_content/Hotel Booking",
+      "RelativePath": "css/AdminHotelsIndex.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\AdminHotelsIndex.css"
     },
     {
       "Identity": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\HomeIndex.css",

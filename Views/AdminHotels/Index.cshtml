@@ -1,9 +1,51 @@
 
-@* @model Hotel_Bookingex *@
+@model List<Hotel_Booking.Models.Hotel>
 @{
     ViewData["Title"] = "Index";
 }
 
-<div>
-    <h1>Congratulations, You finished adding the hotel successfully :)</h1>
-</div>
+<table class="table table-borderd table-striped table-hover">
+    <thead>
+        <tr>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Country </th>
+            <th> City </th>
+            <th> Image </th>
+            <th> Action </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var hotel in Model){
+            <tr>
+                <td>@hotel.ID</td>
+                <td>@hotel.Name</td>
+                <td>@hotel.Country</td>
+                <td>@hotel.City</td>
+                <td><img src="~/Images/@hotel.Image" alt="Pic" class="img-thumbnail"></td>
+                <td>
+                    <a asp-action="Edit" asp-controller="AdminHotels" asp-route-id="@hotel.ID" class="btn btn-success">View</a>
+                    |
+                    <a asp-action="Edit" asp-controller="AdminHotels" asp-route-id="@hotel.ID" class="btn btn-primary">Edit</a>
+                    |
+                    <a asp-action="Details" asp-controller="AdminHotels" asp-route-id="@hotel.ID" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    @* <tfoot>
+        <tr>
+            <td colspan="5">
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Create">NEW</a>
+            </td>
+        </tr>
+    </tfoot> *@
+</table>
+
+
+@section PageStyle {
+    <link rel="stylesheet" href="~/css/AdminHotelsIndex.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+}

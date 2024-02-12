@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+
+.ta {
+    text-decoration: none;
+    background-color: aqua;
+    transition: 0.7s ease;
+}
+
+
+img {
+    width: 100px;
+    height: 100px;
+}

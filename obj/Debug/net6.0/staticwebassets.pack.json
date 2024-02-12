@@ -445,6 +445,10 @@
       "PackagePath": "staticwebassets\\css\\AddRoom.css"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\AdminHotelsIndex.css",
+      "PackagePath": "staticwebassets\\css\\AdminHotelsIndex.css"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\HomeIndex.css",
       "PackagePath": "staticwebassets\\css\\HomeIndex.css"
     },

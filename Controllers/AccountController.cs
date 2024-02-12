@@ -95,6 +95,9 @@ namespace Hotel_Booking.Controllers
                     if(check)
                     {
                         await _signInManager.SignInAsync(_user, loginData.RememberMe);
+
+                        if(await _userManager.IsInRoleAsync(_user, "Admin"))
+                            return RedirectToAction(nameof(Index), "AdminHotels");
                         
                         return RedirectToAction(nameof(Index), "Home");
                     }

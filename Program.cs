@@ -1,5 +1,6 @@
 using Hotel_Booking.Data;
 using Hotel_Booking.Models;
+using Hotel_Booking.Repository.AdminRepo;
 using Hotel_Booking.Repository.FacilitiesRepo;
 using Hotel_Booking.Repository.FeaturesRepo;
 using Hotel_Booking.Repository.FoodDrinksRepo;
@@ -25,6 +26,7 @@ builder.Services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
 
 
+builder.Services.AddScoped<IAdminRepo, AdminRepo>();
 builder.Services.AddScoped<IHomeRepo, HomeRepo>();
 builder.Services.AddScoped<IHotelRepo, HotelRepo>();
 builder.Services.AddScoped<IRoomRepo, RoomRepo>();
@@ -45,8 +47,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -57,7 +59,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Route}/{action=Index}/{id?}");
 
 // app.MapRazorPages();
 

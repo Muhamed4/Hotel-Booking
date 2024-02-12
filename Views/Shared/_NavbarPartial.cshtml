@@ -2,11 +2,26 @@
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
-<a class="logo" asp-action="Index" asp-controller="Home"> Hotel </a>
-<nav class="navbar">
-    <a class="home" asp-action="Index" asp-controller="Home">Home</a>
-    @if(User.Identity.IsAuthenticated == false)
+
+@if (User.Identity.IsAuthenticated == false)
+{
+    <a class="logo" asp-action="Index" asp-controller="Home"> Hotel </a>
+}
+else
+{
+    @if (User.IsInRole("Admin"))
     {
+        <a class="logo" asp-action="Index" asp-controller="AdminHotels"> Hotel </a>
+    }
+    else
+    {
+        <a class="logo" asp-action="Index" asp-controller="Home"> Hotel </a>
+    }
+}
+<nav class="navbar">
+    @if (User.Identity.IsAuthenticated == false)
+    {
+        <a class="home" asp-action="Index" asp-controller="Home">Home</a> 
         <a asp-action="" asp-controller="">Trips</a>
         <a asp-action="" asp-controller="">Fav-Hotels</a>
         <a asp-action="Login" asp-controller="Account">Sign In</a>
@@ -15,9 +30,12 @@
     {
         @if (User.IsInRole("Admin"))
         {
+            <a class="home" asp-action="Index" asp-controller="AdminHotels">Home</a>
             <a asp-action="AddHotel" asp-controller="Hotel">Add Hotel</a>
         }
-        else{
+        else
+        {
+            <a class="home" asp-action="Index" asp-controller="Home">Home</a>
             <a asp-action="" asp-controller="">Trips</a>
             <a asp-action="" asp-controller="">Fav-Hotels</a>
         }

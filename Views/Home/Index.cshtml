@@ -128,6 +128,13 @@
                     return;
                 }
 
+                @* var isUserAdmin = @User.IsInRole("Admin");
+
+                if (!isUserAdmin) {
+                    alert("Admin is not allowed to interact with the hotels.");
+                    return;
+                } *@
+
                 // Toggle button color
                 if (btnvar.style.color === "red") {
                     btnvar.style.color = "grey";
