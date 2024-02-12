@@ -24,12 +24,42 @@ Follow these instructions to get a copy of the project up and running on your lo
 
    ```bash
    git clone https://github.com/Muhamed4/Hotel-Booking.git
+
+2. Navigate to the project folder:
+
+   ```bash
+   cd Hotel-Booking
+
+3. Open the project in your preferred code editor.
+
+4. Configure the necessary dependencies and packages (see Dependencies section).
+
+5. Run the application:
+
+   ```bash
+   dotnet run
 # Usage
 
-1. Open your web browser and go to [https://localhost:5001](https://localhost:5001).
-2. Use the search feature to find hotels by country and city.
-3. Explore individual hotels to view detailed information.
-4. Follow the seamless reservation process to book your room.
+1. Use the search feature to find hotels by country and city.
+2. Explore individual hotels to view detailed information.
+3. If you are an admin:
+   * Add, delete, and edit hotels, features, and rooms.
+4. If you are a normal user:
+   * Interact with hotels by giving a `Love`.
+   * Make reservations for hotels.
+   * Provide reviews by giving ratings and writing comments incase you visit the hotel before otherwise you can't.
+5. Follow the seamless reservation process to book your room.
+
+
+# Roles
+   * The website supports two different roles: admin and normal user.
+## Admin Role :
+   * Can add, delete, and edit hotels, features, and rooms.
+
+## Normal User Role :
+   * Can interact with hotels by giving a `Love`.
+   * Can make reservations for hotels visited.
+   * Provide reviews by giving ratings and writing comments incase you visit the hotel before otherwise you can't.
 
 # Dependencies
 
@@ -49,11 +79,3 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 
 Make sure to keep these packages up to date with the latest versions and regularly check for updates to benefit from bug fixes and new features.
-
-# Contributing
-
-We welcome contributions! If you would like to contribute to the project, please follow our [contribution guidelines](CONTRIBUTING.md).
-
-# Contact
-
-For questions or feedback, please contact [Your Name] at [your.email@example.com].
