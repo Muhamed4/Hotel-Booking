@@ -1,0 +1,36 @@
+
+@model Hotel_Booking.ViewModels.AddFacility
+@{
+    ViewData["Title"] = "Add Facility";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-9">
+        <form asp-action="AddFacility" asp-controller="AdminHotels">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label" style="display: block;"></label>
+                @* <input asp-for="Description" class="form-control" /> *@
+                <textarea asp-for="Description" cols="60" rows="5"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="HotelID" class="form-control" />
+            <input type="hidden" asp-for="FeatureID" class="form-control" />
+            <div class="form-group" style="margin-top: 10px;">
+                <input type="submit" value="Save" class="btn btn-info" />
+                <a asp-action="FacilityDetails" asp-controller="AdminHotels" asp-route-hotelId="@Model.HotelID" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section PageStyle {
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

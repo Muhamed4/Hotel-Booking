@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OfM3cx5k3amXrHrDkmU4SCO4RHSI2Fx3bGxdHdeeMfY=",
+  "Hash": "mYTsni5T9SG8tAEZghjFyfqznUE+srIR2x2CUNpqS7s=",
   "Source": "Hotel Booking",
   "BasePath": "_content/Hotel Booking",
   "Mode": "Default",
@@ -1461,25 +1461,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\030db0b7-a2cd-492e-b1df-6b5dd8fa59e9_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg"
     },
     {
-      "Identity": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\054c3923-3e83-45e4-9eac-751d66a8d4d1inline_image_preview.jpg",
-      "SourceId": "Hotel Booking",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\",
-      "BasePath": "_content/Hotel Booking",
-      "RelativePath": "Images/054c3923-3e83-45e4-9eac-751d66a8d4d1inline_image_preview.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\054c3923-3e83-45e4-9eac-751d66a8d4d1inline_image_preview.jpg"
-    },
-    {
       "Identity": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\0beb49ff-4f04-414f-9e0c-bb445eb9eddf_Programmers-and-software-development-professionals.jpg",
       "SourceId": "Hotel Booking",
       "SourceType": "Discovered",
@@ -2181,6 +2162,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\mainhotel.jpg"
+    },
+    {
+      "Identity": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\pexels-kendall-hoopes-635041.jpg",
+      "SourceId": "Hotel Booking",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\",
+      "BasePath": "_content/Hotel Booking",
+      "RelativePath": "Images/pexels-kendall-hoopes-635041.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\pexels-kendall-hoopes-635041.jpg"
     },
     {
       "Identity": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\secondhotel.jpg",

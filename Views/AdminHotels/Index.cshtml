@@ -25,11 +25,12 @@
                 <td>@hotel.City</td>
                 <td><img src="~/Images/@hotel.Image" alt="Pic" class="img-thumbnail"></td>
                 <td>
-                    <a asp-action="Edit" asp-controller="AdminHotels" asp-route-id="@hotel.ID" class="btn btn-success">View</a>
+                    <a asp-action="Details" asp-controller="AdminHotels" asp-route-hotelId="@hotel.ID" class="btn btn-success">View</a>
                     |
-                    <a asp-action="Edit" asp-controller="AdminHotels" asp-route-id="@hotel.ID" class="btn btn-primary">Edit</a>
+                    <a asp-action="Edit" asp-controller="AdminHotels" asp-route-hotelId="@hotel.ID" class="btn btn-primary">Edit</a>
                     |
-                    <a asp-action="Details" asp-controller="AdminHotels" asp-route-id="@hotel.ID" class="btn btn-danger">Delete</a>
+                    <a asp-action="Delete" asp-controller="AdminHotels" asp-route-hotelId="@hotel.ID" class="btn btn-danger"
+                        onclick="return confirm('Are you sure you want to delete this hotel?')">Delete</a>
                 </td>
             </tr>
         }

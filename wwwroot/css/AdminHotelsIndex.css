@@ -8,6 +8,7 @@ th,
 td {
     border: 3px solid black;
     border-collapse: collapse;
+    text-align: center;
 }
 
 .ta {

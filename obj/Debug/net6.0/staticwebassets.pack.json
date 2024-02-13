@@ -13,10 +13,6 @@
       "PackagePath": "staticwebassets\\Images\\030db0b7-a2cd-492e-b1df-6b5dd8fa59e9_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg"
     },
     {
-      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\054c3923-3e83-45e4-9eac-751d66a8d4d1inline_image_preview.jpg",
-      "PackagePath": "staticwebassets\\Images\\054c3923-3e83-45e4-9eac-751d66a8d4d1inline_image_preview.jpg"
-    },
-    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\0beb49ff-4f04-414f-9e0c-bb445eb9eddf_Programmers-and-software-development-professionals.jpg",
       "PackagePath": "staticwebassets\\Images\\0beb49ff-4f04-414f-9e0c-bb445eb9eddf_Programmers-and-software-development-professionals.jpg"
     },
@@ -163,6 +159,10 @@
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\mainhotel.jpg",
       "PackagePath": "staticwebassets\\Images\\mainhotel.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\pexels-kendall-hoopes-635041.jpg",
+      "PackagePath": "staticwebassets\\Images\\pexels-kendall-hoopes-635041.jpg"
     },
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\secondhotel.jpg",
