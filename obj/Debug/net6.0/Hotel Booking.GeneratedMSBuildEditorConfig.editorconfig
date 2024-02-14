@@ -30,6 +30,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcQWRkRmFjaWxpdHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/AddFoodDrink.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcQWRkRm9vZERyaW5rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/AddFunProgram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcQWRkRnVuUHJvZ3JhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/AddService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcQWRkU2VydmljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,12 +54,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcRWRpdEZhY2lsaXR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/EditFoodDrink.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcRWRpdEZvb2REcmluay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/EditFunProgram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcRWRpdEZ1blByb2dyYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/EditService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcRWRpdFNlcnZpY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/FacilityDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcRmFjaWxpdHlEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/FoodDrinkDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcRm9vZERyaW5rRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/FunProgramDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcRnVuUHJvZ3JhbURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/RoomDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcUm9vbURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/AdminHotels/ServiceDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib3RlbHNcU2VydmljZURldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/projects/C\#Projects/Visual_Studio_Code/Hotel Booking/Views/Feature/AddFeature.cshtml]

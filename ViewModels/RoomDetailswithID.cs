@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace Hotel_Booking.ViewModels
 {
-    public class FeatureDetail
+    public class RoomDetailswithID
     {
-        public List<AddFeature> features { get; set; }
-        public int featureId { get; set; }
         public int HotelID { get; set; }
+        public List<RoomDetails> RoomDetails { get; set; }
     }
 }

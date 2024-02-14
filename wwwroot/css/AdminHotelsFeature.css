@@ -9,15 +9,8 @@ td {
     border: 1px solid black;
 }
 
-th, td {
+th,
+td {
     text-align: center;
     vertical-align: middle;
-}
-
-
-
-
-img {
-    width: 100px;
-    height: 100px;
 }

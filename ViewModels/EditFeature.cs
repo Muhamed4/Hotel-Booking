@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hotel_Booking.ViewModels
 {
-    public class EditFacility
+    public class EditFeature
     {
         public int ID { get; set; }
         [Required]

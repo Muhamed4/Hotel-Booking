@@ -31,9 +31,9 @@ namespace Hotel_Booking.Repository.AdminRepo
         public bool CheckExistenceFacility(int facilityId)
         {
             var check = _context.Facilities.FirstOrDefault(F => F.ID == facilityId);
-            if(check is null)
+            if (check is null)
                 return false;
-            
+
             return true;
         }
 
@@ -46,13 +46,60 @@ namespace Hotel_Booking.Repository.AdminRepo
             return true;
         }
 
+        public bool CheckExistenceFoodDrink(int foodDrinkId)
+        {
+            var check = _context.FoodDrinks.FirstOrDefault(F => F.ID == foodDrinkId);
+            if (check is null)
+                return false;
+
+            return true;
+        }
+
+        public bool CheckExistenceFunProgram(int funProgramId)
+        {
+            var check = _context.FunPrograms.FirstOrDefault(F => F.ID == funProgramId);
+            if (check is null)
+                return false;
+
+            return true;
+        }
+
+        public bool CheckExistenceService(int serviceId)
+        {
+            var check = _context.Services.FirstOrDefault(S => S.ID == serviceId);
+            if (check is null)
+                return false;
+
+            return true;
+        }
+
         public void DeleteFacility(int facilityId)
         {
             var facility = _context.Facilities.Find(facilityId);
 
-            if(facility is not null)
+            if (facility is not null)
             {
                 _context.Facilities.Remove(facility);
+                _context.SaveChanges();
+            }
+        }
+
+        public void DeleteFoodDrink(int foodDrinkId)
+        {
+            var foodDrink = _context.FoodDrinks.Find(foodDrinkId);
+            if (foodDrink is not null)
+            {
+                _context.FoodDrinks.Remove(foodDrink);
+                _context.SaveChanges();
+            }
+        }
+
+        public void DeleteFunProgram(int funProgramId)
+        {
+            var funProgram = _context.FunPrograms.Find(funProgramId);
+            if (funProgram is not null)
+            {
+                _context.FunPrograms.Remove(funProgram);
                 _context.SaveChanges();
             }
         }
@@ -64,6 +111,16 @@ namespace Hotel_Booking.Repository.AdminRepo
             if (hotel is not null)
             {
                 _context.Hotels.Remove(hotel);
+                _context.SaveChanges();
+            }
+        }
+
+        public void DeleteService(int serviceId)
+        {
+            var service = _context.Services.Find(serviceId);
+            if (service is not null)
+            {
+                _context.Services.Remove(service);
                 _context.SaveChanges();
             }
         }
@@ -86,7 +143,7 @@ namespace Hotel_Booking.Repository.AdminRepo
         public void EditFacility(int facilityId, Facility facility)
         {
             var oldFacility = _context.Facilities.Find(facilityId);
-            if(oldFacility is null)
+            if (oldFacility is null)
                 return;
 
             oldFacility.Description = facility.Description;
@@ -94,21 +151,88 @@ namespace Hotel_Booking.Repository.AdminRepo
             _context.SaveChanges();
         }
 
-        public List<AddFacility> Facilities(int hotelId)
+        public void EditFoodDrink(int foodDrinkId, FoodDrink foodDrink)
         {
-            List<AddFacility> facilities = new List<AddFacility>();
+            var oldFoodDrink = _context.FoodDrinks.Find(foodDrinkId);
+            if (oldFoodDrink is null)
+                return;
+
+            oldFoodDrink.Description = foodDrink.Description;
+
+            _context.SaveChanges();
+        }
+
+        public void EditFunProgram(int funProgramId, FunProgram funProgram)
+        {
+            var oldFunProgram = _context.FunPrograms.Find(funProgramId);
+            if (oldFunProgram is null)
+                return;
+
+            oldFunProgram.Description = funProgram.Description;
+
+            _context.SaveChanges();
+        }
+
+        public void EditService(int serviceId, Service service)
+        {
+            var oldService = _context.Services.Find(serviceId);
+            if (oldService is null)
+                return;
+
+            oldService.Description = service.Description;
+
+            _context.SaveChanges();
+        }
+
+        public List<AddFeature> Facilities(int hotelId)
+        {
+            List<AddFeature> facilities = new List<AddFeature>();
             var feature = _context.Features.FirstOrDefault(F => F.HotelID == hotelId);
             if (feature is not null)
             {
                 var res = _context.Facilities.Where(F => F.FeatureID == feature.ID).ToList();
                 foreach (var item in res)
                 {
-                    var facility = new AddFacility() { ID = item.ID, Description = item.Description, FeatureID = item.FeatureID, HotelID = hotelId };
+                    var facility = new AddFeature() { ID = item.ID, Description = item.Description, FeatureID = item.FeatureID, HotelID = hotelId };
                     facilities.Add(facility);
                 }
             }
 
             return facilities;
+        }
+
+        public List<AddFeature> FoodDrinks(int hotelId)
+        {
+            List<AddFeature> foodDrinks = new List<AddFeature>();
+            var feature = _context.Features.FirstOrDefault(F => F.HotelID == hotelId);
+            if (feature is not null)
+            {
+                var res = _context.FoodDrinks.Where(F => F.FeatureID == feature.ID).ToList();
+                foreach (var item in res)
+                {
+                    var foodDrink = new AddFeature() { ID = item.ID, Description = item.Description, FeatureID = item.FeatureID, HotelID = hotelId };
+                    foodDrinks.Add(foodDrink);
+                }
+            }
+
+            return foodDrinks;
+        }
+
+        public List<AddFeature> FunPrograms(int hotelId)
+        {
+            List<AddFeature> funPrograms = new List<AddFeature>();
+            var feature = _context.Features.FirstOrDefault(F => F.HotelID == hotelId);
+            if (feature is not null)
+            {
+                var res = _context.FunPrograms.Where(F => F.FeatureID == feature.ID).ToList();
+                foreach (var item in res)
+                {
+                    var funProgram = new AddFeature() { ID = item.ID, Description = item.Description, FeatureID = item.FeatureID, HotelID = hotelId };
+                    funPrograms.Add(funProgram);
+                }
+            }
+
+            return funPrograms;
         }
 
         public Facility GetFacility(int facilityId)
@@ -120,10 +244,22 @@ namespace Hotel_Booking.Repository.AdminRepo
         public int GetFeatureId(int hotelId)
         {
             var feature = _context.Features.FirstOrDefault(F => F.HotelID == hotelId);
-            if(feature is not null)
+            if (feature is not null)
                 return feature.ID;
 
             return -1;
+        }
+
+        public FoodDrink GetFoodDrink(int foodDrinkId)
+        {
+            var foodDrink = _context.FoodDrinks.FirstOrDefault(F => F.ID == foodDrinkId);
+            return foodDrink;
+        }
+
+        public FunProgram GetFunProgram(int funProgramId)
+        {
+            var funProgram = _context.FunPrograms.FirstOrDefault(F => F.ID == funProgramId);
+            return funProgram;
         }
 
         public Hotel GetHotel(int hotelId)
@@ -148,6 +284,38 @@ namespace Hotel_Booking.Repository.AdminRepo
             return _context.Hotels.ToList();
         }
 
+        public List<RoomDetails> GetRooms(int hotelId)
+        {
+            List<RoomDetails> roomDetails = new List<RoomDetails>();
+            var rooms = _context.Rooms.Where(R => R.HotelID == hotelId).ToList();
+            if(rooms is not null)
+            {
+                foreach(var item in rooms)
+                {
+                    var pics = _context.RoomImages.Where(R => R.RoomID == item.ID).Select(R => R.Image).ToList() ?? new List<string>();
+                    var room = new RoomDetails()
+                    {
+                        RoomID = item.ID,
+                        Price = item.Price,
+                        RoomNumber = item.RoomNumber,
+                        BedCount = item.BedCount,
+                        HotelID = hotelId,
+                        Images = pics
+                    }; 
+
+                    roomDetails.Add(room);
+                }
+            }
+
+            return roomDetails;
+        }
+
+        public Service GetService(int serviceId)
+        {
+            var service = _context.Services.FirstOrDefault(F => F.ID == serviceId);
+            return service;
+        }
+
         public void InsertFacility(Facility facility)
         {
             if (facility is not null)
@@ -155,6 +323,50 @@ namespace Hotel_Booking.Repository.AdminRepo
                 _context.Facilities.Add(facility);
                 _context.SaveChanges();
             }
+        }
+
+        public void InsertFoodDrink(FoodDrink foodDrink)
+        {
+            if (foodDrink is not null)
+            {
+                _context.FoodDrinks.Add(foodDrink);
+                _context.SaveChanges();
+            }
+        }
+
+        public void InsertFunProgram(FunProgram funProgram)
+        {
+            if (funProgram is not null)
+            {
+                _context.FunPrograms.Add(funProgram);
+                _context.SaveChanges();
+            }
+        }
+
+        public void InsertService(Service service)
+        {
+            if (service is not null)
+            {
+                _context.Services.Add(service);
+                _context.SaveChanges();
+            }
+        }
+
+        public List<AddFeature> Services(int hotelId)
+        {
+            List<AddFeature> services = new List<AddFeature>();
+            var feature = _context.Features.FirstOrDefault(F => F.HotelID == hotelId);
+            if (feature is not null)
+            {
+                var res = _context.Services.Where(F => F.FeatureID == feature.ID).ToList();
+                foreach (var item in res)
+                {
+                    var service = new AddFeature() { ID = item.ID, Description = item.Description, FeatureID = item.FeatureID, HotelID = hotelId };
+                    services.Add(service);
+                }
+            }
+
+            return services;
         }
 
         public string UploadFile(IFormFile formFile, string ImageUrl)

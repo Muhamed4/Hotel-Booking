@@ -1,7 +1,7 @@
 
 @model Hotel_Booking.ViewModels.FeatureDetail
 @{
-    ViewData["Title"] = "Facility Details";
+    ViewData["Title"] = "Food and Drink Details";
 }
 
 <table class="table table-borderd table-striped table-hover">
@@ -19,9 +19,9 @@
                 <td>@feature.ID</td>
                 <td style="max-width: 500px;">@feature.Description</td>
                 <td>
-                    <a asp-action="EditFacility" asp-controller="AdminHotels" asp-route-facilityId="@feature.ID" class="btn btn-primary">Edit</a>
+                    <a asp-action="EditFoodDrink" asp-controller="AdminHotels" asp-route-foodDrinkId="@feature.ID" class="btn btn-primary">Edit</a>
                     |
-                    <a asp-action="DeleteFacility" asp-controller="AdminHotels" asp-route-facilityId="@feature.ID" 
+                    <a asp-action="DeleteFoodDrink" asp-controller="AdminHotels" asp-route-foodDrinkId="@feature.ID" 
                         asp-route-hotelId="@Model.HotelID" class="btn btn-danger"
                         onclick="return confirm('Are you sure you want to delete this Feature?')">Delete</a>
                 </td>
@@ -32,7 +32,7 @@
     <tfoot>
         <tr>
             <td colspan="3">
-                <a class="btn btn-success" asp-controller="AdminHotels" asp-action="AddFacility" asp-route-featureId="@Model.featureId">NEW</a>
+                <a class="btn btn-success" asp-controller="AdminHotels" asp-action="AddFoodDrink" asp-route-featureId="@Model.featureId">NEW</a>
             </td>
         </tr>
     </tfoot>

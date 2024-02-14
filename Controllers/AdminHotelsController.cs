@@ -112,9 +112,9 @@ namespace Hotel_Booking.Controllers
             if (featureId == -1)
                 return NotFound();
             var HotelId = _adminContext.GetHotelId(featureId);
-            if(HotelId == -1)
+            if (HotelId == -1)
                 return NotFound();
-            var facility = new FacilityDetail() { facilities = facilities, featureId = featureId, HotelID = HotelId };
+            var facility = new FeatureDetail() { features = facilities, featureId = featureId, HotelID = HotelId };
 
             return View(facility);
         }
@@ -131,14 +131,14 @@ namespace Hotel_Booking.Controllers
             if (hotelId == -1)
                 return NotFound();
 
-            var facility = new AddFacility() { FeatureID = featureId, HotelID = hotelId };
+            var facility = new AddFeature() { FeatureID = featureId, HotelID = hotelId };
 
             return View(facility);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddFacility(AddFacility facility)
+        public IActionResult AddFacility(AddFeature facility)
         {
             if (ModelState.IsValid)
             {
@@ -165,27 +165,27 @@ namespace Hotel_Booking.Controllers
 
             var facility = _adminContext.GetFacility(facilityId);
             var hotelId = _adminContext.GetHotelId(facility.FeatureID);
-            var newFacility = new EditFacility() { ID = facility.ID, Description = facility.Description, FeatureID = facility.FeatureID, HotelID = hotelId };
+            var newFacility = new EditFeature() { ID = facility.ID, Description = facility.Description, FeatureID = facility.FeatureID, HotelID = hotelId };
             return View(newFacility);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EditFacility(EditFacility editFacility)
+        public IActionResult EditFacility(EditFeature editFeature)
         {
             if (ModelState.IsValid)
             {
                 var facility = new Facility()
                 {
-                    Description = editFacility.Description
+                    Description = editFeature.Description
                 };
 
-                _adminContext.EditFacility(editFacility.ID, facility);
+                _adminContext.EditFacility(editFeature.ID, facility);
 
-                return RedirectToAction("FacilityDetails", new { hotelId = editFacility.HotelID });
+                return RedirectToAction("FacilityDetails", new { hotelId = editFeature.HotelID });
             }
 
-            return View(editFacility);
+            return View(editFeature);
         }
 
 
@@ -200,6 +200,320 @@ namespace Hotel_Booking.Controllers
             _adminContext.DeleteFacility(facilityId);
 
             return RedirectToAction("FacilityDetails", new { hotelId = hotelId });
+        }
+
+        [HttpGet]
+        public IActionResult FoodDrinkDetails(int hotelId)
+        {
+            var check = _adminContext.CheckExistence(hotelId);
+            if (check == false)
+                return NotFound();
+
+            var foodDrinks = _adminContext.FoodDrinks(hotelId);
+            var featureId = _adminContext.GetFeatureId(hotelId);
+            if (featureId == -1)
+                return NotFound();
+            var HotelId = _adminContext.GetHotelId(featureId);
+            if (HotelId == -1)
+                return NotFound();
+            var foodDrink = new FeatureDetail() { features = foodDrinks, featureId = featureId, HotelID = HotelId };
+
+            return View(foodDrink);
+        }
+
+        [HttpGet]
+        public IActionResult AddFoodDrink(int featureId)
+        {
+            var check = _adminContext.CheckExistenceFeature(featureId);
+            if (check == false)
+                return NotFound();
+
+            var hotelId = _adminContext.GetHotelId(featureId);
+
+            if (hotelId == -1)
+                return NotFound();
+
+            var foodDrink = new AddFeature() { FeatureID = featureId, HotelID = hotelId };
+
+            return View(foodDrink);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddFoodDrink(AddFeature foodDrink)
+        {
+            if (ModelState.IsValid)
+            {
+                var newFoodDrink = new FoodDrink()
+                {
+                    Description = foodDrink.Description,
+                    FeatureID = foodDrink.FeatureID
+                };
+
+                _adminContext.InsertFoodDrink(newFoodDrink);
+
+                return RedirectToAction("FoodDrinkDetails", new { hotelId = foodDrink.HotelID });
+            }
+
+            return View(foodDrink);
+        }
+
+        [HttpGet]
+        public IActionResult EditFoodDrink(int foodDrinkId)
+        {
+            var check = _adminContext.CheckExistenceFoodDrink(foodDrinkId);
+            if (check == false)
+                return NotFound();
+
+            var foodDrink = _adminContext.GetFoodDrink(foodDrinkId);
+            var hotelId = _adminContext.GetHotelId(foodDrink.FeatureID);
+            var newFeature = new EditFeature() { ID = foodDrink.ID, Description = foodDrink.Description, FeatureID = foodDrink.FeatureID, HotelID = hotelId };
+            return View(newFeature);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditFoodDrink(EditFeature editFeature)
+        {
+            if (ModelState.IsValid)
+            {
+                var foodDrink = new FoodDrink()
+                {
+                    Description = editFeature.Description
+                };
+
+                _adminContext.EditFoodDrink(editFeature.ID, foodDrink);
+
+                return RedirectToAction("FoodDrinkDetails", new { hotelId = editFeature.HotelID });
+            }
+
+            return View(editFeature);
+        }
+
+        [HttpGet]
+        public IActionResult DeleteFoodDrink(int foodDrinkId, int hotelId)
+        {
+            var check = _adminContext.CheckExistenceFoodDrink(foodDrinkId);
+            if (check == false)
+            {
+                return NotFound();
+            }
+            _adminContext.DeleteFoodDrink(foodDrinkId);
+
+            return RedirectToAction("FoodDrinkDetails", new { hotelId = hotelId });
+        }
+
+        [HttpGet]
+        public IActionResult FunProgramDetails(int hotelId)
+        {
+            var check = _adminContext.CheckExistence(hotelId);
+            if (check == false)
+                return NotFound();
+
+            var funPrograms = _adminContext.FunPrograms(hotelId);
+            var featureId = _adminContext.GetFeatureId(hotelId);
+            if (featureId == -1)
+                return NotFound();
+            var HotelId = _adminContext.GetHotelId(featureId);
+            if (HotelId == -1)
+                return NotFound();
+            var funProgram = new FeatureDetail() { features = funPrograms, featureId = featureId, HotelID = HotelId };
+
+            return View(funProgram);
+        }
+
+        [HttpGet]
+        public IActionResult AddFunProgram(int featureId)
+        {
+            var check = _adminContext.CheckExistenceFeature(featureId);
+            if (check == false)
+                return NotFound();
+
+            var hotelId = _adminContext.GetHotelId(featureId);
+
+            if (hotelId == -1)
+                return NotFound();
+
+            var funProgram = new AddFeature() { FeatureID = featureId, HotelID = hotelId };
+
+            return View(funProgram);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddFunProgram(AddFeature funProgram)
+        {
+            if (ModelState.IsValid)
+            {
+                var newFunProgram = new FunProgram()
+                {
+                    Description = funProgram.Description,
+                    FeatureID = funProgram.FeatureID
+                };
+
+                _adminContext.InsertFunProgram(newFunProgram);
+
+                return RedirectToAction("FunProgramDetails", new { hotelId = funProgram.HotelID });
+            }
+
+            return View(funProgram);
+        }
+
+        [HttpGet]
+        public IActionResult EditFunProgram(int funProgramId)
+        {
+            var check = _adminContext.CheckExistenceFunProgram(funProgramId);
+            if (check == false)
+                return NotFound();
+
+            var funProgram = _adminContext.GetFunProgram(funProgramId);
+            var hotelId = _adminContext.GetHotelId(funProgram.FeatureID);
+            var newFeature = new EditFeature() { ID = funProgram.ID, Description = funProgram.Description, FeatureID = funProgram.FeatureID, HotelID = hotelId };
+            return View(newFeature);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditFunProgram(EditFeature editFeature)
+        {
+            if (ModelState.IsValid)
+            {
+                var funProgram = new FunProgram()
+                {
+                    Description = editFeature.Description
+                };
+
+                _adminContext.EditFunProgram(editFeature.ID, funProgram);
+
+                return RedirectToAction("FunProgramDetails", new { hotelId = editFeature.HotelID });
+            }
+
+            return View(editFeature);
+        }
+
+        [HttpGet]
+        public IActionResult DeleteFunProgram(int funProgramId, int hotelId)
+        {
+            var check = _adminContext.CheckExistenceFunProgram(funProgramId);
+            if (check == false)
+            {
+                return NotFound();
+            }
+            _adminContext.DeleteFunProgram(funProgramId);
+
+            return RedirectToAction("FunProgramDetails", new { hotelId = hotelId });
+        }
+
+        [HttpGet]
+        public IActionResult ServiceDetails(int hotelId)
+        {
+            var check = _adminContext.CheckExistence(hotelId);
+            if (check == false)
+                return NotFound();
+
+            var services = _adminContext.Services(hotelId);
+            var featureId = _adminContext.GetFeatureId(hotelId);
+            if (featureId == -1)
+                return NotFound();
+            var HotelId = _adminContext.GetHotelId(featureId);
+            if (HotelId == -1)
+                return NotFound();
+            var service = new FeatureDetail() { features = services, featureId = featureId, HotelID = HotelId };
+
+            return View(service);
+        }
+
+        [HttpGet]
+        public IActionResult AddService(int featureId)
+        {
+            var check = _adminContext.CheckExistenceFeature(featureId);
+            if (check == false)
+                return NotFound();
+
+            var hotelId = _adminContext.GetHotelId(featureId);
+
+            if (hotelId == -1)
+                return NotFound();
+
+            var service = new AddFeature() { FeatureID = featureId, HotelID = hotelId };
+
+            return View(service);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddService(AddFeature service)
+        {
+            if (ModelState.IsValid)
+            {
+                var newService = new Service()
+                {
+                    Description = service.Description,
+                    FeatureID = service.FeatureID
+                };
+
+                _adminContext.InsertService(newService);
+
+                return RedirectToAction("ServiceDetails", new { hotelId = service.HotelID });
+            }
+
+            return View(service);
+        }
+
+        [HttpGet]
+        public IActionResult EditService(int serviceId)
+        {
+            var check = _adminContext.CheckExistenceService(serviceId);
+            if (check == false)
+                return NotFound();
+
+            var service = _adminContext.GetService(serviceId);
+            var hotelId = _adminContext.GetHotelId(service.FeatureID);
+            var newFeature = new EditFeature() { ID = service.ID, Description = service.Description, FeatureID = service.FeatureID, HotelID = hotelId };
+            return View(newFeature);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditService(EditFeature editFeature)
+        {
+            if (ModelState.IsValid)
+            {
+                var service = new Service()
+                {
+                    Description = editFeature.Description
+                };
+
+                _adminContext.EditService(editFeature.ID, service);
+
+                return RedirectToAction("ServiceDetails", new { hotelId = editFeature.HotelID });
+            }
+
+            return View(editFeature);
+        }
+
+        [HttpGet]
+        public IActionResult DeleteService(int serviceId, int hotelId)
+        {
+            var check = _adminContext.CheckExistenceService(serviceId);
+            if (check == false)
+            {
+                return NotFound();
+            }
+            _adminContext.DeleteService(serviceId);
+
+            return RedirectToAction("ServiceDetails", new { hotelId = hotelId });
+        }
+
+        [HttpGet]
+        public IActionResult RoomDetails(int hotelId)
+        {
+            var check = _adminContext.CheckExistence(hotelId);
+            if(check == false)
+                return NotFound();
+
+            var rooms = new RoomDetailswithID() { HotelID = hotelId, RoomDetails = _adminContext.GetRooms(hotelId) };
+            return View(rooms);
         }
     }
 }
