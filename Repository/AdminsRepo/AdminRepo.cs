@@ -288,9 +288,9 @@ namespace Hotel_Booking.Repository.AdminRepo
         {
             List<RoomDetails> roomDetails = new List<RoomDetails>();
             var rooms = _context.Rooms.Where(R => R.HotelID == hotelId).ToList();
-            if(rooms is not null)
+            if (rooms is not null)
             {
-                foreach(var item in rooms)
+                foreach (var item in rooms)
                 {
                     var pics = _context.RoomImages.Where(R => R.RoomID == item.ID).Select(R => R.Image).ToList() ?? new List<string>();
                     var room = new RoomDetails()
@@ -301,7 +301,7 @@ namespace Hotel_Booking.Repository.AdminRepo
                         BedCount = item.BedCount,
                         HotelID = hotelId,
                         Images = pics
-                    }; 
+                    };
 
                     roomDetails.Add(room);
                 }
@@ -343,6 +343,32 @@ namespace Hotel_Booking.Repository.AdminRepo
             }
         }
 
+        public void InsertImages(IFormFileCollection GalleryImages, int RoomId)
+        {
+            if (GalleryImages is not null)
+            {
+                foreach (var file in GalleryImages)
+                {
+                    var _roomImage = new RoomImage()
+                    {
+                        Image = UploadImage(file),
+                        RoomID = RoomId
+                    };
+                    _context.RoomImages.Add(_roomImage);
+                    _context.SaveChanges();
+                }
+            }
+        }
+
+        public void InsertRoom(Room room)
+        {
+            if (room is not null)
+            {
+                _context.Rooms.Add(room);
+                _context.SaveChanges();
+            }
+        }
+
         public void InsertService(Service service)
         {
             if (service is not null)
@@ -369,6 +395,20 @@ namespace Hotel_Booking.Repository.AdminRepo
             return services;
         }
 
+        public string UploadImage(IFormFile File)
+        {
+            string fileName = string.Empty;
+            if (File is not null)
+            {
+                string imagesPath = Path.Combine(_hosting.WebRootPath, "RoomImages");
+                fileName = Guid.NewGuid().ToString() + "_" + File.FileName;
+                string fullPath = Path.Combine(imagesPath, fileName);
+                File.CopyTo(new FileStream(fullPath, FileMode.Create));
+            }
+
+            return fileName;
+        }
+
         public string UploadFile(IFormFile formFile, string ImageUrl)
         {
             if (formFile != null)
@@ -385,6 +425,82 @@ namespace Hotel_Booking.Repository.AdminRepo
                 return formFile.FileName;
             }
             return ImageUrl;
+        }
+
+        public bool CheckExistenceRoom(int RoomId)
+        {
+            var room = _context.Rooms.FirstOrDefault(R => R.ID == RoomId);
+            if (room is null)
+                return false;
+
+            return true;
+        }
+
+        public Room GetRoom(int RoomId)
+        {
+            var room = _context.Rooms.FirstOrDefault(r => r.ID == RoomId);
+            return room;
+        }
+
+        public List<string> GetImagesRoom(int RoomId)
+        {
+            var roomImages = _context.RoomImages.Where(R => R.RoomID == RoomId).Select(R => R.Image).ToList();
+            return roomImages;
+        }
+
+        public void EditRoom(int roomId, Room room)
+        {
+            var oldRoom = _context.Rooms.FirstOrDefault(R => R.ID == roomId);
+            if (oldRoom is not null)
+            {
+                oldRoom.Price = room.Price;
+                oldRoom.RoomNumber = room.RoomNumber;
+                oldRoom.BedCount = room.BedCount;
+
+                _context.SaveChanges();
+            }
+        }
+
+        public void EditRoomImages(IFormFileCollection GalleryImages, int RoomId)
+        {
+            if (GalleryImages is not null)
+            {
+                DeleteRoomImage(RoomId);
+                InsertImages(GalleryImages, RoomId);
+            }
+        }
+
+        public void DeleteRoomImage(int RoomId)
+        {
+            var images = _context.RoomImages.Where(R => R.RoomID == RoomId).ToList();
+            if (images is not null)
+            {
+                foreach (var image in images)
+                {
+                    _context.RoomImages.Remove(image);
+                    _context.SaveChanges();
+                }
+            }
+        }
+
+        public bool CheckRoomByHotelId(int roomNumber, int RoomId, int hotelId)
+        {
+            var _room = _context.Rooms.FirstOrDefault(X => X.HotelID == hotelId && X.ID != RoomId && X.RoomNumber == roomNumber);
+
+            if (_room is null)
+                return true;
+
+            return false;
+        }
+
+        public void DeleteRoom(int roomId)
+        {
+            var room = _context.Rooms.FirstOrDefault(R => R.ID == roomId);
+            if(room is not null)
+            {
+                _context.Rooms.Remove(room);
+                _context.SaveChanges();
+            }
         }
     }
 }

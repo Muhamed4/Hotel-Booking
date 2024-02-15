@@ -509,11 +509,108 @@ namespace Hotel_Booking.Controllers
         public IActionResult RoomDetails(int hotelId)
         {
             var check = _adminContext.CheckExistence(hotelId);
-            if(check == false)
+            if (check == false)
                 return NotFound();
 
             var rooms = new RoomDetailswithID() { HotelID = hotelId, RoomDetails = _adminContext.GetRooms(hotelId) };
             return View(rooms);
+        }
+
+        [HttpGet]
+        public IActionResult AddRoom(int hotelId)
+        {
+            var check = _adminContext.CheckExistence(hotelId);
+            if (check == false)
+                return NotFound();
+
+            var room = new RoomData();
+            room.hotelID = hotelId;
+            // ViewBag.hotelID = hotelId;
+            return View(room);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddRoom(RoomEdit roomData)
+        {
+            if (ModelState.IsValid)
+            {
+                var _room = new Room()
+                {
+                    Price = roomData.Price,
+                    RoomNumber = roomData.RoomNumber,
+                    BedCount = roomData.BedCount,
+                    HotelID = roomData.hotelID
+                };
+
+                _adminContext.InsertRoom(_room);
+
+                // Add the Images of this room using RoomImages list ....
+                _adminContext.InsertImages(roomData.GalleryImages, _room.ID);
+
+                return RedirectToAction("RoomDetails", new { hotelId = roomData.hotelID });
+            }
+
+            return View(roomData);
+        }
+
+        [HttpGet]
+        public IActionResult EditRoom(int RoomId)
+        {
+            var check = _adminContext.CheckExistenceRoom(RoomId);
+            if (check == false)
+                return NotFound();
+
+            var room = _adminContext.GetRoom(RoomId);
+            var Images = _adminContext.GetImagesRoom(RoomId);
+
+            var roomEdit = new RoomEdit()
+            {
+                RoomID = RoomId,
+                Price = room.Price,
+                RoomNumber = room.RoomNumber,
+                BedCount = room.BedCount,
+                hotelID = room.HotelID,
+                Images = Images ?? new List<string>()
+            };
+
+            return View(roomEdit);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditRoom(RoomEdit roomEdit)
+        {
+            if (ModelState.IsValid)
+            {
+                var room = new Room()
+                {
+                    ID = roomEdit.RoomID,
+                    Price = roomEdit.Price,
+                    RoomNumber = roomEdit.RoomNumber,
+                    BedCount = roomEdit.BedCount,
+                    HotelID = roomEdit.hotelID
+                };
+
+                _adminContext.EditRoom(room.ID, room);
+                _adminContext.EditRoomImages(roomEdit.GalleryImages, roomEdit.RoomID);
+
+                return RedirectToAction("RoomDetails", new { hotelId = roomEdit.hotelID });
+            }
+
+            return View(roomEdit);
+        }
+
+        [HttpGet]
+        public IActionResult DeleteRoom(int roomId, int hotelId)
+        {
+            var check = _adminContext.CheckExistenceRoom(roomId);
+            if(check == false)
+                return NotFound();
+
+            _adminContext.DeleteRoom(roomId);
+
+            return RedirectToAction("RoomDetails", new { hotelId = hotelId });
         }
     }
 }

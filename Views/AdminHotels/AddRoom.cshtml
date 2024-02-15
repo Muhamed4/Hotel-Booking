@@ -1,0 +1,42 @@
+@model Hotel_Booking.ViewModels.RoomData
+@{
+    ViewData["Title"] = "Add Room";
+}
+
+
+<div class="row">
+    <div class="col-md-9">
+        <form asp-action="AddRoom" asp-controller="AdminHotels" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label" style="display: block;"></label>
+                <input type="number" asp-for="Price" placeholder="Price of the Room" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomNumber" class="control-label" style="display: block;"></label>
+                <input type="number" asp-for="RoomNumber" placeholder="Room Number" />
+                <span asp-validation-for="RoomNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BedCount" class="control-label" style="display: block;"></label>
+                <input type="number" asp-for="BedCount" placeholder="Number of Beds inside the room" />
+                <span asp-validation-for="BedCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GalleryImages" class="control-label" style="display: block;"></label>
+                <input type="file" asp-for="GalleryImages" multiple />
+                <span asp-validation-for="GalleryImages" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="hotelID" class="form-control" />
+            <div class="form-group" style="margin-top: 10px;">
+                <input type="submit" value="Save" class="btn btn-info" />
+                <a asp-action="RoomDetails" asp-controller="AdminHotels" asp-route-hotelId="@Model.hotelID" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section PageStyle {
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+}
