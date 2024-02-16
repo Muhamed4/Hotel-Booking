@@ -432,6 +432,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\64af2bcf-f60b-4818-985d-f00c620c8617_0_h1Rym88uBaU2OQPm.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\64b1f2a9-b260-4671-a403-a6425db00c78_pexels-frans-van-heerden-1438834.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>Images/64b1f2a9-b260-4671-a403-a6425db00c78_pexels-frans-van-heerden-1438834.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\64b1f2a9-b260-4671-a403-a6425db00c78_pexels-frans-van-heerden-1438834.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\7f5d30ad-57b9-4d8b-8e12-f805632c8508_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -1872,6 +1888,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\002de1ce-b92f-4f83-91f0-2d9993b1b2b8_pexels-curtis-adams-7601116.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\036eca48-9566-4e52-8d96-3b1fd783dece_pexels-jean-van-der-meulen-1457842.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/036eca48-9566-4e52-8d96-3b1fd783dece_pexels-jean-van-der-meulen-1457842.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\036eca48-9566-4e52-8d96-3b1fd783dece_pexels-jean-van-der-meulen-1457842.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\03bd3012-e38f-4431-8757-168ab7dfbb32_unnamed.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -1968,6 +2000,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\10d3d028-d46d-4717-a404-b9a7eadb0d3e_pexels-vecislavas-popa-1743231.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\11887487-7518-4234-919a-7faa1c52992d_pexels-pixabay-271624.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/11887487-7518-4234-919a-7faa1c52992d_pexels-pixabay-271624.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\11887487-7518-4234-919a-7faa1c52992d_pexels-pixabay-271624.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\13c47b5e-90d5-447e-bf97-98bab8c78235_pexels-vecislavas-popa-1669799.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -1999,6 +2047,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\14b28964-7cb2-43a4-9ff7-25971542fa84_job-57897.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\15a32028-4e87-45a9-9704-ccc9756cb14b_pexels-pixabay-259962.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/15a32028-4e87-45a9-9704-ccc9756cb14b_pexels-pixabay-259962.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\15a32028-4e87-45a9-9704-ccc9756cb14b_pexels-pixabay-259962.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\15bfaafa-8e78-46d6-a897-bd9c6fec5a4b_pexels-huseyn-kamaladdin-667838.jpg))">
       <SourceType>Package</SourceType>
@@ -2192,6 +2256,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\2997b209-7785-407f-89d7-4c515fd837f8_steve-halama-Yhc7YGZlz3g-unsplash.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\29e0f838-9ab3-4d2a-a343-e8c69ac55260_pexels-medhat-ayad-439227.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/29e0f838-9ab3-4d2a-a343-e8c69ac55260_pexels-medhat-ayad-439227.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\29e0f838-9ab3-4d2a-a343-e8c69ac55260_pexels-medhat-ayad-439227.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\2a54aad9-58da-4d5b-950a-29406c44852d_0_h1Rym88uBaU2OQPm.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -2239,6 +2319,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\353c82a6-5b2e-4bba-850a-10570d244547_pexels-pixabay-210265.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\36a30696-1678-430c-bdc9-e6c72546eac7_pexels-pixabay-210265.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/36a30696-1678-430c-bdc9-e6c72546eac7_pexels-pixabay-210265.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\36a30696-1678-430c-bdc9-e6c72546eac7_pexels-pixabay-210265.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\374e74f3-3433-4765-9e8d-7fbf6f596ae1_pexels-get-lost-mike-10551140.jpg))">
       <SourceType>Package</SourceType>
@@ -2303,6 +2399,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\4754eefe-abaa-44a5-a2d2-857f88632a70_pexels-get-lost-mike-10258626.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\4cc667dc-0a69-4585-a4d2-87695f9b43c3_pexels-pixabay-210265.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/4cc667dc-0a69-4585-a4d2-87695f9b43c3_pexels-pixabay-210265.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\4cc667dc-0a69-4585-a4d2-87695f9b43c3_pexels-pixabay-210265.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\4ddd4d23-e777-43ae-afbd-bf895884615d_pexels-curtis-adams-7601116.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/4ddd4d23-e777-43ae-afbd-bf895884615d_pexels-curtis-adams-7601116.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\4ddd4d23-e777-43ae-afbd-bf895884615d_pexels-curtis-adams-7601116.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\4ea57882-e9c0-4c59-a2ae-8ccb7657dc6b_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))">
       <SourceType>Package</SourceType>
@@ -2528,6 +2656,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\773d2f3d-23e8-45e9-8219-eac5f886edd8_pexels-medhat-ayad-439227.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\774d5a0f-5f1d-43a6-a10d-f2e66916ee06_pexels-get-lost-mike-10258626.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/774d5a0f-5f1d-43a6-a10d-f2e66916ee06_pexels-get-lost-mike-10258626.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\774d5a0f-5f1d-43a6-a10d-f2e66916ee06_pexels-get-lost-mike-10258626.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\7a12275b-143b-4760-9766-ff1e9a86b902_pexels-pixabay-164595.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -2704,6 +2848,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\85fe911d-0615-43f8-addd-dd6b19ec4628_pexels-pixabay-210265.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\921a964e-a839-4977-bd50-faa80380a2b4_pexels-mark-2724749.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/921a964e-a839-4977-bd50-faa80380a2b4_pexels-mark-2724749.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\921a964e-a839-4977-bd50-faa80380a2b4_pexels-mark-2724749.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\97db9783-8fe2-41f5-8fb5-373e5db98955_pexels-get-lost-mike-10258626.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -2751,6 +2911,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\9b771095-8e9c-43c9-998e-5d8826f1adca_pexels-mark-2724749.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\9f79c9e7-557d-4800-baad-2f20fa5d3ef2_pexels-pixabay-164595.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/9f79c9e7-557d-4800-baad-2f20fa5d3ef2_pexels-pixabay-164595.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\9f79c9e7-557d-4800-baad-2f20fa5d3ef2_pexels-pixabay-164595.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\ab020d9f-d966-4681-988c-c3ed166bf238_sean-lim-NPlv2pkYoUA-unsplash.jpg))">
       <SourceType>Package</SourceType>
@@ -2896,6 +3072,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\b2ae2946-70d1-4551-9654-bac069c81543_96050752-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\b4f70645-aecc-49b1-9b47-16988c4fe211_pexels-pixabay-276724.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/b4f70645-aecc-49b1-9b47-16988c4fe211_pexels-pixabay-276724.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\b4f70645-aecc-49b1-9b47-16988c4fe211_pexels-pixabay-276724.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\b977c0b4-8ff6-4012-b60b-b3bea792a659_abdulsamad-aliyu-ydqQla7PAd4-unsplash.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -3007,6 +3199,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\cb75bdfc-3799-4d95-9bdb-6232d5d5dee7_pexels-pixabay-271624.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\cbda72a9-6375-4e95-ba49-46b09c01aa79_pexels-pixabay-275484.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/cbda72a9-6375-4e95-ba49-46b09c01aa79_pexels-pixabay-275484.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\cbda72a9-6375-4e95-ba49-46b09c01aa79_pexels-pixabay-275484.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\cdebf03e-3f34-474e-b014-a0b4a9615728_pexels-medhat-ayad-439227.jpg))">
       <SourceType>Package</SourceType>
@@ -3136,6 +3344,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\e67bfe30-b638-4932-8a5d-243704a80395_pexels-pixabay-279746.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\e7ec61a6-87b8-4b74-b9d7-e059eb8c3dc5_pexels-get-lost-mike-10450149.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/e7ec61a6-87b8-4b74-b9d7-e059eb8c3dc5_pexels-get-lost-mike-10450149.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\e7ec61a6-87b8-4b74-b9d7-e059eb8c3dc5_pexels-get-lost-mike-10450149.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\e9f4a471-f022-4b0e-88f3-99c3717cf575_pexels-pixabay-164595.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -3200,6 +3424,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\f7c070b1-478a-4848-b723-f404de8f0463_pexels-pixabay-276724.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\f80b9040-5228-4f85-8e3c-399bd2608470_pexels-huseyn-kamaladdin-667838.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/f80b9040-5228-4f85-8e3c-399bd2608470_pexels-huseyn-kamaladdin-667838.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\f80b9040-5228-4f85-8e3c-399bd2608470_pexels-huseyn-kamaladdin-667838.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\fe801f9a-8544-4e62-b62b-b27a4cdd71a9_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Hotel Booking</SourceId>
@@ -3215,6 +3455,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\fe801f9a-8544-4e62-b62b-b27a4cdd71a9_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\fe88f1b9-19d4-4c17-abc9-86682f5cce7a_pexels-pixabay-271619.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Hotel Booking</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Hotel Booking</BasePath>
+      <RelativePath>RoomImages/fe88f1b9-19d4-4c17-abc9-86682f5cce7a_pexels-pixabay-271619.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\RoomImages\fe88f1b9-19d4-4c17-abc9-86682f5cce7a_pexels-pixabay-271619.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>
