@@ -28,14 +28,14 @@ namespace Hotel_Booking.Controllers
             return View();
         }
 
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult AddHotel()
         {
             return View();
         }
 
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult AddHotel(HotelData hotelData)
@@ -69,18 +69,18 @@ namespace Hotel_Booking.Controllers
             return View(hotelData);
         }
 
-        [Authorize(Roles ="NUser")]
+        [Authorize(Roles = "NUser")]
         [HttpGet]
         public IActionResult Details(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             _hotelContext.UserWatchHotel(id, userId);
             var allHotelDetails = _hotelContext.GetAllHotelDetails(id, userId);
-            
+
             return View(allHotelDetails);
         }
 
-        [Authorize(Roles ="NUser")]
+        [Authorize(Roles = "NUser")]
         public JsonResult Reaction(int hotelId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -88,7 +88,7 @@ namespace Hotel_Booking.Controllers
             return Json(reactCount);
         }
 
-        [Authorize(Roles ="NUser")]
+        [Authorize(Roles = "NUser")]
         [HttpGet]
         public IActionResult Review(int hotelId)
         {
@@ -103,7 +103,7 @@ namespace Hotel_Booking.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Review(ReviewData review)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _hotelContext.AddReview(review);
                 return RedirectToAction("Details", "Hotel", new { id = review.HotelID });
@@ -111,7 +111,16 @@ namespace Hotel_Booking.Controllers
 
             return View(review);
         }
-        
+
+        [Authorize(Roles = "NUser")]
+        [HttpGet]
+        public IActionResult Trips()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var trips = _hotelContext.GetTrips(userId);
+            return View(trips);
+        }
+
 
         [HttpPost]
         public IActionResult ShowImages()

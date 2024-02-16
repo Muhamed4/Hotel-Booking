@@ -31,5 +31,6 @@ namespace Hotel_Booking.Repository.HotelRepo
         AllHotelDetails GetAllHotelDetails(int hotelId, string UserID);
         List<Servicewithicon> Getservicewithicons(int hotelId);
         List<RoomWithPics> GetRoomWithPics(int hotelID, string UserID);
+        List<TripData> GetTrips(string UserId);
     }
 }

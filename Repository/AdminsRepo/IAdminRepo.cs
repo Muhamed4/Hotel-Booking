@@ -19,6 +19,7 @@ namespace Hotel_Booking.Repository.AdminRepo
         void DeleteService(int serviceId);
         void DeleteRoom(int roomId);
         void Edit(int hotelId, Hotel hotel);
+        void EditFeature(int featureId, Feature feature);
         void EditFacility(int facilityId, Facility facility);
         void EditFoodDrink(int foodDrinkId, FoodDrink foodDrink);
         void EditFunProgram(int funProgramId, FunProgram funProgram);
@@ -32,6 +33,7 @@ namespace Hotel_Booking.Repository.AdminRepo
         bool CheckExistenceRoom(int RoomId);
         Hotel GetHotel(int hotelId);
         Room GetRoom(int RoomId);
+        Feature GetFeature(int hotelId);
         Facility GetFacility(int facilityId);
         FoodDrink GetFoodDrink(int foodDrinkId);
         FunProgram GetFunProgram(int funProgramId);

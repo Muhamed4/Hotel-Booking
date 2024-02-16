@@ -605,12 +605,65 @@ namespace Hotel_Booking.Controllers
         public IActionResult DeleteRoom(int roomId, int hotelId)
         {
             var check = _adminContext.CheckExistenceRoom(roomId);
-            if(check == false)
+            if (check == false)
                 return NotFound();
 
             _adminContext.DeleteRoom(roomId);
 
             return RedirectToAction("RoomDetails", new { hotelId = hotelId });
+        }
+
+        [HttpGet]
+        public IActionResult EditFeature(int hotelId)
+        {
+            var check = _adminContext.CheckExistence(hotelId);
+            var feature = _adminContext.GetFeature(hotelId);
+            if (check == false || feature is null)
+                return NotFound();
+
+            var featureData = new FeatureData()
+            {
+                FreeParking = (bool)feature.FreeParking,
+                LaundryFacility = (bool)feature.LaundryFacility,
+                NoSmoking = (bool)feature.NoSmoking,
+                FreeWifi = (bool)feature.FreeWifi,
+                FreeBreakfast = (bool)feature.FreeBreakfast,
+                AirportTransfer = (bool)feature.AirportTransfer,
+                FontDesk247 = (bool)feature.FontDesk247,
+                Restaurant = (bool)feature.Restaurant,
+                AirCondition = (bool)feature.AirCondition
+            };
+            ViewBag.HotelID = hotelId;
+            ViewBag.FeatureID = feature.ID;
+
+            return View(featureData);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditFeature(FeatureData featureData, int hotelId, int featureId)
+        {
+            if (ModelState.IsValid)
+            {
+                var feature = new Feature()
+                {
+                    FreeParking = featureData.FreeParking,
+                    LaundryFacility = featureData.LaundryFacility,
+                    NoSmoking = featureData.NoSmoking,
+                    FreeWifi = featureData.FreeWifi,
+                    FreeBreakfast = featureData.FreeBreakfast,
+                    AirportTransfer = featureData.AirportTransfer,
+                    FontDesk247 = featureData.FontDesk247,
+                    Restaurant = featureData.Restaurant,
+                    AirCondition = featureData.AirCondition
+                };
+
+                _adminContext.EditFeature(featureId, feature);
+
+                return RedirectToAction("Details", new { hotelId = hotelId });
+            }
+
+            return View(featureData);
         }
     }
 }

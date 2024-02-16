@@ -22,7 +22,7 @@ else
     @if (User.Identity.IsAuthenticated == false)
     {
         <a class="home" asp-action="Index" asp-controller="Home">Home</a> 
-        <a asp-action="" asp-controller="">Trips</a>
+        <a asp-action="Trips" asp-controller="Hotel">Trips</a>
         <a asp-action="" asp-controller="">Fav-Hotels</a>
         <a asp-action="Login" asp-controller="Account">Sign In</a>
     }
@@ -36,7 +36,7 @@ else
         else
         {
             <a class="home" asp-action="Index" asp-controller="Home">Home</a>
-            <a asp-action="" asp-controller="">Trips</a>
+            <a asp-action="Trips" asp-controller="Hotel">Trips</a>
             <a asp-action="" asp-controller="">Fav-Hotels</a>
         }
         <a asp-action="" asp-controller="">@User.Identity.Name</a>

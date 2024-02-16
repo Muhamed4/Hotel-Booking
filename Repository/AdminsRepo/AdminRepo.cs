@@ -496,9 +496,34 @@ namespace Hotel_Booking.Repository.AdminRepo
         public void DeleteRoom(int roomId)
         {
             var room = _context.Rooms.FirstOrDefault(R => R.ID == roomId);
-            if(room is not null)
+            if (room is not null)
             {
                 _context.Rooms.Remove(room);
+                _context.SaveChanges();
+            }
+        }
+
+        public Feature GetFeature(int hotelId)
+        {
+            var feature = _context.Features.FirstOrDefault(F => F.HotelID == hotelId);
+            return feature;
+        }
+
+        public void EditFeature(int featureId, Feature feature)
+        {
+            var oldFeature = _context.Features.FirstOrDefault(F => F.ID == featureId);
+            if (oldFeature is not null)
+            {
+                oldFeature.FreeParking = feature.FreeParking;
+                oldFeature.LaundryFacility = feature.LaundryFacility;
+                oldFeature.NoSmoking = feature.NoSmoking;
+                oldFeature.FreeWifi = feature.FreeWifi;
+                oldFeature.FreeBreakfast = feature.FreeBreakfast;
+                oldFeature.AirportTransfer = feature.AirportTransfer;
+                oldFeature.FontDesk247 = feature.FontDesk247;
+                oldFeature.Restaurant = feature.Restaurant;
+                oldFeature.AirCondition = feature.AirCondition;
+
                 _context.SaveChanges();
             }
         }

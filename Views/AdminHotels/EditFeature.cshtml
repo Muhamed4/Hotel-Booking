@@ -1,0 +1,428 @@
+@model Hotel_Booking.ViewModels.FeatureData
+
+
+@* <div class="row">
+<div class="col-md-4">
+<form asp-action="EditFeature" asp-route-hotelId="@ViewBag.HotelID">
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="container mt-4">
+<div class="row">
+<div class="col-md-6 offset-md-3">
+<div class="form-group">
+<label class="control-label">Do you have Free Parking?</label>
+<div class="form-check">
+<input type="radio" id="freeParkingYes" asp-for="FreeParking" value="true"
+class="form-check-input">
+<label for="freeParkingYes" class="form-check-label">Yes</label>
+</div>
+
+<div class="form-check">
+<input type="radio" id="freeParkingNo" asp-for="FreeParking" value="false"
+class="form-check-input">
+<label for="freeParkingNo" class="form-check-label">No</label>
+</div>
+
+<span asp-validation-for="FreeParking" class="text-danger"></span>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="cont-box">
+<div class="lbsp">
+<label>Do you have Laundry Facility ?</label>
+<span asp-validation-for="LaundryFacility"></span>
+</div>
+<div class="form-group">
+<label>
+<input type="radio" asp-for="LaundryFacility" value="true">
+Yes
+</label>
+
+<label>
+<input type="radio" asp-for="LaundryFacility" value="false">
+No
+</label>
+</div>
+</div>
+
+<div class="cont-box">
+<div class="lbsp">
+<label>Do you allow Smoking ?</label>
+<span asp-validation-for="NoSmoking"></span>
+</div>
+<div class="form-group">
+<label>
+<input type="radio" asp-for="NoSmoking" value="false">
+Yes
+</label>
+
+<label>
+<input type="radio" asp-for="NoSmoking" value="true">
+No
+</label>
+</div>
+</div>
+
+<div class="cont-box">
+<div class="lbsp">
+<label>Do you have Free Wifi ?</label>
+<span asp-validation-for="FreeWifi"></span>
+</div>
+<div class="form-group">
+<label>
+<input type="radio" asp-for="FreeWifi" value="true">
+Yes
+</label>
+
+<label>
+<input type="radio" asp-for="FreeWifi" value="false">
+No
+</label>
+</div>
+</div>
+
+<div class="cont-box">
+<div class="lbsp">
+<label>Do you have Free Breakfast ?</label>
+<span asp-validation-for="FreeBreakfast"></span>
+</div>
+<div class="form-group">
+<label>
+<input asp-for="FreeBreakfast" type="radio" value="true" />
+Yes
+</label>
+<label>
+<input asp-for="FreeBreakfast" type="radio" value="false" />
+No
+</label>
+</div>
+</div>
+
+<div class="cont-box">
+<div class="lbsp">
+<label>Do you have Airport Transfer ?</label>
+<span asp-validation-for="AirportTransfer"></span>
+</div>
+<div class="form-group">
+<label>
+<input type="radio" asp-for="AirportTransfer" value="true">
+Yes
+</label>
+
+<label>
+<input type="radio" asp-for="AirportTransfer" value="false">
+No
+</label>
+</div>
+</div>
+
+<div class="cont-box">
+<div class="lbsp">
+<label>Do you have 24 hour service every day?</label>
+<span asp-validation-for="FontDesk247"></span>
+</div>
+<div class="form-group">
+<label>
+<input type="radio" asp-for="FontDesk247" value="true">
+Yes
+</label>
+
+<label>
+<input type="radio" asp-for="FontDesk247" value="false">
+No
+</label>
+</div>
+</div>
+
+<div class="cont-box">
+<div class="lbsp">
+<label>Do you have Restaurant ?</label>
+<span asp-validation-for="Restaurant"></span>
+</div>
+<div class="form-group">
+<label>
+<input type="radio" asp-for="Restaurant" value="true">
+Yes
+</label>
+
+<label>
+<input type="radio" asp-for="Restaurant" value="false">
+No
+</label>
+</div>
+</div>
+
+<div class="cont-box">
+<div class="lbsp">
+<label>Do you have Air Condition ?</label>
+<span asp-validation-for="AirCondition"></span>
+</div>
+<div class="form-group">
+<label>
+<input type="radio" asp-for="AirCondition" value="true">
+Yes
+</label>
+
+<label>
+<input type="radio" asp-for="AirCondition" value="false">
+No
+</label>
+</div>
+</div>
+
+<div class="cont-btn">
+<input type="submit" value="Save" />
+</div>
+
+</form>
+</div>
+</div> *@
+
+
+@section PageStyle {
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form asp-action="EditFeature" asp-controller="AdminHotels" asp-route-hotelId="@ViewBag.HotelID" asp-route-featureId="@ViewBag.FeatureID">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label class="control-label">Do you have Free Parking?</label>
+                                <div class="form-check">
+                                    <input type="radio" id="freeParkingYes" asp-for="FreeParking" value="true"
+                                        class="form-check-input">
+                                    <label for="freeParkingYes" class="form-check-label">Yes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" id="freeParkingNo" asp-for="FreeParking" value="false"
+                                        class="form-check-input">
+                                    <label for="freeParkingNo" class="form-check-label">No</label>
+                                </div>
+
+                                <span asp-validation-for="FreeParking" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label class="control-label">Do you have Laundry Facility ?</label>
+                                <div class="form-check">
+                                    <input type="radio" id="laundryFacilityYes" asp-for="LaundryFacility" value="true"
+                                        class="form-check-input">
+                                    <label for="laundryFacilityYes" class="form-check-label">Yes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" id="laundryFacilityNo" asp-for="LaundryFacility" value="false"
+                                        class="form-check-input">
+                                    <label for="laundryFacilityNo" class="form-check-label">No</label>
+                                </div>
+
+                                <span asp-validation-for="LaundryFacility" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label class="control-label">Do you allow Smoking ?</label>
+                                <div class="form-check">
+                                    <input type="radio" id="noSmokingYes" asp-for="NoSmoking" value="false"
+                                        class="form-check-input">
+                                    <label for="noSmokingYes" class="form-check-label">Yes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" id="noSmokingNo" asp-for="NoSmoking" value="true"
+                                        class="form-check-input">
+                                    <label for="noSmokingNo" class="form-check-label">No</label>
+                                </div>
+
+                                <span asp-validation-for="NoSmoking" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label class="control-label">Do you have Free Wifi ?</label>
+                                <div class="form-check">
+                                    <input type="radio" id="freeWifiYes" asp-for="FreeWifi" value="true"
+                                        class="form-check-input">
+                                    <label for="freeWifiYes" class="form-check-label">Yes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" id="freeWifiNo" asp-for="FreeWifi" value="false"
+                                        class="form-check-input">
+                                    <label for="freeWifiNo" class="form-check-label">No</label>
+                                </div>
+
+                                <span asp-validation-for="FreeWifi" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label class="control-label">Do you have Free Breakfast ?</label>
+                                <div class="form-check">
+                                    <input type="radio" id="freeBreakfastYes" asp-for="FreeBreakfast" value="true"
+                                        class="form-check-input">
+                                    <label for="freeBreakfastYes" class="form-check-label">Yes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" id="freeBreakfastNo" asp-for="FreeBreakfast" value="false"
+                                        class="form-check-input">
+                                    <label for="freeBreakfastNo" class="form-check-label">No</label>
+                                </div>
+
+                                <span asp-validation-for="FreeBreakfast" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label class="control-label">Do you have Airport Transfer ?</label>
+                                <div class="form-check">
+                                    <input type="radio" id="airportTransferYes" asp-for="AirportTransfer" value="true"
+                                        class="form-check-input">
+                                    <label for="airportTransferYes" class="form-check-label">Yes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" id="airportTransferNo" asp-for="AirportTransfer" value="false"
+                                        class="form-check-input">
+                                    <label for="airportTransferNo" class="form-check-label">No</label>
+                                </div>
+
+                                <span asp-validation-for="AirportTransfer" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label class="control-label">Do you have 24 hour service every day?</label>
+                                <div class="form-check">
+                                    <input type="radio" id="fontDesk247Yes" asp-for="FontDesk247" value="true"
+                                        class="form-check-input">
+                                    <label for="fontDesk247Yes" class="form-check-label">Yes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" id="fontDesk247No" asp-for="FontDesk247" value="false"
+                                        class="form-check-input">
+                                    <label for="fontDesk247No" class="form-check-label">No</label>
+                                </div>
+
+                                <span asp-validation-for="FontDesk247" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label class="control-label">Do you have Restaurant ?</label>
+                                <div class="form-check">
+                                    <input type="radio" id="restaurantYes" asp-for="Restaurant" value="true"
+                                        class="form-check-input">
+                                    <label for="restaurantYes" class="form-check-label">Yes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" id="restaurantNo" asp-for="Restaurant" value="false"
+                                        class="form-check-input">
+                                    <label for="restaurantNo" class="form-check-label">No</label>
+                                </div>
+
+                                <span asp-validation-for="Restaurant" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label class="control-label">Do you have Air Condition ?</label>
+                                <div class="form-check">
+                                    <input type="radio" id="airConditionYes" asp-for="AirCondition" value="true"
+                                        class="form-check-input">
+                                    <label for="airConditionYes" class="form-check-label">Yes</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input type="radio" id="airConditionNo" asp-for="AirCondition" value="false"
+                                        class="form-check-input">
+                                    <label for="airConditionNo" class="form-check-label">No</label>
+                                </div>
+
+                                <span asp-validation-for="AirCondition" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cont-btn">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+}
+
+
+@*
+@section PageStyle {
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+}
+
+
+@section Scripts {
+@{
+await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+} *@

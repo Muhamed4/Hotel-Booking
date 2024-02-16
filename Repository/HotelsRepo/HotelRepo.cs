@@ -366,5 +366,35 @@ namespace Hotel_Booking.Repository.HotelRepo
                 _context.SaveChanges();
             }
         }
+
+        public List<TripData> GetTrips(string UserId)
+        {
+            var trips = _context.UserBookRooms.Where(R => R.UserID == UserId && R.CheckIn.Date > DateTime.Now.Date).ToList();
+            List<TripData> result = new List<TripData>();
+            foreach (var item in trips)
+            {
+                var room = _context.Rooms.FirstOrDefault(H => H.ID == item.RoomID);
+                if (room is not null)
+                {
+                    var hotel = _context.Hotels.FirstOrDefault(H => H.ID == room.HotelID);
+                    if(hotel is not null)
+                    {
+                        var trip = new TripData() 
+                        {
+                            HotelID = hotel.ID,
+                            UserID = UserId,
+                            Name = hotel.Name,
+                            Country = hotel.Country,
+                            City = hotel.City,
+                            CheckIn = item.CheckIn,
+                            CheckOut = item.CheckOut,
+                            ImageUrl = hotel.Image
+                        };
+                        result.Add(trip);
+                    }
+                }
+            }
+            return result;
+        }
     }
 }

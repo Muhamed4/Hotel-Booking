@@ -561,6 +561,10 @@
       "PackagePath": "staticwebassets\\css\\HotelReview.css"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\HotelTrips.css",
+      "PackagePath": "staticwebassets\\css\\HotelTrips.css"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\css\\RoomBookRoom.css",
       "PackagePath": "staticwebassets\\css\\RoomBookRoom.css"
     },
