@@ -121,6 +121,15 @@ namespace Hotel_Booking.Controllers
             return View(trips);
         }
 
+        [Authorize(Roles = "NUser")]
+        [HttpGet]
+        public IActionResult FavHotels()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var favHotels = _hotelContext.GetFavouritHotels(userId);
+            return View(favHotels);
+        }
+
 
         [HttpPost]
         public IActionResult ShowImages()

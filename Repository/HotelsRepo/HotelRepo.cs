@@ -261,6 +261,7 @@ namespace Hotel_Booking.Repository.HotelRepo
                     {
                         UserReview userReview = new UserReview()
                         {
+                            UserId = user.Id,
                             UserName = user.UserName,
                             Rating = item.Rating,
                             Comment = item.Comment,
@@ -394,6 +395,35 @@ namespace Hotel_Booking.Repository.HotelRepo
                     }
                 }
             }
+            return result;
+        }
+
+        public List<Favhotel> GetFavouritHotels(string UserId)
+        {
+            List<Favhotel> result = new List<Favhotel>();
+            var reactions = _context.UserReactHotels.Where(R => R.UserID == UserId).ToList();
+            if(reactions is not null)
+            {
+                foreach(var item in reactions)
+                {
+                    var hotel = _context.Hotels.FirstOrDefault(H => H.ID == item.HotelID);
+                    if(hotel is not null)
+                    {
+                        Favhotel favhotel = new Favhotel()
+                        {
+                            HotelID = hotel.ID,
+                            UserID = UserId,
+                            Name = hotel.Name,
+                            Description = hotel.Description,
+                            Country = hotel.Country,
+                            City = hotel.City,
+                            ImageUrl = hotel.Image
+                        };
+                        result.Add(favhotel);
+                    }
+                }
+            }
+
             return result;
         }
     }

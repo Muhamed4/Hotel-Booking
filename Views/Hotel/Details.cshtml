@@ -13,7 +13,8 @@
             </div>
             <hr>
             <div class="rating">
-                <a href="#"> <span style="color: black;">@Model.Rate/10 </span> see all @Model.ReviewsCount reviews
+                <a href="#seeReviews"> <span style="color: black;">@Model.Rate/10 </span> see all @Model.ReviewsCount
+                    reviews
                     ></a>
             </div>
             <div class="desc">
@@ -146,12 +147,12 @@
                                 }
                                 <div id=@Roomid class="carousel slide" data-ride="carousel">
                                     @* <ol class="carousel-indicators">
-                                            @for (int i = 0; i < room.Images.Count; i++)
-                                            {
-                                            <li data-target="#@Roomid" data-slide-to="@i" class="@(i==0 ? "active" : "") ">
-                                            </li>
-                                            }
-                                        </ol> *@
+                            @for (int i = 0; i < room.Images.Count; i++)
+                            {
+                            <li data-target="#@Roomid" data-slide-to="@i" class="@(i==0 ? "active" : "") ">
+                            </li>
+                            }
+                            </ol> *@
                                     <div class="carousel-inner">
                                         @for (int i = 0; i < room.Images.Count; i++)
                                         {
@@ -240,7 +241,7 @@
     }
 
 
-    <div class="reviews">
+    <div class="reviews" id="seeReviews">
         <div class="makereview">
             <span>Do You Want To Make a Review on this Hotel ?</span>
             @* <form asp-action="Review" asp-controller="Hotel" asp-route-hotelId="@Model.Hotel.ID" id="review-from">
@@ -266,7 +267,7 @@
                 <p>
                     @review.Comment
                 </p>
-                <p>@review.UserName</p>
+                <a asp-action="UserProfile" asp-controller="Home" asp-route-UserId="@review.UserId">@review.UserName</a>
                 <hr>
             </div>
         }

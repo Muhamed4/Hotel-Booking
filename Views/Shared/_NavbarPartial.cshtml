@@ -1,4 +1,5 @@
 @using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
@@ -23,7 +24,7 @@ else
     {
         <a class="home" asp-action="Index" asp-controller="Home">Home</a> 
         <a asp-action="Trips" asp-controller="Hotel">Trips</a>
-        <a asp-action="" asp-controller="">Fav-Hotels</a>
+        <a asp-action="FavHotels" asp-controller="Hotel">Fav-Hotels</a>
         <a asp-action="Login" asp-controller="Account">Sign In</a>
     }
     else
@@ -37,9 +38,9 @@ else
         {
             <a class="home" asp-action="Index" asp-controller="Home">Home</a>
             <a asp-action="Trips" asp-controller="Hotel">Trips</a>
-            <a asp-action="" asp-controller="">Fav-Hotels</a>
+            <a asp-action="FavHotels" asp-controller="Hotel">Fav-Hotels</a>
         }
-        <a asp-action="" asp-controller="">@User.Identity.Name</a>
+        <a asp-action="UserProfile" asp-controller="Home" asp-route-UserId="@User.FindFirstValue(ClaimTypes.NameIdentifier)">@User.Identity.Name</a>
         <a asp-action="FLogout" asp-controller="Account">Logout</a>
     }
 </nav>

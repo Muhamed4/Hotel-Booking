@@ -1,0 +1,42 @@
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@model Hotel_Booking.ViewModels.Profile
+@{
+    ViewData["Title"] = "UserProfile";
+}
+
+<div class="body">
+    <div class="profile-container">
+        @if (Model.Image is null)
+        {
+            <img src="~/Images/noProfile.jpg" alt="Profile Image" class="profile-image">
+        }
+        else
+        {
+            <img src="~/Images/@Model.Image" alt="Profile Image" class="profile-image">
+        }
+        <div class="profile-name">@Model.FirstName @Model.LastName</div>
+        <div class="profile-email">@Model.Email</div>
+        <div class="profile-details">
+            <p>First Name: @Model.FirstName</p>
+            <p>Last Name: @Model.LastName</p>
+            <p>Email: @Model.Email</p>
+            @* <p>Joined: January 1, 2022</p> *@
+        </div>
+        @if (User.FindFirstValue(ClaimTypes.NameIdentifier) == @Model.UserId)
+        {
+            <div class="navigation-menu">
+                <a asp-action="Index" asp-controller="Home" class="menu-item">Home</a>
+                @* <a href="#" class="menu-item">Change Photo</a> *@
+                <a asp-action="EditUser" asp-controller="Home" asp-route-UserId="@Model.UserId" class="menu-item">Edit
+                    Profile</a>
+                <a asp-action="FLogout" asp-controller="Account" class="menu-item">Logout</a>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section PageStyle {
+    <link rel="stylesheet" href="~/css/HomeUserProfile.css">
+}

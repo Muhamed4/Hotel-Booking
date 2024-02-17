@@ -7,6 +7,7 @@ namespace Hotel_Booking.ViewModels
 {
     public class UserReview
     {
+        public string UserId { get; set; } = null!;
         public string UserName { get; set; } = null!;
         public decimal Rating { get; set; }
         public string Comment { get; set; } = null!;

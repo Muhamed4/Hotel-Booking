@@ -62,4 +62,10 @@
 .content .img .sp2 {
     display: block;
     color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Adjust the number of lines to show */
+    -webkit-box-orient: vertical;
 }
