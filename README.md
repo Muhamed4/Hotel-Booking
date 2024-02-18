@@ -47,7 +47,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 4. If you are a normal user:
    * Interact with hotels by giving a `Love`.
    * Make reservations for hotels.
-   * Provide reviews by giving ratings and writing comments incase you visit the hotel before otherwise you can't.
+   * Provide reviews by giving ratings and writing comments in case you have visited the hotel before otherwise, you can't.
 5. Follow the seamless reservation process to book your room.
 
 
@@ -59,7 +59,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 ## Normal User Role :
    * Can interact with hotels by giving a `Love`.
    * Can make reservations for hotels visited.
-   * Provide reviews by giving ratings and writing comments incase you visit the hotel before otherwise you can't.
+   * Provide reviews by giving ratings and writing comments in case you have visited the hotel before otherwise, you can't.
 
 # Dependencies
 
@@ -72,10 +72,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 - **Microsoft.EntityFrameworkCore.SqlServer** (Version 6.0.25): Components for using Entity Framework Core with SQL Server as the database provider.
 - **Microsoft.EntityFrameworkCore.Tools** (Version 6.0.25): Tools for Entity Framework Core migrations and development tasks.
 - **Microsoft.Extensions.Configuration** (Version 8.0.0): Part of the Microsoft.Extensions.Configuration framework, providing a configuration system for .NET applications.
-- **Microsoft.Extensions.Configuration.Json** (Version 8.0.0): Adds JSON configuration file support to the Microsoft.Extensions.Configuration framework.
+- **Microsoft.Extensions.Configuration.Json** (Version 8.0.0): Adds JSON configuration file support to Microsoft.Extensions.Configuration framework.
 - **Microsoft.VisualStudio.Web.CodeGeneration.Design** (Version 6.0.16): Design-time components for ASP.NET Core code generation, used for scaffolding controllers, views, and other code.
 
-
-
-
-Make sure to keep these packages up to date with the latest versions and regularly check for updates to benefit from bug fixes and new features.
+# [Screen Shots For the Project](https://github.com/Muhamed4/Hotel-Booking/tree/master/ScreenShots)
