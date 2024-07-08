@@ -2,6 +2,16 @@
 
 Hotel Explorer is a web application developed in .NET 6 MVC and C# to empower users to discover and explore hotels around the world. Whether you're planning a business trip or a vacation, Hotel Explorer provides a user-friendly platform to find, explore, and book hotels effortlessly.
 
+## ER Diagram for the Project :
+   ![ERD](ScreenShots/ERD.png)
+
+## Some ScreenShots from the Project :
+   ### Login :![LogIn](ScreenShots/Login.png)
+   ### User Profile : ![User Profile](ScreenShots/UserProfile.png)
+   ### Browsing Hotels : ![Browsing Hotels](ScreenShots/BrowsingHotels.png)
+   ### Hotel's Rooms : ![Hotel's Rooms](ScreenShots/HotelRoomWithReservation.png)
+   ### Users Reviews : ![Users Reviews](ScreenShots/UsersReiewsForTheHotel.png)
+
 ## Features
 
 - **Search by Country and City:** Users can easily search for hotels based on the country and city of their choice.
@@ -55,6 +65,7 @@ Follow these instructions to get a copy of the project up and running on your lo
    * The website supports two different roles: admin and normal user.
 ## Admin Role :
    * Can add, delete, and edit hotels, features, and rooms.
+   ![Admin Operations](ScreenShots/AdminWithHotelsOperations.png)
 
 ## Normal User Role :
    * Can interact with hotels by giving a `Love`.

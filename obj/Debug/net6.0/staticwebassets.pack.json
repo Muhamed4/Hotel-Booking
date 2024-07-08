@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\Images\\0beb49ff-4f04-414f-9e0c-bb445eb9eddf_Programmers-and-software-development-professionals.jpg"
     },
     {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\0c4c3f84-4457-4048-b7d4-f276039e999a_0_h1Rym88uBaU2OQPm.jpg",
+      "PackagePath": "staticwebassets\\Images\\0c4c3f84-4457-4048-b7d4-f276039e999a_0_h1Rym88uBaU2OQPm.jpg"
+    },
+    {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\11166420-0b8c-4edd-a486-00cb47210fd5_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg",
       "PackagePath": "staticwebassets\\Images\\11166420-0b8c-4edd-a486-00cb47210fd5_abdelrahman-sobhy-8LBLGdiKcu0-unsplash.jpg"
     },
@@ -119,6 +123,18 @@
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\banner.jpg",
       "PackagePath": "staticwebassets\\Images\\banner.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\beb4578b-d7c1-4de7-9bd5-8129b8849dda_simple-simple-background-minimalism-black-background-wallpaper-preview.jpg",
+      "PackagePath": "staticwebassets\\Images\\beb4578b-d7c1-4de7-9bd5-8129b8849dda_simple-simple-background-minimalism-black-background-wallpaper-preview.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\c1fff0c1-9f88-4247-b5af-a1f42efaa619_programming-wallpaper20-800x437.jpg",
+      "PackagePath": "staticwebassets\\Images\\c1fff0c1-9f88-4247-b5af-a1f42efaa619_programming-wallpaper20-800x437.jpg"
+    },
+    {
+      "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\c70102ae-6b1f-4a4b-92e6-262659a229b7_simple-simple-background-minimalism-black-background-wallpaper-preview.jpg",
+      "PackagePath": "staticwebassets\\Images\\c70102ae-6b1f-4a4b-92e6-262659a229b7_simple-simple-background-minimalism-black-background-wallpaper-preview.jpg"
     },
     {
       "Id": "D:\\projects\\C#Projects\\Visual_Studio_Code\\Hotel Booking\\wwwroot\\Images\\cb607f5e-2d7c-4009-ae87-6ebd66dc1852_84412931-developing-programming-and-coding-technologies-website-design-programmer-working-in-a-software-devel.jpg",
